@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<title>Sell Saudi</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+@font-face{font-family:"Saudi Sans";src:url(assets/9d5b063e22fb4c1fdf4e126126e305fc.ttf) format("truetype");font-weight:400 700}
+@font-face{font-family:"Saudi Serif";src:url(assets/036b8acfe104a78d15187d034057eea5.ttf) format("truetype");font-weight:400 700}
+body{margin:0;background:#FFFFFF}
+a{color:#78006E;text-decoration:none}a:hover{color:#5A0052}
+</style>
+</helmet>
+<div style="width: 1440px; height: 2300px; display: flex; flex-direction: column; background: #FFFFFF; font-family: 'Saudi Sans', system-ui, sans-serif; color: #1A1A1A; overflow: hidden">
+<div style="position: relative; z-index: 10; flex-shrink: 0"><dc-import name="PublicHeader" hint-size="1440px,104px"></dc-import></div>
+
+<section style="background: #78006E; color: #FFFFFF; padding: 72px 72px 80px; display: flex; gap: 56px; align-items: center">
+<div style="flex-grow: 1; display: flex; flex-direction: column; gap: 18px; max-width: 720px">
+<span style="font-size: 14px; font-weight: 700; letter-spacing: 1px; color: #F0D6EC">SELL SAUDI · MARKET PAGES</span>
+<h1 style="margin: 0; font-family: 'Saudi Serif', Georgia, serif; font-size: 64px; font-weight: 700; line-height: 1.08">Saudi, told for your market, in your language</h1>
+<p style="margin: 0; font-size: 18px; line-height: 1.6; color: #F3E1F0">Each STA business unit publishes pages for its markets: why Saudi, the giga projects, the culture, the places travellers ask for, itineraries you can sell, and licensed suppliers from Connect ready to work with you.</p>
+</div>
+<img src="assets/e8bc2e7591d257ff45c7538fea89219d.jpg" alt="Hegra, AlUla" style="width: 440px; height: 320px; object-fit: cover; border-radius: 20px; flex-shrink: 0">
+</section>
+
+<section style="padding: 80px 72px 40px; display: flex; flex-direction: column; gap: 28px">
+<div style="display: flex; flex-direction: column; gap: 10px"><span style="font-size: 13px; font-weight: 700; letter-spacing: 1px; color: #78006E">BY BUSINESS UNIT</span><h2 style="margin: 0; font-family: 'Saudi Serif', Georgia, serif; font-size: 44px; font-weight: 700">Choose your region</h2></div>
+<div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px">
+<sc-for list="{{ bus }}" as="b" hint-placeholder-count="6">
+<article style="border: 1px solid #EBEBEB; border-radius: 18px; overflow: hidden; display: flex; flex-direction: column">
+<div style="padding: 22px 24px 16px; display: flex; flex-direction: column; gap: 8px">
+<span style="font-size: 12px; font-weight: 700; letter-spacing: 0.8px; color: #78006E">BUSINESS UNIT</span>
+<span style="font-family: 'Saudi Serif', Georgia, serif; font-size: 28px; font-weight: 700">{{ b.name }}</span>
+<span style="font-size: 14px; color: #4B4B4B">Markets: {{ b.markets }}</span>
+</div>
+<a href="{{ b.href }}" style="position: relative; height: 200px; display: flex; margin: 0 16px 16px; border-radius: 14px; overflow: hidden; color: #FFFFFF">
+<img src="{{ b.img }}" alt="{{ b.alt }}" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover">
+<span style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(40,0,36,0) 25%, rgba(40,0,36,0.86) 100%)"></span>
+<span style="position: absolute; top: 14px; inset-inline-start: 14px; height: 26px; padding: 0 12px; border-radius: 13px; background: #FFFFFF; color: #78006E; font-size: 11px; font-weight: 700; display: flex; align-items: center">EXAMPLE PAGE</span>
+<span style="position: relative; margin-top: auto; padding: 16px 18px; display: flex; flex-direction: column; gap: 4px"><span style="font-size: 20px; font-weight: 700">{{ b.example }}</span><span style="font-size: 13px; color: #F3E1F0">{{ b.lang }} · open page</span></span>
+</a>
+</article>
+</sc-for>
+</div>
+</section>
+
+<section style="padding: 40px 72px 80px; display: flex; flex-direction: column; gap: 24px">
+<div style="display: flex; flex-direction: column; gap: 10px"><span style="font-size: 13px; font-weight: 700; letter-spacing: 1px; color: #78006E">ON EVERY MARKET PAGE</span><h2 style="margin: 0; font-family: 'Saudi Serif', Georgia, serif; font-size: 44px; font-weight: 700">Seven sections, one format</h2></div>
+<ol style="margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 14px">
+<sc-for list="{{ sections }}" as="s" hint-placeholder-count="7">
+<li style="border-top: 3px solid #78006E; padding-top: 16px; display: flex; flex-direction: column; gap: 8px"><span style="font-family: 'Saudi Serif', Georgia, serif; font-size: 28px; font-weight: 700; color: #78006E">{{ s.n }}</span><span style="font-size: 16px; font-weight: 700">{{ s.t }}</span><span style="font-size: 13px; line-height: 1.5; color: #4B4B4B">{{ s.d }}</span></li>
+</sc-for>
+</ol>
+</section>
+
+<section style="margin: 0 72px 80px; background: #78006E; border-radius: 24px; padding: 48px 56px; display: flex; align-items: center; justify-content: space-between; color: #FFFFFF">
+<div style="display: flex; flex-direction: column; gap: 10px"><h2 style="margin: 0; font-family: 'Saudi Serif', Georgia, serif; font-size: 36px; font-weight: 700">Want your offers on these pages?</h2><span style="font-size: 17px; color: #F3E1F0">Licensed suppliers listed in Connect appear on the markets they are ready for.</span></div>
+<a href="Register.dc.html" style="height: 54px; padding: 0 30px; border-radius: 27px; background: #FFFFFF; color: #78006E; font-size: 16px; font-weight: 700; display: flex; align-items: center">Become a partner</a>
+</section>
+
+<div style="margin-top: auto"><dc-import name="PublicFooter" hint-size="1440px,440px"></dc-import></div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":2300}}'>
+class Component extends DCLogic {
+  renderVals() {
+    var B = [
+      ['Greater China', 'China, Hong Kong, Taiwan', 'China', '中文', 'MarketChina', 'assets/e8bc2e7591d257ff45c7538fea89219d.jpg', 'Hegra, AlUla'],
+      ['Southeast Asia', 'Indonesia, Malaysia, Singapore', 'Indonesia', 'Bahasa Indonesia', 'MarketIndonesia', 'assets/c11ac0687c6f13f7b0073cb4afef6ccd.jpg', 'Family visiting a museum in Saudi Arabia'],
+      ['South Asia', 'India, Pakistan, Bangladesh', 'India', 'English', 'MarketIndia', 'assets/98f663db535a65d0f72791a63c2b0f5e.jpg', 'Visitors in Diriyah'],
+      ['Europe', 'Italy, Germany, France, Spain', 'Italy', 'Italiano', 'MarketItaly', 'assets/85fda2f036184f4714830af67057a67a.jpg', 'Hegra, AlUla'],
+      ['Middle East', 'Jordan, Egypt, GCC', 'Jordan', 'العربية', 'MarketJordan', 'assets/4f91d07a84e88edcb6880dfaafcaaf95.jpg', 'Desert camp at sunset'],
+      ['UK and Americas', 'United Kingdom, USA, Canada', 'United Kingdom', 'English', 'MarketUK', 'assets/6596caef0129c20aa5b6bf10f6dd1789.jpg', 'Group walking a canyon trail']
+    ];
+    return {
+      bus: B.map(function (b) { return { name: b[0], markets: b[1], example: b[2], lang: b[3], href: b[4] + '.dc.html', img: b[5], alt: b[6] }; }),
+      sections: [['Intro', 'Saudi in a few lines for this market'], ['Why Saudi', 'Four reasons that matter here'], ['Giga projects', 'What is opening and when'], ['Culture', 'Etiquette and what to expect'], ['Top places', 'The places travellers ask for'], ['Itineraries', 'Sample trips you can sell'], ['Suppliers', 'Licensed offers from Connect']].map(function (x, i) { return { n: String(i + 1), t: x[0], d: x[1] }; })
+    };
+  }
+}
+</script>
+</body>
+</html>

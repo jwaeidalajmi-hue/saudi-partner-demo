@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<title>Programmes</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+@font-face{font-family:"Saudi Sans";src:url(assets/9d5b063e22fb4c1fdf4e126126e305fc.ttf) format("truetype");font-weight:400 700}
+@font-face{font-family:"Saudi Serif";src:url(assets/036b8acfe104a78d15187d034057eea5.ttf) format("truetype");font-weight:400 700}
+body{margin:0;background:#F5F5F5}
+a{color:#78006E;text-decoration:none}a:hover{color:#5A0052}
+button{font-family:inherit}
+</style>
+</helmet>
+<div style="width: 1440px; height: 1600px; display: flex; flex-direction: column; background: #F5F5F5; font-family: 'Saudi Sans', system-ui, sans-serif; color: #1A1A1A; overflow: hidden">
+<div style="position: relative; z-index: 10; flex-shrink: 0"><dc-import name="Topbar" hint-size="1440px,76px"></dc-import></div>
+<div style="flex-grow: 1; display: flex; min-height: 0">
+<div style="flex-shrink: 0; display: flex; background: #FFFFFF; border-right: 1px solid #EBEBEB"><dc-import name="Sidebar" active="programmes" hint-size="264px,100%"></dc-import></div>
+<main style="flex-grow: 1; min-width: 0; padding: 32px 40px 48px; box-sizing: border-box; display: flex; flex-direction: column; gap: 22px">
+<dc-import name="JourneyBar" page="Programmes" hint-size="100%,52px"></dc-import>
+<div style="display: flex; align-items: flex-end; justify-content: space-between; gap: 24px">
+<div style="display: flex; flex-direction: column; gap: 8px; max-width: 760px">
+<span style="font-size: 12px; font-weight: 700; letter-spacing: 1px; color: #78006E">PROGRAMMES · ENABLEMENT</span>
+<h1 style="margin: 0; font-family: 'Saudi Serif', Georgia, serif; font-weight: 700; font-size: 38px; line-height: 1.12">Programmes open to you</h1>
+<p style="margin: 0; font-size: 15px; line-height: 1.6; color: #4B4B4B">Programmes are published by STA business units and destination partners, each with its own qualification rules. Your profile is checked automatically, so you see what you can join today and what one more step unlocks.</p>
+</div>
+<div style="display: flex; gap: 10px; flex-shrink: 0"><a href="TierSupplier.dc.html" style="height: 44px; padding: 0 20px; border-radius: 22px; background: #FFFFFF; color: #78006E; border: 1px solid #78006E; font-size: 14px; font-weight: 700; display: flex; align-items: center; gap: 8px; cursor: pointer">My partner tier</a><a href="ProgrammeNew.dc.html" style="height: 44px; padding: 0 22px; border-radius: 22px; background: #78006E; color: #FFFFFF; border: 0; font-size: 14px; font-weight: 700; display: flex; align-items: center; gap: 8px; cursor: pointer">Add a programme</a></div>
+</div>
+
+<section style="display: flex; flex-direction: column; gap: 12px">
+<div style="display: flex; align-items: baseline; gap: 10px"><h2 style="margin: 0; font-size: 17px; font-weight: 700">Eligible now</h2><span style="font-size: 13px; color: #6B6B6B">You meet every condition</span></div>
+<div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px">
+<sc-for list="{{ eligible }}" as="p" hint-placeholder-count="3">
+<article style="background: #FFFFFF; border: 1px solid #EBEBEB; border-radius: 12px; overflow: hidden; display: flex; flex-direction: column">
+<img src="{{ p.img }}" alt="" style="width: 100%; height: 120px; object-fit: cover">
+<div style="padding: 16px 18px; display: flex; flex-direction: column; gap: 10px; flex-grow: 1">
+<span style="font-size: 11px; font-weight: 700; letter-spacing: 0.5px; color: #78006E">{{ p.owner }}</span>
+<span style="font-size: 16px; font-weight: 700">{{ p.name }}</span>
+<span style="font-size: 13px; line-height: 1.5; color: #4B4B4B; flex-grow: 1">{{ p.desc }}</span>
+<div style="display: flex; gap: 6px; flex-wrap: wrap"><sc-for list="{{ p.rules }}" as="r" hint-placeholder-count="3"><span style="height: 24px; padding: 0 10px; border-radius: 12px; background: #EDF8F3; color: #1F6647; font-size: 11px; font-weight: 700; display: flex; align-items: center">✓ {{ r.t }}</span></sc-for></div>
+<button type="button" onClick="{{ p.apply }}" style="{{ p.btn }}">{{ p.cta }}</button>
+</div>
+</article>
+</sc-for>
+</div>
+</section>
+
+<section style="background: #FFFFFF; border: 1px solid #EBEBEB; border-radius: 12px; padding: 22px 24px; display: flex; flex-direction: column; gap: 14px">
+<div style="display: flex; align-items: baseline; gap: 10px"><h2 style="margin: 0; font-size: 17px; font-weight: 700">One step away</h2><span style="font-size: 13px; color: #6B6B6B">What is missing is shown for each</span></div>
+<sc-for list="{{ near }}" as="p" hint-placeholder-count="3">
+<div style="display: flex; align-items: center; gap: 16px; padding: 12px 0; border-top: 1px solid #EBEBEB">
+<span style="flex-grow: 1; display: flex; flex-direction: column; gap: 3px"><span style="font-size: 14px; font-weight: 700">{{ p.name }}</span><span style="font-size: 12px; color: #6B6B6B">{{ p.owner }}</span></span>
+<span style="height: 26px; padding: 0 12px; border-radius: 13px; background: #FEF1EB; color: #8A3C0F; font-size: 11px; font-weight: 700; display: flex; align-items: center">Missing: {{ p.gap }}</span>
+<a href="{{ p.href }}" style="font-size: 13px; font-weight: 700; white-space: nowrap; width: 150px; text-align: end">{{ p.cta }}</a>
+</div>
+</sc-for>
+</section>
+
+<div style="display: flex; gap: 20px; align-items: flex-start">
+<section style="flex: 1 1 0; min-width: 0; background: #FFFFFF; border: 1px solid #EBEBEB; border-radius: 12px; padding: 22px 24px; display: flex; flex-direction: column; gap: 14px">
+<h2 style="margin: 0; font-size: 17px; font-weight: 700">Joint programmes you are in</h2>
+<sc-for list="{{ joint }}" as="j" hint-placeholder-count="3">
+<div style="display: flex; align-items: center; gap: 14px; padding: 12px 0; border-top: 1px solid #EBEBEB">
+<img src="{{ j.img }}" alt="" style="width: 60px; height: 48px; border-radius: 8px; object-fit: cover; flex-shrink: 0">
+<span style="flex-grow: 1; display: flex; flex-direction: column; gap: 3px"><span style="font-size: 14px; font-weight: 700">{{ j.name }}</span><span style="font-size: 12px; color: #6B6B6B">{{ j.meta }}</span></span>
+<span style="{{ j.pill }}">{{ j.status }}</span>
+</div>
+</sc-for>
+</section>
+<section style="width: 420px; flex-shrink: 0; background: #FFFFFF; border: 1px solid #EBEBEB; border-radius: 12px; padding: 22px 24px; display: flex; flex-direction: column; gap: 14px">
+<h2 style="margin: 0; font-size: 17px; font-weight: 700">Awards</h2>
+<sc-for list="{{ awards }}" as="a" hint-placeholder-count="3">
+<div style="display: flex; align-items: center; gap: 12px; padding: 10px 0; border-top: 1px solid #EBEBEB">
+<span style="{{ a.ic }}"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 15a6 6 0 100-12 6 6 0 000 12zM8.5 14l-1.5 7 5-3 5 3-1.5-7"></path></svg></span>
+<span style="display: flex; flex-direction: column; gap: 3px"><span style="font-size: 14px; font-weight: 700">{{ a.name }}</span><span style="font-size: 12px; color: #6B6B6B">{{ a.meta }}</span></span>
+</div>
+</sc-for>
+</section>
+</div>
+<span style="font-size: 12px; color: #6B6B6B">Sample data for the prototype.</span>
+</main>
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview": {"width": 1440, "height": 1600}}'>
+class Component extends DCLogic {
+  constructor(props) { super(props); this.state = { applied: {} }; }
+  renderVals() {
+    var self = this, st = this.state;
+    var pill = function (bg, fg) { return 'height: 26px; padding: 0 12px; border-radius: 13px; font-size: 11px; font-weight: 700; display: flex; align-items: center; white-space: nowrap; background: ' + bg + '; color: ' + fg; };
+    var ic = function (bg, fg) { return 'width: 40px; height: 40px; flex-shrink: 0; border-radius: 20px; display: flex; align-items: center; justify-content: center; background: ' + bg + '; color: ' + fg; };
+    var E = [
+      ['p1', 'STA APAC BU', 'China Ready enablement', 'Mandarin content support, the China course and introductions to Chinese group operators.', ['Accredited', 'Licence valid', 'Heritage offers'], 'assets/e8bc2e7591d257ff45c7538fea89219d.jpg'],
+      ['p2', 'STA Europe BU', 'WTM London · Saudi pavilion', 'Co-exhibitor counters and pre-booked buyer meetings on the Saudi pavilion.', ['Accredited', 'Certified', 'Europe ready'], 'assets/98f663db535a65d0f72791a63c2b0f5e.jpg'],
+      ['p3', 'Asir DMO', 'Asir Winter Trade Package', 'Co-funded packages for Asir sold through European operators this winter.', ['Operates in Asir', 'Accredited', 'Groups 10+'], 'assets/31cdd3634e4f755cd3e3a6d44e978dee.jpg']
+    ];
+    return {
+      eligible: E.map(function (p) {
+        var a = !!st.applied[p[0]];
+        return { owner: p[1], name: p[2], desc: p[3], img: p[5], rules: p[4].map(function (t) { return { t: t }; }),
+          cta: a ? 'Application sent' : 'Apply', apply: function () { var o = Object.assign({}, self.state.applied); o[p[0]] = true; self.setState({ applied: o }); },
+          btn: 'height: 40px; border-radius: 20px; font-size: 13px; font-weight: 700; cursor: pointer; ' + (a ? 'background: #EDF8F3; color: #1F6647; border: 1px solid #C8EBDB' : 'background: #78006E; color: #FFFFFF; border: 1px solid #78006E') };
+      }),
+      near: [
+        { name: 'OneSaudi media placements', owner: 'STA Marketing CoE', gap: 'Premier tier (share 3 months of actuals)', cta: 'Share actuals', href: 'TierSupplier.dc.html' },
+        { name: 'China roadshow: Shanghai and Beijing', owner: 'STA APAC BU', gap: 'China Market Specialist certificate', cta: 'Finish the course', href: 'CourseMarket.dc.html' },
+        { name: 'IBTM World MICE delegation', owner: 'STA MICE team', gap: 'MICE Ready badge', cta: 'Start MICE course', href: 'Training.dc.html' }
+      ],
+      joint: [
+        { name: '2027 COOP with STA', meta: 'With your Account Manager · 40% STA contribution', status: 'With Line Manager', pill: pill('#EEF0FA', '#4F58B0'), img: 'assets/6596caef0129c20aa5b6bf10f6dd1789.jpg' },
+        { name: 'Asir Winter FAM trip', meta: 'Host partner · 14 buyers · Jan 2027', status: 'Confirmed', pill: pill('#EDF8F3', '#1F6647'), img: 'assets/31cdd3634e4f755cd3e3a6d44e978dee.jpg' },
+        { name: 'AlUla Skies campaign', meta: 'Featured offer in the STA Europe campaign', status: 'Live', pill: pill('#F7EBF5', '#78006E'), img: 'assets/e8bc2e7591d257ff45c7538fea89219d.jpg' }
+      ],
+      awards: [
+        { name: 'Partner of Choice 2026', meta: 'Buyer ratings 4.8 across 26 engagements', ic: ic('#FEF1EB', '#B84A18') },
+        { name: 'Top heritage experience, Europe', meta: 'STA Europe BU · Q2 2026', ic: ic('#F7EBF5', '#78006E') },
+        { name: 'Best FAM trip host', meta: 'Asir DMO · Winter 2025', ic: ic('#EDF8F3', '#2E7D55') }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

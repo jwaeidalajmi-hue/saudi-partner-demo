@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<title>Saudi Partner – Demo launcher</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+@font-face{font-family:"Saudi Sans";src:url(assets/9d5b063e22fb4c1fdf4e126126e305fc.ttf) format("truetype");font-weight:400 700}
+@font-face{font-family:"Saudi Serif";src:url(assets/036b8acfe104a78d15187d034057eea5.ttf) format("truetype");font-weight:400 700}
+body{margin:0;background:#78006E}
+a{color:#78006E;text-decoration:none}a:hover{color:#5A0052}
+</style>
+</helmet>
+<div style="width: 1440px; height: 1480px; box-sizing: border-box; padding: 48px 64px; background: #78006E; font-family: 'Saudi Sans', system-ui, sans-serif; color: #FFFFFF; display: flex; flex-direction: column; gap: 32px">
+
+<div style="display: flex; align-items: center; justify-content: space-between">
+<img src="assets/605505d45f1d76478d470bd94b8ee803.png" alt="Saudi Partner" style="height: 60px; width: auto">
+<span style="height: 32px; padding: 0 14px; border-radius: 16px; border: 1px solid rgba(255,255,255,0.5); font-size: 12px; font-weight: 700; letter-spacing: 0.6px; display: flex; align-items: center">PROTOTYPE · SAMPLE DATA</span>
+</div>
+
+<div style="display: flex; gap: 48px; align-items: flex-end">
+<div style="display: flex; flex-direction: column; gap: 14px; max-width: 760px">
+<h1 style="margin: 0; font-family: 'Saudi Serif', Georgia, serif; font-size: 52px; font-weight: 700; line-height: 1.1">One platform, four partners. Pick a role and follow its journey.</h1>
+<p style="margin: 0; font-size: 17px; line-height: 1.6; color: #F3E1F0">Every role uses the same six services: Insights, Academy, Marketing, Planning, Connect and Programmes. Suppliers and buyers use them to grow; DMOs and STA feed them with content, plans, requests and programmes. Each journey takes about ten steps, with a bar at the top of every page to move to the next one.</p>
+</div>
+<div style="flex-grow: 1; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px">
+<sc-for list="{{ services }}" as="g" hint-placeholder-count="6"><span style="height: 40px; border-radius: 20px; background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.3); font-size: 13px; font-weight: 700; display: flex; align-items: center; justify-content: center">{{ g }}</span></sc-for>
+</div>
+</div>
+
+<div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px; flex-grow: 1">
+<sc-for list="{{ roles }}" as="r" hint-placeholder-count="4">
+<article style="background: #FFFFFF; color: #1A1A1A; border-radius: 16px; padding: 22px; display: flex; flex-direction: column; gap: 14px">
+<div style="display: flex; align-items: center; gap: 12px">
+<span style="{{ r.iconStyle }}"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="{{ r.icon }}"></path></svg></span>
+<div style="display: flex; flex-direction: column; gap: 2px"><span style="font-size: 11px; font-weight: 700; letter-spacing: 0.6px; color: #78006E">{{ r.n }}</span><h2 style="margin: 0; font-family: 'Saudi Serif', Georgia, serif; font-size: 24px; font-weight: 700">{{ r.title }}</h2></div>
+</div>
+<span style="font-size: 12px; color: #6B6B6B">{{ r.persona }}</span>
+<p style="margin: 0; font-size: 13px; line-height: 1.55; color: #4B4B4B">{{ r.intro }}</p>
+<ol style="margin: 0; padding: 12px 0 0; list-style: none; display: flex; flex-direction: column; gap: 4px; flex-grow: 1; border-top: 1px solid #EBEBEB">
+<sc-for list="{{ r.steps }}" as="s" hint-placeholder-count="10">
+<li><a href="{{ s.href }}" onClick="{{ r.pick }}" style="display: flex; gap: 10px; align-items: flex-start; padding: 5px 0; color: #1A1A1A"><span style="width: 22px; height: 22px; flex-shrink: 0; border-radius: 11px; background: #F7EBF5; color: #78006E; font-size: 11px; font-weight: 700; display: flex; align-items: center; justify-content: center">{{ s.n }}</span><span style="display: flex; flex-direction: column; gap: 1px"><span style="font-size: 11px; font-weight: 700; letter-spacing: 0.4px; color: #78006E">{{ s.group }}</span><span style="font-size: 13px; line-height: 1.4">{{ s.t }}</span></span></a></li>
+</sc-for>
+</ol>
+<a href="{{ r.href }}" onClick="{{ r.pick }}" style="height: 46px; border-radius: 23px; background: #78006E; color: #FFFFFF; font-size: 14px; font-weight: 700; display: flex; align-items: center; justify-content: center; gap: 8px">Start as {{ r.short }} <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+</article>
+</sc-for>
+</div>
+
+<div style="display: flex; align-items: center; gap: 24px; font-size: 13px; color: #F3E1F0">
+<span>Anonymous visitor:</span>
+<a href="PublicHome.dc.html" style="color: #FFFFFF; font-weight: 700; text-decoration: underline">Public website</a>
+<a href="SellSaudi.dc.html" style="color: #FFFFFF; font-weight: 700; text-decoration: underline">Sell Saudi market pages</a>
+<a href="Register.dc.html" style="color: #FFFFFF; font-weight: 700; text-decoration: underline">Registration flow</a>
+<span style="flex-grow: 1"></span>
+<span>Current role: <b style="color: #FFFFFF">{{ current }}</b></span>
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":1480}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    var stored = null;
+    try { stored = window.localStorage.getItem('sp-demo-mode'); } catch (e) { stored = null; }
+    this.state = { stored: stored };
+  }
+  renderVals() {
+    var self = this;
+    var set = function (m) { return function () { try { window.localStorage.setItem('sp-demo-mode', m); } catch (e) {} self.setState({ stored: m }); try { window.dispatchEvent(new Event('storage')); } catch (e) {} }; };
+    var tone = ['background: #F7EBF5; color: #78006E', 'background: #EEF0FA; color: #4F58B0', 'background: #EDF8F3; color: #2E7D55', 'background: #FEF1EB; color: #B84A18'];
+    var S = function (arr) { return arr.map(function (x, i) { return { n: String(i + 1), group: x[0], t: x[1], href: x[2] + '.dc.html' }; }); };
+    var R = [
+      ['supplier', 'supplier', 'Supplier', 'Fahad Al-Rashid · AlUla Experiences (DMC)', 'Main', 'M21 8l-9-5-9 5 9 5zM3 8v8l9 5 9-5V8M12 13v8',
+        'Grow with STA: see what you qualify for, sharpen your offer for China, and win work through Connect.',
+        [['DASHBOARD', 'Programmes you qualify for, badges such as Partner of Choice, messages from buyers', 'Main'], ['INSIGHTS', 'Read how your offer performs in the Chinese market', 'MarketInsights'], ['ACADEMY', 'Get certified as a China Market Specialist and view badges', 'CourseMarket'], ['MARKETING', 'Get brand kits', 'StudioKits'], ['MARKETING', 'Create content in Saudi Studio', 'StudioHome'], ['PLANNING', 'View the calendar and MICE events, apply to join STA at WTM', 'Calendar'], ['PLANNING', 'Plan a fam trip on the Rihla map and see where buyers find you', 'TripPlanner'], ['CONNECT', 'List yourself in matchmaking', 'GetFound'], ['CONNECT', 'See requests from buyers, STA and DMOs', 'Requests'], ['CONNECT', 'Send a proposal', 'RequestOffer'], ['CONNECT', 'Rate past engagements', 'Engagements'], ['PROGRAMMES', 'Eligible and joint programmes, awards', 'Programmes']]],
+      ['buyer', 'buyer', 'Buyer', 'Maya Haddad · Levant Journeys (tour operator)', 'BuyerHome', 'M3 4h2l2 12h11l2-8H6M9 20h.01M17 20h.01',
+        'Source Saudi with confidence: market content, trained teams, and licensed partners matched to your brief.',
+        [['DASHBOARD', 'Your STA relationship, enquiries and replies', 'BuyerHome'], ['INSIGHTS', 'Read the report for your market', 'MarketInsights'], ['ACADEMY', 'Get certified and view badges', 'CourseMarket'], ['MARKETING', 'Get brand kits for your campaigns', 'StudioKits'], ['PLANNING', 'Trade calendar and events', 'Calendar'], ['PLANNING', 'Plan a fam trip on the Rihla map', 'TripPlanner'], ['PLANNING', 'Preview a virtual FAM trip and request suppliers', 'VirtualFam'], ['CONNECT', 'Get matched on seven questions', 'Matches'], ['CONNECT', 'Post a request', 'RequestNew'], ['CONNECT', 'Review proposals', 'RequestOffers'], ['CONNECT', 'Rate the engagement', 'Engagements'], ['PROGRAMMES', 'Co-op, tier and programmes', 'Programmes']]],
+      ['dmo', 'DMO', 'DMO', 'Layla Al-Qahtani · Marketing Manager, Asir DMO', 'DMOHome', 'M12 21s7-6.2 7-12a7 7 0 10-14 0c0 5.8 7 12 7 12zM12 11.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5z',
+        'Take the destination into the trade: contribute content, plan media with STA, request suppliers and launch programmes.',
+        [['DASHBOARD', 'Campaigns, approvals and deadlines', 'DMOHome'], ['INSIGHTS', 'Contribute an insight, assets or a collection', 'Contribute'], ['INSIGHTS', 'Read market reports', 'MarketInsights'], ['MARKETING', 'Visual assets and collections', 'Assets'], ['PLANNING', 'Build a joint business plan with STA', 'JointPlan'], ['PLANNING', 'Plan a virtual FAM trip route', 'VirtualFam'], ['PLANNING', 'National media buying', 'MediaPlan'], ['CONNECT', 'Put a request out to suppliers', 'RequestNew'], ['CONNECT', 'Review proposals', 'RequestOffers'], ['PROGRAMMES', 'Add a programme with conditions and a form', 'ProgrammeNew'], ['PROGRAMMES', 'Live and joint programmes', 'Programmes']]],
+      ['sta', 'STA', 'STA employee', 'Omar Al-Harbi · STA Marketing CoE', 'STAHome', 'M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6zM8.5 12l2.5 2.5 4.5-5',
+        'Run trade as one business: feed content, agree joint plans, publish events and programmes, and govern tiers by rule.',
+        [['WORKSPACE', 'Verifications, reviews and tier requests', 'STAHome'], ['INSIGHTS', 'Publish insights, assets and collections', 'Contribute'], ['INSIGHTS', 'Market reports by business unit', 'MarketInsights'], ['MARKETING', 'Visual assets and collections', 'Assets'], ['PLANNING', 'Joint business plans with partners', 'JointPlan'], ['PLANNING', 'Publish trade events', 'Calendar'], ['PLANNING', 'Virtual FAM trips for buyers', 'VirtualFam'], ['CONNECT', 'Put a request out to suppliers', 'RequestNew'], ['PROGRAMMES', 'Add a programme with conditions and a form', 'ProgrammeNew'], ['PROGRAMMES', 'Review tier requests', 'TierSTA'], ['PROGRAMMES', 'Live and joint programmes', 'Programmes']]]
+    ];
+    var NAMES = { dmo: 'DMO', supplier: 'Supplier', buyer: 'Buyer', sta: 'STA employee' };
+    return {
+      services: ['Insights', 'Academy', 'Marketing', 'Planning', 'Connect', 'Programmes'],
+      current: NAMES[this.state.stored] || 'Supplier (default)',
+      roles: R.map(function (r, i) {
+        return { n: 'ROLE ' + (i + 1), short: r[1], title: r[2], persona: r[3], href: r[4] + '.dc.html', icon: r[5], intro: r[6], steps: S(r[7]), pick: set(r[0]),
+          iconStyle: 'width: 46px; height: 46px; flex-shrink: 0; border-radius: 23px; display: flex; align-items: center; justify-content: center; ' + tone[i] };
+      })
+    };
+  }
+}
+</script>
+</body>
+</html>

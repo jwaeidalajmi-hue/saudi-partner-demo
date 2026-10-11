@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<title>Register – Become a Partner</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+@font-face{font-family:"Saudi Sans";src:url(assets/9d5b063e22fb4c1fdf4e126126e305fc.ttf) format("truetype");font-weight:400 700}
+@font-face{font-family:"Saudi Serif";src:url(assets/036b8acfe104a78d15187d034057eea5.ttf) format("truetype");font-weight:400 700}
+body{margin:0;background:#FFFFFF}
+a{color:#78006E;text-decoration:none}a:hover{color:#5A0052}
+button,input,select{font-family:inherit}
+</style>
+</helmet>
+<div style="width: 1440px; height: 1180px; display: flex; flex-direction: column; background: #FFFFFF; font-family: 'Saudi Sans', system-ui, sans-serif; color: #1A1A1A; overflow: hidden">
+
+<header style="height: 80px; flex-shrink: 0; padding: 0 72px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid #EBEBEB">
+<a href="PublicHome.dc.html" aria-label="Saudi Partner home" style="display: flex"><img src="assets/49c80982c4552f941f3ed2b617aaedd2.png" alt="Saudi Partner" style="height: 44px; width: auto"></a>
+<div style="display: flex; align-items: center; gap: 20px; font-size: 14px"><span style="color: #4B4B4B">Already have an account? <a href="DemoLauncher.dc.html" style="font-weight: 700">Log in</a></span><a href="PublicHome.dc.html" style="height: 38px; padding: 0 16px; border-radius: 19px; border: 1px solid #DCDCDC; color: #1A1A1A; font-weight: 700; display: flex; align-items: center; gap: 6px">← Back to home</a></div>
+</header>
+<div style="height: 24px; flex-shrink: 0; background-color: #78006E; background-image: url(assets/41e40209d6d7a5cfe46169d373aa8388.png); background-size: auto 24px; background-repeat: repeat-x"></div>
+
+<main style="flex-grow: 1; display: flex; justify-content: center; padding: 56px 0; background: #FFFFFF">
+<div style="width: 640px; display: flex; flex-direction: column; gap: 24px">
+
+<sc-if value="{{ inWizard }}" hint-placeholder-val="{{ false }}">
+<div style="display: flex; flex-direction: column; gap: 10px">
+<div style="display: flex; justify-content: space-between; font-size: 12px; font-weight: 700; color: #4B4B4B"><span>Step {{ wizN }} of 3</span><span>{{ wizLabel }}</span></div>
+<div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px"><sc-for list="{{ bars }}" as="b" hint-placeholder-count="3"><span style="{{ b }}"></span></sc-for></div>
+</div>
+</sc-if>
+
+<section style="border: 1px solid #EBEBEB; border-radius: 20px; padding: 40px 44px; display: flex; flex-direction: column; gap: 22px; box-shadow: 0 10px 30px rgba(0,0,0,0.05)">
+
+<!-- Sign-up options -->
+<sc-if value="{{ isOptions }}" hint-placeholder-val="{{ true }}">
+<div style="display: flex; flex-direction: column; gap: 8px; text-align: center"><h1 style="margin: 0; font-family: 'Saudi Serif', Georgia, serif; font-size: 34px; font-weight: 700; color: #78006E">Create your Saudi Partner account</h1><p style="margin: 0; font-size: 15px; color: #4B4B4B">Sign up to access tools, training, and Partner Connect.</p></div>
+<span style="height: 4px; border-radius: 2px; background: #78006E"></span>
+<button onClick="{{ goEmail }}" style="height: 52px; border-radius: 12px; border: 1px solid #DCDCDC; background: #FFFFFF; font-size: 15px; font-weight: 700; color: #1A1A1A; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 10px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1A1A1A" stroke-width="1.8"><path d="M3 5h18v14H3zM3 6l9 7 9-7"></path></svg>Continue with email</button>
+<button onClick="{{ goGoogle }}" style="height: 52px; border-radius: 12px; border: 1px solid #DCDCDC; background: #FFFFFF; font-size: 15px; font-weight: 700; color: #1A1A1A; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 10px"><span style="width: 20px; height: 20px; border-radius: 10px; border: 2px solid #4F58B0; font-size: 11px; font-weight: 700; color: #4F58B0; display: flex; align-items: center; justify-content: center; box-sizing: border-box">G</span>Continue with Google</button>
+<span style="font-size: 13px; color: #4B4B4B; text-align: center">Already have an account? <a href="DemoLauncher.dc.html" style="font-weight: 700">Log in</a></span>
+</sc-if>
+
+<!-- Email + password -->
+<sc-if value="{{ isEmail }}" hint-placeholder-val="{{ false }}">
+<div style="display: flex; flex-direction: column; gap: 8px; text-align: center"><h1 style="margin: 0; font-family: 'Saudi Serif', Georgia, serif; font-size: 34px; font-weight: 700; color: #78006E">Create your Saudi Partner account</h1><p style="margin: 0; font-size: 15px; color: #4B4B4B">Sign up to access tools, training, and Partner Connect.</p></div>
+<label style="display: flex; flex-direction: column; gap: 8px; font-size: 13px; font-weight: 700">Email address<input type="email" value="{{ f.email }}" onChange="{{ on.email }}" placeholder="you@example.com" style="height: 50px; border-radius: 10px; border: 1px solid #DCDCDC; padding: 0 14px; font-size: 15px; font-weight: 400"></label>
+<div style="display: flex; flex-direction: column; gap: 8px"><label for="pw" style="font-size: 13px; font-weight: 700">Password</label><div style="display: flex; align-items: center; height: 50px; border-radius: 10px; border: 1px solid #DCDCDC; padding: 0 6px 0 14px"><input id="pw" type="{{ pwType }}" value="{{ f.pw }}" onChange="{{ on.pw }}" placeholder="Min. 8 characters" style="flex-grow: 1; border: 0; outline: none; font-size: 15px; background: transparent"><button onClick="{{ togglePw }}" aria-label="Show password" style="border: 0; background: none; font-size: 12px; font-weight: 700; color: #78006E; cursor: pointer; padding: 8px">{{ pwLabel }}</button></div><span style="{{ pwHintStyle }}">{{ pwHint }}</span></div>
+<button onClick="{{ create }}" disabled="{{ cantCreate }}" style="{{ createStyle }}">Create account</button>
+<button onClick="{{ goOptions }}" style="border: 0; background: none; font-size: 13px; font-weight: 700; color: #78006E; cursor: pointer">← Back to sign-up options</button>
+</sc-if>
+
+<!-- Verify email -->
+<sc-if value="{{ isVerify }}" hint-placeholder-val="{{ false }}">
+<div style="display: flex; flex-direction: column; gap: 10px; align-items: center; text-align: center">
+<span style="width: 64px; height: 64px; border-radius: 32px; background: #F7EBF5; display: flex; align-items: center; justify-content: center"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#78006E" stroke-width="1.8"><path d="M3 5h18v14H3zM3 6l9 7 9-7"></path></svg></span>
+<h1 style="margin: 0; font-family: 'Saudi Serif', Georgia, serif; font-size: 32px; font-weight: 700; color: #78006E">Verify your email address</h1>
+<p style="margin: 0; font-size: 15px; line-height: 1.6; color: #4B4B4B">We sent a 6-digit code to <b style="color: #1A1A1A">{{ shownEmail }}</b>. Enter it below to continue.</p>
+</div>
+<label style="display: flex; flex-direction: column; gap: 8px; font-size: 13px; font-weight: 700">Verification code<input inputmode="numeric" maxlength="6" value="{{ f.code }}" onChange="{{ on.code }}" placeholder="• • • • • •" style="height: 60px; border-radius: 12px; border: 1px solid #DCDCDC; padding: 0 14px; font-size: 26px; font-weight: 700; letter-spacing: 14px; text-align: center"></label>
+<button onClick="{{ verify }}" disabled="{{ cantVerify }}" style="{{ verifyStyle }}">Verify email</button>
+<div style="display: flex; justify-content: space-between; font-size: 13px"><button onClick="{{ resend }}" style="border: 0; background: none; padding: 0; font-weight: 700; color: #78006E; cursor: pointer">{{ resendLabel }}</button><button onClick="{{ goEmail }}" style="border: 0; background: none; padding: 0; font-weight: 700; color: #78006E; cursor: pointer">Use a different email</button></div>
+</sc-if>
+
+<!-- Wizard 1 -->
+<sc-if value="{{ isW1 }}" hint-placeholder-val="{{ false }}">
+<div style="display: flex; flex-direction: column; gap: 8px"><h1 style="margin: 0; font-family: 'Saudi Serif', Georgia, serif; font-size: 32px; font-weight: 700; color: #78006E">Welcome to Saudi Partner</h1><p style="margin: 0; font-size: 15px; color: #4B4B4B">Let's start with the basics. This takes about 2 minutes.</p></div>
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px">
+<label style="display: flex; flex-direction: column; gap: 8px; font-size: 13px; font-weight: 700">First name<input value="{{ f.first }}" onChange="{{ on.first }}" style="height: 48px; border-radius: 10px; border: 1px solid #DCDCDC; padding: 0 14px; font-size: 15px; font-weight: 400"></label>
+<label style="display: flex; flex-direction: column; gap: 8px; font-size: 13px; font-weight: 700">Last name<input value="{{ f.last }}" onChange="{{ on.last }}" style="height: 48px; border-radius: 10px; border: 1px solid #DCDCDC; padding: 0 14px; font-size: 15px; font-weight: 400"></label>
+</div>
+<label style="display: flex; flex-direction: column; gap: 8px; font-size: 13px; font-weight: 700">Email address<input value="{{ shownEmail }}" readonly="{{ true }}" style="height: 48px; border-radius: 10px; border: 1px solid #EBEBEB; background: #F7F7F7; padding: 0 14px; font-size: 15px; font-weight: 400; color: #4B4B4B"></label>
+<label style="display: flex; flex-direction: column; gap: 8px; font-size: 13px; font-weight: 700">Country<select value="{{ f.country }}" onChange="{{ on.country }}" style="height: 48px; border-radius: 10px; border: 1px solid #DCDCDC; padding: 0 14px; font-size: 15px; font-weight: 400; background: #FFFFFF"><option value="">Select your country…</option><option>Saudi Arabia</option><option>United Arab Emirates</option><option>Egypt</option><option>France</option><option>Germany</option><option>India</option><option>Japan</option><option>Jordan</option><option>United Kingdom</option><option>United States</option></select></label>
+<div style="display: flex; flex-direction: column; gap: 8px"><label for="phone" style="font-size: 13px; font-weight: 700">Phone number</label><div style="display: flex; gap: 8px"><span style="height: 48px; padding: 0 14px; border-radius: 10px; border: 1px solid #DCDCDC; display: flex; align-items: center; font-size: 15px; font-weight: 700">{{ dial }}</span><input id="phone" value="{{ f.phone }}" onChange="{{ on.phone }}" placeholder="5X XXX XXXX" style="flex-grow: 1; height: 48px; border-radius: 10px; border: 1px solid #DCDCDC; padding: 0 14px; font-size: 15px"></div></div>
+</sc-if>
+
+<!-- Wizard 2 -->
+<sc-if value="{{ isW2 }}" hint-placeholder-val="{{ false }}">
+<div style="display: flex; flex-direction: column; gap: 8px"><h1 style="margin: 0; font-family: 'Saudi Serif', Georgia, serif; font-size: 32px; font-weight: 700; color: #78006E">What best describes you?</h1><p style="margin: 0; font-size: 15px; line-height: 1.6; color: #4B4B4B">Choose the option that best matches what you do — we'll personalise your tools and content accordingly.</p></div>
+<div role="radiogroup" aria-label="What best describes you" style="display: flex; flex-direction: column; gap: 10px">
+<sc-for list="{{ roles }}" as="r" hint-placeholder-count="5">
+<button role="radio" aria-checked="{{ r.on }}" onClick="{{ r.pick }}" style="{{ r.style }}"><span style="{{ r.dot }}"></span><span style="display: flex; flex-direction: column; gap: 4px"><span style="font-size: 15px; font-weight: 700">{{ r.title }}</span><sc-if value="{{ r.hasDesc }}" hint-placeholder-val="{{ true }}"><span style="font-size: 13px; color: #4B4B4B">{{ r.desc }}</span></sc-if></span></button>
+</sc-for>
+</div>
+<sc-if value="{{ showSub }}" hint-placeholder-val="{{ false }}">
+<div role="group" aria-label="Service type" style="display: flex; flex-direction: column; gap: 10px"><span style="font-size: 13px; font-weight: 700">What type of service do you provide?</span><div style="display: flex; gap: 8px; flex-wrap: wrap"><sc-for list="{{ subs }}" as="s" hint-placeholder-count="7"><button onClick="{{ s.pick }}" aria-pressed="{{ s.on }}" style="{{ s.style }}">{{ s.label }}</button></sc-for></div></div>
+</sc-if>
+</sc-if>
+
+<!-- Wizard 3 -->
+<sc-if value="{{ isW3 }}" hint-placeholder-val="{{ false }}">
+<div style="display: flex; flex-direction: column; gap: 8px"><h1 style="margin: 0; font-family: 'Saudi Serif', Georgia, serif; font-size: 32px; font-weight: 700; color: #78006E">What's your primary objective?</h1><p style="margin: 0; font-size: 15px; line-height: 1.6; color: #4B4B4B">Select everything you want to achieve — we'll highlight the right tools, content, and opportunities for you.</p></div>
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px">
+<sc-for list="{{ goals }}" as="g" hint-placeholder-count="6">
+<button onClick="{{ g.pick }}" aria-pressed="{{ g.on }}" style="{{ g.style }}"><span style="{{ g.box }}">{{ g.mark }}</span><span style="display: flex; flex-direction: column; gap: 4px"><span style="font-size: 14px; font-weight: 700">{{ g.title }}</span><span style="font-size: 12px; line-height: 1.5; color: #4B4B4B">{{ g.desc }}</span></span></button>
+</sc-for>
+</div>
+</sc-if>
+
+<!-- Done -->
+<sc-if value="{{ isDone }}" hint-placeholder-val="{{ false }}">
+<div style="display: flex; flex-direction: column; gap: 12px; align-items: center; text-align: center">
+<span style="width: 72px; height: 72px; border-radius: 36px; background: #EDF8F3; display: flex; align-items: center; justify-content: center"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#2E7D55" stroke-width="2.4" stroke-linecap="round"><path d="M4 12l5 5L20 6"></path></svg></span>
+<h1 style="margin: 0; font-family: 'Saudi Serif', Georgia, serif; font-size: 34px; font-weight: 700; color: #78006E">You're all set, {{ firstName }}</h1>
+<p style="margin: 0; font-size: 15px; line-height: 1.6; color: #4B4B4B">We've set up your portal as a <b style="color: #1A1A1A">{{ roleLabel }}</b>. Next, verify your company to unlock partner services.</p>
+</div>
+<div style="border: 1px solid #EBEBEB; border-radius: 12px; padding: 16px 18px; display: flex; flex-direction: column; gap: 8px; font-size: 13px"><div style="display: flex; justify-content: space-between"><span style="color: #6B6B6B">Country</span><b>{{ countryLabel }}</b></div><div style="display: flex; justify-content: space-between"><span style="color: #6B6B6B">Objectives selected</span><b>{{ goalCount }}</b></div></div>
+<a href="{{ homeHref }}" onClick="{{ enter }}" style="height: 52px; border-radius: 26px; background: #78006E; color: #FFFFFF; font-size: 15px; font-weight: 700; display: flex; align-items: center; justify-content: center">Go to my portal →</a>
+</sc-if>
+
+<sc-if value="{{ inWizard }}" hint-placeholder-val="{{ false }}">
+<div style="display: flex; justify-content: space-between; border-top: 1px solid #EBEBEB; padding-top: 20px">
+<button onClick="{{ back }}" style="{{ backStyle }}">← Back</button>
+<button onClick="{{ next }}" disabled="{{ cantNext }}" style="{{ nextStyle }}">Continue →</button>
+</div>
+</sc-if>
+
+</section>
+<p style="margin: 0; font-size: 12px; color: #6B6B6B; text-align: center">By continuing, you agree to Saudi Partner's <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>.</p>
+</div>
+</main>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"startStep":{"editor":"enum","options":["Sign-up options","Email & password","Verify email","1 Basics","2 Describe you","3 Objectives","Done"],"default":"Sign-up options"},"$preview":{"width":1440,"height":1180}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { step: this.mapStep(props.startStep), showPw: false, resent: false,
+      f: { email: '', pw: '', code: '', first: '', last: '', country: 'Saudi Arabia', phone: '', role: -1, sub: '', goals: [] } };
+  }
+  mapStep(s) { return { 'Sign-up options': 'options', 'Email & password': 'email', 'Verify email': 'verify', '1 Basics': 'w1', '2 Describe you': 'w2', '3 Objectives': 'w3', 'Done': 'done' }[s] || 'options'; }
+  componentDidUpdate(prev) { if (prev.startStep !== this.props.startStep) this.setState({ step: this.mapStep(this.props.startStep) }); }
+  renderVals() {
+    var self = this, st = this.state, f = st.f, step = st.step;
+    var set = function (p, extra) { self.setState(Object.assign({ f: Object.assign({}, self.state.f, p) }, extra || {})); };
+    var v = function (e) { return e.target.value; };
+    var btn = function (enabled) { return 'height: 52px; border-radius: 26px; border: 0; font-size: 15px; font-weight: 700; ' + (enabled ? 'background: #78006E; color: #FFFFFF; cursor: pointer' : 'background: #D9D9D9; color: #6B6B6B; cursor: not-allowed'); };
+    var emailOk = /.+@.+\..+/.test(f.email), pwOk = (f.pw || '').length >= 8;
+    var ROLES = [
+      ["I'm a DMC, Activity, or Experience Provider in Saudi", "I own an MT License.", 'supplier'],
+      ["I'm a Tour Guide", '', 'supplier'],
+      ["I'm an Accommodation or Service Provider", '', 'supplier'],
+      ['I distribute or resell tourism products', 'I source Saudi tourism experiences and sell them through my own channels.', 'buyer'],
+      ['I represent a DMO or Government Body', 'I work in destination planning, promotion, or tourism policy.', 'dmo']
+    ];
+    var GOALS = [
+      ['List my tourism products on the Exchange', 'Reach Saudi partners and international distributors with my offerings.'],
+      ['Source & re-sell Saudi tourism products', 'Build a portfolio of Saudi experiences to sell through my channels.'],
+      ['Earn certifications & build my expertise', 'Complete Saudi destination courses and earn recognised partner credentials.'],
+      ['Access marketing assets & brand content', 'Download ready-to-use imagery, videos, and STA-approved brand materials.'],
+      ['Research Saudi market opportunities', 'Explore destination guides, market insights, and traveller trend reports.'],
+      ['Discover what Saudi Partner has to offer', 'Get a full picture of the platform before deciding where to focus.']
+    ];
+    var SUBS = ['Accommodation & Hotels', 'Food & Beverages', 'Retail', 'Activities & Tours', 'Events', 'Transportation', 'Other'];
+    var chip = function (on) { return 'height: 38px; padding: 0 16px; border-radius: 19px; font-size: 13px; font-weight: 500; cursor: pointer; ' + (on ? 'background: #78006E; color: #FFFFFF; border: 1px solid #78006E' : 'background: #FFFFFF; color: #1A1A1A; border: 1px solid #DCDCDC'); };
+    var roles = ROLES.map(function (r, i) {
+      var on = f.role === i;
+      return { title: r[0], desc: r[1], hasDesc: !!r[1], on: on, pick: function () { set({ role: i, sub: '' }); },
+        style: 'text-align: start; cursor: pointer; border-radius: 12px; padding: 16px 18px; display: flex; gap: 14px; align-items: flex-start; color: #1A1A1A; ' + (on ? 'border: 2px solid #78006E; background: #F7F1F6' : 'border: 1px solid #DCDCDC; background: #FFFFFF'),
+        dot: 'width: 20px; height: 20px; flex-shrink: 0; margin-top: 1px; border-radius: 10px; box-sizing: border-box; ' + (on ? 'border: 6px solid #78006E; background: #FFFFFF' : 'border: 2px solid #B0B0B0') };
+    });
+    var goals = GOALS.map(function (g, i) {
+      var on = f.goals.indexOf(i) >= 0;
+      return { title: g[0], desc: g[1], on: on, mark: on ? '✓' : '',
+        pick: function () { var a = self.state.f.goals.slice(); var k = a.indexOf(i); if (k >= 0) a.splice(k, 1); else a.push(i); set({ goals: a }); },
+        style: 'text-align: start; cursor: pointer; border-radius: 12px; padding: 14px 16px; display: flex; gap: 12px; align-items: flex-start; color: #1A1A1A; min-height: 96px; ' + (on ? 'border: 2px solid #78006E; background: #F7F1F6' : 'border: 1px solid #DCDCDC; background: #FFFFFF'),
+        box: 'width: 20px; height: 20px; flex-shrink: 0; border-radius: 5px; font-size: 12px; font-weight: 700; display: flex; align-items: center; justify-content: center; box-sizing: border-box; ' + (on ? 'background: #78006E; color: #FFFFFF' : 'border: 2px solid #B0B0B0; color: transparent') };
+    });
+    var order = ['w1', 'w2', 'w3', 'done'];
+    var wi = order.indexOf(step);
+    var cantNext = (step === 'w1' && !(f.first && f.last && f.country)) || (step === 'w2' && (f.role < 0 || (f.role === 2 && !f.sub))) || (step === 'w3' && f.goals.length === 0);
+    var mode = f.role >= 0 ? ROLES[f.role][2] : 'supplier';
+    var HOME = { supplier: 'Main.dc.html', buyer: 'BuyerHome.dc.html', dmo: 'DMOHome.dc.html' };
+    var LABEL = { supplier: 'Provider / Supplier', buyer: 'Buyer / Distributor', dmo: 'DMO / Government body' };
+    return {
+      f: f,
+      isOptions: step === 'options', isEmail: step === 'email', isVerify: step === 'verify',
+      isW1: step === 'w1', isW2: step === 'w2', isW3: step === 'w3', isDone: step === 'done',
+      inWizard: step === 'w1' || step === 'w2' || step === 'w3',
+      wizN: wi + 1, wizLabel: ['Basics', 'About you', 'Objectives'][wi] || '',
+      bars: [0, 1, 2].map(function (i) { return 'height: 6px; border-radius: 3px; background: ' + (i < wi ? '#3CA06E' : (i === wi ? '#78006E' : '#EBEBEB')); }),
+      shownEmail: f.email || 'you@example.com',
+      on: {
+        email: function (e) { set({ email: v(e) }); }, pw: function (e) { set({ pw: v(e) }); }, code: function (e) { set({ code: v(e).replace(/[^0-9]/g, '').slice(0, 6) }); },
+        first: function (e) { set({ first: v(e) }); }, last: function (e) { set({ last: v(e) }); }, country: function (e) { set({ country: v(e) }); }, phone: function (e) { set({ phone: v(e) }); }
+      },
+      goEmail: function () { self.setState({ step: 'email' }); },
+      goOptions: function () { self.setState({ step: 'options' }); },
+      goGoogle: function () { set({ email: f.email || 'you@example.com' }, { step: 'w1' }); },
+      pwType: st.showPw ? 'text' : 'password', pwLabel: st.showPw ? 'Hide' : 'Show',
+      togglePw: function () { self.setState({ showPw: !self.state.showPw }); },
+      pwHint: pwOk || !f.pw ? 'Use at least 8 characters.' : (8 - f.pw.length) + ' more characters needed',
+      pwHintStyle: 'font-size: 12px; color: ' + (pwOk || !f.pw ? '#6B6B6B' : '#B84A18'),
+      cantCreate: !(emailOk && pwOk), createStyle: btn(emailOk && pwOk),
+      create: function () { if (emailOk && pwOk) self.setState({ step: 'verify' }); },
+      cantVerify: f.code.length !== 6, verifyStyle: btn(f.code.length === 6),
+      verify: function () { if (self.state.f.code.length === 6) self.setState({ step: 'w1' }); },
+      resend: function () { self.setState({ resent: true }); }, resendLabel: st.resent ? 'Code sent again ✓' : 'Resend code',
+      dial: f.country === 'Saudi Arabia' ? '+966' : '+ —',
+      roles: roles, goals: goals, showSub: f.role === 2,
+      subs: SUBS.map(function (s) { return { label: s, on: f.sub === s, style: chip(f.sub === s), pick: function () { set({ sub: s }); } }; }),
+      cantNext: cantNext,
+      nextStyle: 'height: 48px; padding: 0 26px; border-radius: 24px; border: 0; font-size: 15px; font-weight: 700; ' + (cantNext ? 'background: #D9D9D9; color: #6B6B6B; cursor: not-allowed' : 'background: #78006E; color: #FFFFFF; cursor: pointer'),
+      backStyle: 'height: 48px; padding: 0 20px; border-radius: 24px; border: 1px solid #DCDCDC; background: #FFFFFF; font-size: 15px; font-weight: 700; cursor: pointer; ' + (wi === 0 ? 'visibility: hidden' : 'color: #1A1A1A'),
+      next: function () { if (!cantNext && wi >= 0 && wi < 3) self.setState({ step: order[wi + 1] }); },
+      back: function () { if (wi > 0) self.setState({ step: order[wi - 1] }); },
+      firstName: f.first || 'there', roleLabel: LABEL[mode], countryLabel: f.country || '—', goalCount: f.goals.length,
+      homeHref: HOME[mode],
+      enter: function () { try { window.localStorage.setItem('sp-demo-mode', mode); } catch (e) {} }
+    };
+  }
+}
+</script>
+</body>
+</html>

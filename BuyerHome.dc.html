@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<title>Buyer – Dashboard</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+@font-face{font-family:"Saudi Sans";src:url(assets/9d5b063e22fb4c1fdf4e126126e305fc.ttf) format("truetype");font-weight:400 700}
+@font-face{font-family:"Saudi Serif";src:url(assets/036b8acfe104a78d15187d034057eea5.ttf) format("truetype");font-weight:400 700}
+body{margin:0;background:#FFFFFF}
+a{color:#78006E;text-decoration:none}a:hover{color:#5A0052}
+button{font-family:inherit}
+</style>
+</helmet>
+<div style="width: 1440px; height: 1376px; display: flex; flex-direction: column; background: #FFFFFF; font-family: 'Saudi Sans', system-ui, sans-serif; color: #1A1A1A; overflow: hidden">
+<div style="position: relative; z-index: 10; flex-shrink: 0"><dc-import name="Topbar" mode="buyer" hint-size="1440px,76px"></dc-import></div>
+<div style="flex-grow: 1; display: flex; min-height: 0">
+<div style="flex-shrink: 0; display: flex; background: #FFFFFF; border-inline-end: 1px solid #EBEBEB"><dc-import name="Sidebar" mode="buyer" active="dashboard" hint-size="264px,100%"></dc-import></div>
+<main style="flex-grow: 1; min-width: 0; padding: 36px 40px 48px; box-sizing: border-box; display: flex; flex-direction: column; gap: 26px">
+<dc-import name="JourneyBar" page="BuyerHome" hint-size="100%,52px"></dc-import>
+
+<div style="display: flex; align-items: flex-end; justify-content: space-between; gap: 24px">
+<div style="display: flex; flex-direction: column; gap: 10px">
+<h1 style="margin: 0; font-family: 'Saudi Serif', Georgia, serif; font-weight: 700; font-size: 44px; line-height: 1.1">Welcome back, Maya</h1>
+<p style="margin: 0; font-size: 16px; color: #4B4B4B">{{ newReplies }} suppliers replied to your enquiries since your last visit.</p>
+</div>
+<a href="Matches.dc.html" style="height: 48px; padding: 0 24px; border-radius: 24px; background: #78006E; color: #FFFFFF; font-size: 14px; font-weight: 700; display: flex; align-items: center; gap: 8px">Find partners for a brief</a>
+</div>
+
+<section style="background: #EDF8F3; border: 1px solid #C8EBDB; border-radius: 12px; padding: 16px 22px; display: flex; align-items: center; gap: 14px">
+<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2E7D55" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6z"></path><path d="M8.5 12l2.5 2.5 4.5-5"></path></svg>
+<div style="flex-grow: 1; display: flex; flex-direction: column; gap: 2px"><span style="font-size: 14px; font-weight: 700; color: #1F6143">Verified trade account · Co-op partner</span><span style="font-size: 12px; color: #2E7D55">Approved international partner · Levant Journeys, Jordan. Your STA account owner is Omar Al-Harbi.</span></div>
+<a href="TierBuyer.dc.html" style="font-size: 13px; font-weight: 700">STA relationship</a>
+</section>
+
+<div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px">
+<sc-for list="{{ tiles }}" as="k" hint-placeholder-count="4">
+<div style="border: 1px solid #EBEBEB; border-radius: 12px; padding: 20px 22px; display: flex; flex-direction: column; gap: 8px"><span style="font-size: 13px; color: #4B4B4B">{{ k.label }}</span><span style="font-family: 'Saudi Serif', Georgia, serif; font-size: 30px; font-weight: 700; line-height: 1.1">{{ k.value }}</span><span style="font-size: 12px; color: #6B6B6B">{{ k.note }}</span></div>
+</sc-for>
+</div>
+
+<section style="border: 1px solid #EBEBEB; border-radius: 12px; overflow: hidden">
+<div style="padding: 18px 22px; border-bottom: 1px solid #EBEBEB; display: flex; justify-content: space-between; align-items: center"><h2 style="margin: 0; font-size: 17px; font-weight: 700">My enquiries</h2><span style="font-size: 12px; color: #6B6B6B">Sample data</span></div>
+<table style="width: 100%; border-collapse: collapse; font-size: 13px">
+<thead><tr style="background: #FAFAFA; color: #4B4B4B"><th scope="col" style="text-align: start; padding: 12px 22px; font-size: 12px">Product</th><th scope="col" style="text-align: start; padding: 12px; font-size: 12px">Supplier</th><th scope="col" style="text-align: start; padding: 12px; font-size: 12px">Group</th><th scope="col" style="text-align: start; padding: 12px; font-size: 12px">Sent</th><th scope="col" style="text-align: start; padding: 12px; font-size: 12px">Status</th><th scope="col" style="text-align: end; padding: 12px 22px; font-size: 12px">Action</th></tr></thead>
+<tbody>
+<sc-for list="{{ enquiries }}" as="e" hint-placeholder-count="4">
+<tr style="border-top: 1px solid #EBEBEB">
+<td style="padding: 14px 22px; font-weight: 700">{{ e.product }}</td><td style="padding: 14px 12px">{{ e.supplier }}</td><td style="padding: 14px 12px; color: #4B4B4B">{{ e.pax }}</td><td style="padding: 14px 12px; color: #4B4B4B">{{ e.sent }}</td>
+<td style="padding: 14px 12px"><span style="{{ e.pill }}">{{ e.status }}</span></td>
+<td style="padding: 14px 22px; text-align: end"><button onClick="{{ e.act }}" style="border: 0; background: none; font-size: 13px; font-weight: 700; color: #78006E; cursor: pointer">{{ e.cta }}</button></td>
+</tr>
+</sc-for>
+</tbody>
+</table>
+</section>
+
+<section style="display: flex; flex-direction: column; gap: 14px">
+<div style="display: flex; align-items: center; justify-content: space-between"><h2 style="margin: 0; font-size: 18px; font-weight: 700">Recommended for your market</h2><a href="Directory.dc.html" style="font-size: 13px; font-weight: 700">See all partners</a></div>
+<div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px">
+<sc-for list="{{ recs }}" as="r" hint-placeholder-count="3">
+<article style="border: 1px solid #EBEBEB; border-radius: 10px; overflow: hidden; display: flex; flex-direction: column">
+<div style="{{ r.cover }}"><span style="font-family: 'Saudi Serif', Georgia, serif; font-size: 20px; font-weight: 700; color: #FFFFFF">{{ r.region }}</span></div>
+<div style="padding: 16px 18px; display: flex; flex-direction: column; gap: 6px"><span style="font-size: 14px; font-weight: 700">{{ r.title }}</span><span style="font-size: 12px; color: #6B6B6B">{{ r.supplier }} · ✓ Verified</span><div style="display: flex; justify-content: space-between; align-items: center; padding-top: 8px"><span style="font-size: 14px; font-weight: 700; color: #78006E">{{ r.price }}</span><a href="Matches.dc.html" style="font-size: 12px; font-weight: 700">Enquire</a></div></div>
+</article>
+</sc-for>
+</div>
+</section>
+
+</main>
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":1376}}'>
+class Component extends DCLogic {
+  constructor(props) { super(props); this.state = { done: {} }; }
+  renderVals() {
+    var self = this, st = this.state;
+    var S = {
+      replied: ['Supplier replied', 'background: #EDF8F3; color: #1F6143'],
+      quote: ['Quote received', 'background: #F7EBF5; color: #78006E'],
+      waiting: ['Awaiting reply', 'background: #EEF0FA; color: #4F58B0'],
+      closed: ['Booked', 'background: #F0F0F0; color: #4B4B4B']
+    };
+    var src = [
+      [1, 'AlUla Heritage Trek — Full Day', 'AlUla Experiences Co.', '24 pax', '19 Sep 2026', 'replied', 'Read reply'],
+      [2, 'Luxury Desert Camp — 2 Nights', 'Desert Quest Arabia', '12 pax', '17 Sep 2026', 'quote', 'Review quote'],
+      [3, 'Jeddah Old Town Walking Experience', 'Heritage Walks Arabia', '30 pax', '22 Sep 2026', 'waiting', 'Send reminder'],
+      [4, 'Red Sea Diving & Snorkelling Package', 'Red Sea Aquatics', '8 pax', '2 Sep 2026', 'closed', 'View']
+    ];
+    var enquiries = src.map(function (e) {
+      var d = !!st.done[e[0]];
+      var s = S[e[5]];
+      return { product: e[1], supplier: e[2], pax: e[3], sent: e[4], status: d && e[5] === 'waiting' ? 'Reminder sent' : s[0],
+        pill: 'display: inline-flex; height: 24px; padding: 0 10px; border-radius: 12px; font-size: 11px; font-weight: 700; align-items: center; white-space: nowrap; ' + s[1],
+        cta: d ? 'Done ✓' : e[6], act: function () { var o = Object.assign({}, self.state.done); o[e[0]] = true; self.setState({ done: o }); } };
+    });
+    return {
+      newReplies: 2,
+      enquiries: enquiries,
+      tiles: [
+        { label: 'Open enquiries', value: '3', note: '1 awaiting supplier reply' },
+        { label: 'New replies', value: '2', note: 'Including 1 quote' },
+        { label: 'Saved products', value: '5', note: 'Across 3 regions' },
+        { label: 'Bookings via partners', value: '1', note: 'Since access approved' }
+      ],
+      recs: [
+        { title: 'AlUla Heritage Trek — Full Day', supplier: 'AlUla Experiences Co.', region: 'AlUla', price: 'SAR 480/pax', cover: 'height: 110px; padding: 14px; box-sizing: border-box; display: flex; align-items: flex-end; background: #C0541F' },
+        { title: 'Riyadh City & Culture Tour', supplier: 'Capital Tours KSA', region: 'Riyadh', price: 'SAR 240/pax', cover: 'height: 110px; padding: 14px; box-sizing: border-box; display: flex; align-items: flex-end; background: #78006E' },
+        { title: 'Taif Rose Farm & Countryside Tour', supplier: 'Taif Blooms Tours', region: 'Taif', price: 'SAR 290/pax', cover: 'height: 110px; padding: 14px; box-sizing: border-box; display: flex; align-items: flex-end; background: #9A1F6E' }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

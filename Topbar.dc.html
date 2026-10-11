@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<title>Top bar</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+@font-face{font-family:"Saudi Sans";src:url(assets/9d5b063e22fb4c1fdf4e126126e305fc.ttf) format("truetype");font-weight:400 700}
+body{margin:0}
+</style>
+</helmet>
+<div dir="{{ dir }}" style="width: 1440px; height: 76px; position: relative; font-family: 'Saudi Sans', system-ui, sans-serif; color: #1A1A1A">
+<header style="height: 76px; background: #FFFFFF; border-bottom: 1px solid #EBEBEB; display: flex; align-items: center; justify-content: space-between; padding-inline: 40px 32px; box-sizing: border-box">
+<a href="Main.dc.html" aria-label="Saudi Partner portal home" style="display: flex"><img src="assets/49c80982c4552f941f3ed2b617aaedd2.png" alt="Saudi Partner" style="height: 48px; width: auto"></a>
+<div style="display: flex; align-items: center; gap: 10px">
+<a href="DemoLauncher.dc.html" title="Switch demo role" style="height: 32px; padding: 0 12px; border-radius: 16px; border: 1px dashed #78006E; color: #78006E; font-size: 11px; font-weight: 700; letter-spacing: 0.3px; display: flex; align-items: center; gap: 6px; text-decoration: none; margin-inline-end: 6px"><span style="width: 7px; height: 7px; border-radius: 4px; background: #78006E"></span>DEMO · {{ modeLabel }}</a>
+<button aria-label="Search" style="width: 40px; height: 40px; border-radius: 20px; border: 1px solid #EBEBEB; background: #F5F5F5; display: flex; align-items: center; justify-content: center; cursor: pointer; padding: 0"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1A1A1A" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"></circle><path d="M20 20l-3.5-3.5"></path></svg></button>
+<button onClick="{{ toggleBell }}" aria-label="Notifications, 3 unread" aria-expanded="{{ bellOpen }}" style="position: relative; width: 40px; height: 40px; border-radius: 20px; border: 1px solid #EBEBEB; background: #F5F5F5; display: flex; align-items: center; justify-content: center; cursor: pointer; padding: 0"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1A1A1A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8a6 6 0 0112 0c0 7 3 9 3 9H3s3-2 3-9"></path><path d="M10.3 21a1.94 1.94 0 003.4 0"></path></svg><span style="position: absolute; top: -3px; right: -3px; min-width: 16px; height: 16px; border-radius: 8px; background: #FF4664; color: #FFFFFF; font-size: 9px; font-weight: 700; display: flex; align-items: center; justify-content: center">3</span></button>
+<button aria-label="{{ langLabel }}" style="height: 40px; padding: 0 14px; border-radius: 20px; border: 1px solid #EBEBEB; background: #F5F5F5; display: flex; align-items: center; gap: 6px; cursor: pointer; font-size: 12px; font-weight: 700; font-family: inherit; color: #1A1A1A"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#1A1A1A" stroke-width="2"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3c2.5 2.5 3.5 5.5 3.5 9s-1 6.5-3.5 9c-2.5-2.5-3.5-5.5-3.5-9s1-6.5 3.5-9z"></path></svg>{{ langShort }}</button>
+<div style="height: 40px; padding: 0 14px 0 10px; border-radius: 20px; background: #F5F5F5; border: 1px solid #EBEBEB; display: flex; align-items: center; gap: 8px; font-size: 12px; font-weight: 700"><span style="width: 22px; height: 15px; border-radius: 2px; background: #3CA06E; display: inline-block"></span>{{ country }}</div>
+<a href="MyAccount.dc.html" aria-label="My account" style="width: 40px; height: 40px; border-radius: 20px; background: #78006E; color: #FFFFFF; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700; text-decoration: none">{{ initials }}</a>
+</div>
+</header>
+<sc-if value="{{ bellOpen }}" hint-placeholder-val="{{ false }}">
+<div style="position: absolute; top: 68px; inset-inline-end: 120px; width: 340px; background: #FFFFFF; border: 1px solid #EBEBEB; border-radius: 12px; box-shadow: 0 12px 32px rgba(0,0,0,0.12); z-index: 20; overflow: hidden">
+<div style="padding: 16px 18px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #EBEBEB"><span style="font-size: 14px; font-weight: 700">Notifications</span><button onClick="{{ toggleBell }}" style="border: 0; background: none; font-size: 12px; font-weight: 700; color: #78006E; cursor: pointer; font-family: inherit">Mark all as read</button></div>
+<sc-for list="{{ notes }}" as="n" hint-placeholder-count="3">
+<a href="{{ n.href }}" style="display: flex; gap: 12px; padding: 14px 18px; border-bottom: 1px solid #F0F0F0; color: #1A1A1A; text-decoration: none"><span style="width: 8px; height: 8px; margin-top: 6px; border-radius: 4px; background: #FF4664; flex-shrink: 0"></span><span style="display: flex; flex-direction: column; gap: 4px"><span style="font-size: 13px; font-weight: 500; line-height: 1.4">{{ n.title }}</span><span style="font-size: 11px; color: #767676">{{ n.when }}</span></span></a>
+</sc-for>
+</div>
+</sc-if>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"initials":{"editor":null,"default":""},"country":{"editor":null,"default":""},"mode":{"editor":"enum","options":["auto","supplier","buyer","dmo","sta"],"default":"auto"},"lang":{"editor":"enum","options":["en","ar"],"default":"en"},"$preview":{"width":1440,"height":76}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    var stored = null;
+    try { stored = window.localStorage.getItem('sp-demo-mode'); } catch (e) { stored = null; }
+    this.state = { bellOpen: false, stored: stored };
+  }
+  componentDidMount() {
+    var self = this;
+    this._onStorage = function () { self.forceUpdate(); };
+    try { window.addEventListener('storage', this._onStorage); window.addEventListener('focus', this._onStorage); } catch (e) {}
+  }
+  componentWillUnmount() {
+    try { window.removeEventListener('storage', this._onStorage); window.removeEventListener('focus', this._onStorage); } catch (e) {}
+  }
+  readMode() { try { return window.localStorage.getItem('sp-demo-mode'); } catch (e) { return null; } }
+  renderVals() {
+    var self = this;
+    var mode = this.props.mode && this.props.mode !== 'auto' ? this.props.mode : (this.readMode() || 'supplier');
+    var ID = { supplier: ['FA', 'KSA', 'SUPPLIER'], buyer: ['MH', 'INTL', 'BUYER'], dmo: ['LQ', 'KSA', 'DMO'], sta: ['OH', 'KSA', 'STA EMPLOYEE'] }[mode] || ['FA', 'KSA', 'SUPPLIER'];
+    return {
+      modeLabel: ID[2],
+      initials: this.props.initials || ID[0],
+      dir: this.props.lang === 'ar' ? 'rtl' : 'ltr',
+      langShort: this.props.lang === 'ar' ? 'EN' : 'AR',
+      langLabel: this.props.lang === 'ar' ? 'Switch to English' : 'Switch to Arabic',
+      country: this.props.country || ID[1],
+      bellOpen: this.state.bellOpen,
+      toggleBell: function () { self.setState({ bellOpen: !self.state.bellOpen }); },
+      notes: [
+        { title: 'Matchmaking is live in Connect', when: '24 Jul 2026', href: 'GetFound.dc.html' },
+        { title: 'New learning path: Saudi Heritage & Culture', when: '20 Jul 2026', href: 'Training.dc.html' },
+        { title: 'Winter Season campaign assets available', when: '18 Jul 2026', href: 'Assets.dc.html' }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

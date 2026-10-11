@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<title>Market reports</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+@font-face{font-family:"Saudi Sans";src:url(assets/9d5b063e22fb4c1fdf4e126126e305fc.ttf) format("truetype");font-weight:400 700}
+@font-face{font-family:"Saudi Serif";src:url(assets/036b8acfe104a78d15187d034057eea5.ttf) format("truetype");font-weight:400 700}
+body{margin:0;background:#F5F5F5}
+a{color:#78006E;text-decoration:none}a:hover{color:#5A0052}
+button{font-family:inherit}
+</style>
+</helmet>
+<div style="width: 1440px; height: 1560px; display: flex; flex-direction: column; background: #F5F5F5; font-family: 'Saudi Sans', system-ui, sans-serif; color: #1A1A1A; overflow: hidden">
+<div style="position: relative; z-index: 10; flex-shrink: 0"><dc-import name="Topbar" hint-size="1440px,76px"></dc-import></div>
+<div style="flex-grow: 1; display: flex; min-height: 0">
+<div style="flex-shrink: 0; display: flex; background: #FFFFFF; border-right: 1px solid #EBEBEB"><dc-import name="Sidebar" active="reports" hint-size="264px,100%"></dc-import></div>
+<main style="flex-grow: 1; min-width: 0; padding: 32px 40px 48px; box-sizing: border-box; display: flex; flex-direction: column; gap: 22px">
+<dc-import name="JourneyBar" page="MarketInsights" hint-size="100%,52px"></dc-import>
+<div style="display: flex; align-items: flex-end; justify-content: space-between; gap: 24px">
+<div style="display: flex; flex-direction: column; gap: 8px; max-width: 760px">
+<span style="font-size: 12px; font-weight: 700; letter-spacing: 1px; color: #78006E">INSIGHTS · MARKET REPORTS</span>
+<h1 style="margin: 0; font-family: 'Saudi Serif', Georgia, serif; font-weight: 700; font-size: 38px; line-height: 1.12">{{ m.title }}</h1>
+<p style="margin: 0; font-size: 15px; line-height: 1.6; color: #4B4B4B">How travellers from {{ m.name }} book Saudi, and how your offer performs with buyers there. Reports come from STA business units and destination partners.</p>
+</div>
+<div style="display: flex; gap: 10px; flex-shrink: 0"><a href="Contribute.dc.html" style="height: 44px; padding: 0 20px; border-radius: 22px; background: #FFFFFF; color: #78006E; border: 1px solid #78006E; font-size: 14px; font-weight: 700; display: flex; align-items: center; gap: 8px; cursor: pointer">Contribute an insight</a><a href="Insights.dc.html" style="height: 44px; padding: 0 22px; border-radius: 22px; background: #78006E; color: #FFFFFF; border: 0; font-size: 14px; font-weight: 700; display: flex; align-items: center; gap: 8px; cursor: pointer">Data and dashboards</a></div>
+</div>
+
+<div role="group" aria-label="Market" style="display: flex; gap: 8px; flex-wrap: wrap">
+<sc-for list="{{ markets }}" as="c" hint-placeholder-count="6"><button type="button" aria-pressed="{{ c.on }}" onClick="{{ c.pick }}" style="{{ c.style }}">{{ c.label }}</button></sc-for>
+</div>
+
+<div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px">
+<sc-for list="{{ m.kpis }}" as="k" hint-placeholder-count="4">
+<div style="background: #FFFFFF; border: 1px solid #EBEBEB; border-radius: 12px; padding: 18px 20px; display: flex; flex-direction: column; gap: 6px">
+<span style="font-size: 13px; color: #4B4B4B">{{ k.label }}</span>
+<span style="font-family: 'Saudi Serif', Georgia, serif; font-size: 30px; font-weight: 700; line-height: 1.1">{{ k.value }}</span>
+<span style="font-size: 12px; color: #6B6B6B">{{ k.note }}</span>
+</div>
+</sc-for>
+</div>
+
+<div style="display: flex; gap: 20px; align-items: stretch">
+<section style="flex: 1 1 0; min-width: 0; background: #FFFFFF; border: 1px solid #EBEBEB; border-radius: 12px; padding: 22px 24px; display: flex; flex-direction: column; gap: 14px">
+<div style="display: flex; flex-direction: column; gap: 4px"><h2 style="margin: 0; font-size: 17px; font-weight: 700">Enquiries to you from {{ m.name }}-based buyers</h2><span style="font-size: 12px; color: #6B6B6B">Last 6 months · hover a bar for the exact count</span></div>
+<div style="height: 220px; display: flex; align-items: flex-end; gap: 18px; border-bottom: 1px solid #DCDCDC; padding: 0 8px">
+<sc-for list="{{ m.bars }}" as="b" hint-placeholder-count="6">
+<div style="flex: 1 1 0; height: 100%; display: flex; flex-direction: column; justify-content: flex-end; align-items: center; gap: 6px" title="{{ b.tip }}">
+<span style="font-size: 12px; font-weight: 700; color: #1A1A1A">{{ b.label }}</span>
+<span style="{{ b.style }}"></span>
+</div>
+</sc-for>
+</div>
+<div style="display: flex; gap: 18px; padding: 0 8px"><sc-for list="{{ m.bars }}" as="b" hint-placeholder-count="6"><span style="flex: 1 1 0; text-align: center; font-size: 12px; color: #6B6B6B">{{ b.month }}</span></sc-for></div>
+</section>
+
+<section style="width: 380px; flex-shrink: 0; background: #FFFFFF; border: 1px solid #EBEBEB; border-radius: 12px; padding: 22px 24px; display: flex; flex-direction: column; gap: 14px">
+<h2 style="margin: 0; font-size: 17px; font-weight: 700">Most searched destinations</h2>
+<sc-for list="{{ m.dest }}" as="d" hint-placeholder-count="5">
+<div style="display: flex; flex-direction: column; gap: 6px">
+<div style="display: flex; justify-content: space-between; font-size: 13px"><span>{{ d.name }}</span><b>{{ d.pct }}</b></div>
+<span style="height: 8px; border-radius: 4px; background: #F0EDEF; display: flex"><span style="{{ d.bar }}"></span></span>
+</div>
+</sc-for>
+</section>
+</div>
+
+<div style="display: flex; gap: 20px; align-items: flex-start">
+<section style="flex: 1 1 0; min-width: 0; background: #FFFFFF; border: 1px solid #EBEBEB; border-radius: 12px; padding: 22px 24px; display: flex; flex-direction: column; gap: 14px">
+<h2 style="margin: 0; font-size: 17px; font-weight: 700">What travellers from {{ m.name }} look for</h2>
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px">
+<sc-for list="{{ m.needs }}" as="n" hint-placeholder-count="4">
+<div style="border: 1px solid #EBEBEB; border-radius: 10px; padding: 14px 16px; display: flex; flex-direction: column; gap: 4px"><span style="font-size: 14px; font-weight: 700">{{ n.t }}</span><span style="font-size: 12px; line-height: 1.5; color: #4B4B4B">{{ n.d }}</span></div>
+</sc-for>
+</div>
+</section>
+<section style="width: 480px; flex-shrink: 0; background: #FFFFFF; border: 1px solid #EBEBEB; border-radius: 12px; padding: 22px 24px; display: flex; flex-direction: column; gap: 14px">
+<h2 style="margin: 0; font-size: 17px; font-weight: 700">Reports</h2>
+<sc-for list="{{ m.reports }}" as="r" hint-placeholder-count="4">
+<div style="display: flex; align-items: center; gap: 12px; padding: 10px 0; border-top: 1px solid #EBEBEB">
+<span style="width: 34px; height: 42px; flex-shrink: 0; border-radius: 6px; background: #F7EBF5; color: #78006E; font-size: 10px; font-weight: 700; display: flex; align-items: center; justify-content: center">PDF</span>
+<span style="flex-grow: 1; display: flex; flex-direction: column; gap: 3px"><span style="font-size: 13px; font-weight: 700">{{ r.t }}</span><span style="font-size: 11px; color: #6B6B6B">{{ r.src }}</span></span>
+<button type="button" style="height: 34px; padding: 0 14px; border-radius: 17px; background: #FFFFFF; border: 1px solid #78006E; color: #78006E; font-size: 12px; font-weight: 700; cursor: pointer">Download</button>
+</div>
+</sc-for>
+</section>
+</div>
+<span style="font-size: 12px; color: #6B6B6B">Sample data for the prototype. Market figures to be replaced with STA and TDI sources.</span>
+</main>
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview": {"width": 1440, "height": 1560}}'>
+class Component extends DCLogic {
+  constructor(props) { super(props); this.state = { mk: 'cn' }; }
+  renderVals() {
+    var self = this, st = this.state;
+    var chip = function (on) { return 'height: 36px; padding: 0 16px; border-radius: 18px; font-size: 13px; font-weight: 500; cursor: pointer; ' + (on ? 'background: #78006E; color: #FFFFFF; border: 1px solid #78006E' : 'background: #FFFFFF; color: #1A1A1A; border: 1px solid #DCDCDC'); };
+    var MONTHS = ['Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep'];
+    var D = {
+      cn: { name: 'China', bars: [12, 18, 15, 22, 31, 38], views: '472', seg: 'Culturalists', stay: '9 nights', dest: [['AlUla', 34], ['Riyadh', 26], ['Red Sea', 18], ['Jeddah', 12], ['Diriyah', 10]],
+        needs: [['Mandarin-speaking guides', 'Buyers filter first on guide language. Profiles with Mandarin guides get twice the enquiries.'], ['Heritage with a story', 'Hegra and Diriyah lead. Pair sites with the stories behind them.'], ['Groups of 16 to 30', 'Most requests come from group operators; quote per group, not per person.'], ['Payment and visa clarity', 'State eVisa eligibility and accepted payment methods on your offer.']],
+        reports: [['China market brief, Q3 2026', 'STA APAC business unit'], ['Mandarin itinerary trends', 'STA APAC business unit'], ['Direct flights and visa update', 'STA Distribution CoE'], ['Asir for Chinese groups', 'Contributed by Asir DMO']] },
+      in: { name: 'India', bars: [20, 24, 19, 26, 29, 33], views: '318', seg: 'Belongers', stay: '7 nights', dest: [['Riyadh', 30], ['Jeddah', 24], ['AlUla', 20], ['Red Sea', 14], ['Madinah', 12]],
+        needs: [['Family groups', 'Multi-generation trips; quote family rooms and flexible dining.'], ['Vegetarian dining', 'List vegetarian options clearly in offers.'], ['Weddings and MICE', 'Destination weddings and incentive groups are growing.'], ['Short breaks', 'Four to six nights, often combined with Umrah.']],
+        reports: [['India market brief, Q3 2026', 'STA South Asia business unit'], ['MICE and weddings demand', 'STA South Asia business unit'], ['Flight capacity update', 'STA Distribution CoE']] },
+      id: { name: 'Indonesia', bars: [40, 44, 38, 52, 48, 57], views: '256', seg: 'Umrah plus', stay: '12 nights', dest: [['Makkah', 38], ['Madinah', 30], ['Jeddah', 14], ['AlUla', 10], ['Taif', 8]],
+        needs: [['Umrah plus leisure', 'Add AlUla or Jeddah days to Umrah packages.'], ['Bahasa Indonesia guides', 'A strong filter for group operators.'], ['Halal-certified partners', 'Show certificates on your profile.'], ['Large groups', '30 to 45 travellers per departure.']],
+        reports: [['Indonesia market brief, Q3 2026', 'STA Southeast Asia business unit'], ['Umrah plus itineraries', 'STA Umrah CoE']] },
+      it: { name: 'Italy', bars: [8, 10, 6, 5, 9, 16], views: '142', seg: 'Culturalists', stay: '8 nights', dest: [['AlUla', 36], ['Riyadh', 22], ['Red Sea', 20], ['Jeddah', 12], ['Asir', 10]],
+        needs: [['Archaeology and art', 'Hegra, rock art and museums anchor the trip.'], ['Italian-speaking guides', 'Rare today; a clear advantage for your profile.'], ['Boutique stays', 'Heritage hotels and desert camps over large resorts.'], ['Winter season', 'Demand peaks from October to March.']],
+        reports: [['Italy market brief, Q3 2026', 'STA Europe business unit'], ['Winter sun campaign results', 'STA Marketing CoE']] },
+      jo: { name: 'Jordan', bars: [22, 25, 30, 34, 28, 26], views: '198', seg: 'Belongers', stay: '5 nights', dest: [['Riyadh', 28], ['Jeddah', 24], ['Makkah', 20], ['AlUla', 16], ['Red Sea', 12]],
+        needs: [['Road and short-haul trips', 'Many travel by road; add ground transport to offers.'], ['Events and seasons', 'Riyadh Season and concerts drive short breaks.'], ['Family packages', 'Quote in Arabic with family pricing.'], ['Umrah combinations', 'Pair Umrah with city stays.']],
+        reports: [['Levant market brief, Q3 2026', 'STA Middle East business unit'], ['Seasons and events demand', 'STA Partnerships']] },
+      uk: { name: 'the UK', bars: [14, 16, 12, 11, 18, 24], views: '287', seg: 'Achievers', stay: '8 nights', dest: [['AlUla', 30], ['Red Sea', 26], ['Riyadh', 20], ['Jeddah', 14], ['Diriyah', 10]],
+        needs: [['Winter sun', 'Beach and desert from November to March.'], ['Luxury and adventure', 'High-end stays plus hiking, diving and stargazing.'], ['Clear trade terms', 'Net rates and cancellation terms up front.'], ['Sustainability', 'Show certifications and local sourcing.']],
+        reports: [['UK market brief, Q3 2026', 'STA Europe business unit'], ['WTM London buyer list', 'STA Europe business unit']] }
+    };
+    var LABELS = [['cn', 'China'], ['in', 'India'], ['id', 'Indonesia'], ['it', 'Italy'], ['jo', 'Jordan'], ['uk', 'United Kingdom']];
+    var d = D[st.mk];
+    var max = Math.max.apply(null, d.bars);
+    var total = d.bars.reduce(function (a, b) { return a + b; }, 0);
+    return {
+      markets: LABELS.map(function (l) { return { label: l[1], on: st.mk === l[0] ? 'true' : 'false', style: chip(st.mk === l[0]), pick: function () { self.setState({ mk: l[0] }); } }; }),
+      m: {
+        name: d.name, title: (d.name === 'the UK' ? 'UK' : d.name) + ' market: how your offer performs',
+        kpis: [
+          { label: 'Profile views from ' + d.name, value: d.views, note: 'Last 30 days' },
+          { label: 'Enquiries, 6 months', value: String(total), note: 'Up ' + Math.round((d.bars[5] - d.bars[0]) / d.bars[0] * 100) + '% since April' },
+          { label: 'Largest segment', value: d.seg, note: 'STA segmentation 2025' },
+          { label: 'Typical stay', value: d.stay, note: 'Trips from this market' }
+        ],
+        bars: d.bars.map(function (v, i) { return { month: MONTHS[i], label: (i === 5 || v === max) ? String(v) : '', tip: MONTHS[i] + ': ' + v + ' enquiries', style: 'width: 100%; max-width: 44px; height: ' + Math.round(v / max * 170) + 'px; border-radius: 4px 4px 0 0; background: ' + (i === 5 ? '#78006E' : '#C99BC4') }; }),
+        dest: d.dest.map(function (x) { return { name: x[0], pct: x[1] + '%', bar: 'width: ' + x[1] * 2.5 + '%; border-radius: 4px; background: #78006E' }; }),
+        needs: d.needs.map(function (x) { return { t: x[0], d: x[1] }; }),
+        reports: d.reports.map(function (x) { return { t: x[0], src: x[1] }; })
+      }
+    };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<title>Saudi Partner – Home</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+@font-face{font-family:"Saudi Sans";src:url(assets/9d5b063e22fb4c1fdf4e126126e305fc.ttf) format("truetype");font-weight:400 700}
+@font-face{font-family:"Saudi Serif";src:url(assets/036b8acfe104a78d15187d034057eea5.ttf) format("truetype");font-weight:400 700}
+body{margin:0;background:#FFFFFF}
+a{color:#78006E;text-decoration:none}a:hover{color:#5A0052}
+</style>
+</helmet>
+<div style="width: 1440px; height: 6800px; display: flex; flex-direction: column; background: #FFFFFF; font-family: 'Saudi Sans', system-ui, sans-serif; color: #1A1A1A; overflow: hidden">
+<div style="position: relative; z-index: 10; flex-shrink: 0"><dc-import name="PublicHeader" hint-size="1440px,104px"></dc-import></div>
+
+<!-- Hero -->
+<section style="background: #78006E; color: #FFFFFF; padding: 72px 72px 96px; display: flex; gap: 56px; align-items: center">
+<div style="flex-grow: 1; display: flex; flex-direction: column; gap: 22px; max-width: 700px">
+<span style="font-size: 14px; font-weight: 700; color: #F0D6EC">The official partner platform from Saudi Tourism Authority</span>
+<h1 style="margin: 0; font-family: 'Saudi Serif', Georgia, serif; font-size: 76px; font-weight: 700; line-height: 1.05">One platform for everyone who sells Saudi</h1>
+<p style="margin: 0; font-size: 19px; line-height: 1.6; color: #F3E1F0; max-width: 580px">Get found by buyers, get matched with the right partners, and grow with STA content, training and co-invested programmes.</p>
+<div style="display: flex; align-items: center; gap: 18px; margin-top: 8px">
+<a href="Register.dc.html" style="height: 54px; padding: 0 30px; border-radius: 27px; background: #FFFFFF; color: #78006E; font-size: 16px; font-weight: 700; display: flex; align-items: center">Become a Partner</a>
+<span style="color: #F0D6EC">·</span>
+<a href="Directory.dc.html" style="color: #FFFFFF; font-size: 16px; font-weight: 700; display: flex; align-items: center; gap: 8px">Explore the directory <span aria-hidden="true">→</span></a>
+</div>
+</div>
+<div style="width: 520px; height: 460px; flex-shrink: 0; position: relative">
+<img src="assets/9d2bc83e34a1b61c5e4ca63b5f151b6d.jpg" alt="High-speed train crossing desert dunes" style="position: absolute; top: 0; inset-inline-end: 0; width: 400px; height: 300px; object-fit: cover; border-radius: 20px">
+<img src="assets/126806652de6e2fd582f319f28f97d84.jpg" alt="Arabic coffee and dates on a brass tray" style="position: absolute; bottom: 0; inset-inline-start: 0; width: 300px; height: 230px; object-fit: cover; border-radius: 20px; border: 6px solid #78006E">
+</div>
+</section>
+
+<!-- Find your path -->
+<section style="padding: 96px 72px; display: flex; flex-direction: column; gap: 40px">
+<div style="display: flex; flex-direction: column; gap: 12px; max-width: 720px">
+<span style="font-size: 13px; font-weight: 700; letter-spacing: 1px; color: #78006E">FIND YOUR PATH</span>
+<h2 style="margin: 0; font-family: 'Saudi Serif', Georgia, serif; font-size: 48px; font-weight: 700; line-height: 1.1">Built for every tourism partner</h2>
+<p style="margin: 0; font-size: 17px; line-height: 1.6; color: #4B4B4B">Suppliers, buyers and destinations each get a clear reason to be here. Pick yours and go straight to the tools that fit.</p>
+</div>
+<div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px">
+<sc-for list="{{ paths }}" as="p" hint-placeholder-count="3">
+<a href="{{ p.href }}" style="border: 1px solid #EBEBEB; border-radius: 18px; padding: 32px; display: flex; flex-direction: column; gap: 16px; color: #1A1A1A; min-height: 300px; box-sizing: border-box">
+<span style="{{ p.iconStyle }}"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="{{ p.icon }}"></path></svg></span>
+<span style="font-size: 12px; font-weight: 700; letter-spacing: 1px; color: #78006E">{{ p.tag }}</span>
+<span style="font-family: 'Saudi Serif', Georgia, serif; font-size: 26px; font-weight: 700; line-height: 1.25">{{ p.title }}</span>
+<span style="font-size: 15px; line-height: 1.6; color: #4B4B4B; flex-grow: 1">{{ p.desc }}</span>
+<span style="font-size: 15px; font-weight: 700; color: #78006E">{{ p.cta }} →</span>
+</a>
+</sc-for>
+</div>
+</section>
+
+<!-- Why -->
+<section style="background: #78006E; color: #FFFFFF; padding: 88px 72px; display: flex; flex-direction: column; gap: 40px">
+<div style="display: flex; flex-direction: column; gap: 12px"><span style="font-size: 13px; font-weight: 700; letter-spacing: 1px; color: #F0D6EC">WHY SAUDI PARTNER?</span><h2 style="margin: 0; font-family: 'Saudi Serif', Georgia, serif; font-size: 48px; font-weight: 700">Grow Your Business with One Platform</h2></div>
+<div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px">
+<sc-for list="{{ why }}" as="w" hint-placeholder-count="3">
+<div style="border-top: 2px solid rgba(255,255,255,0.4); padding-top: 22px; display: flex; flex-direction: column; gap: 10px"><span style="font-size: 22px; font-weight: 700">{{ w.title }}</span><span style="font-size: 15px; line-height: 1.6; color: #F3E1F0">{{ w.desc }}</span></div>
+</sc-for>
+</div>
+</section>
+
+<!-- Features -->
+<section style="padding: 96px 72px 40px; display: flex; flex-direction: column; gap: 16px">
+<span style="font-size: 13px; font-weight: 700; letter-spacing: 1px; color: #78006E">PLATFORM FEATURES</span>
+<h2 style="margin: 0; font-family: 'Saudi Serif', Georgia, serif; font-size: 48px; font-weight: 700">Everything in One Place</h2>
+</section>
+<sc-for list="{{ features }}" as="f" hint-placeholder-count="5">
+<section style="{{ f.rowStyle }}">
+<div style="flex: 1 1 0; display: flex; flex-direction: column; gap: 16px">
+<div style="display: flex; align-items: center; gap: 12px"><span style="font-family: 'Saudi Serif', Georgia, serif; font-size: 34px; font-weight: 700; color: #DDBFDB">{{ f.n }}</span><span style="height: 26px; padding: 0 12px; border-radius: 13px; background: #F7EBF5; color: #78006E; font-size: 12px; font-weight: 700; display: flex; align-items: center">{{ f.tag }}</span></div>
+<h3 style="margin: 0; font-family: 'Saudi Serif', Georgia, serif; font-size: 38px; font-weight: 700">{{ f.title }}</h3>
+<p style="margin: 0; font-size: 17px; line-height: 1.6; color: #4B4B4B">{{ f.desc }}</p>
+<ul style="margin: 6px 0 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px">
+<sc-for list="{{ f.points }}" as="pt" hint-placeholder-count="4"><li style="display: flex; gap: 8px; align-items: center; font-size: 15px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3CA06E" stroke-width="2.6" stroke-linecap="round"><path d="M4 12l5 5L20 6"></path></svg>{{ pt }}</li></sc-for>
+</ul>
+<a href="{{ f.href }}" style="align-self: flex-start; margin-top: 8px; height: 48px; padding: 0 24px; border-radius: 24px; border: 1px solid #78006E; font-size: 15px; font-weight: 700; display: flex; align-items: center">{{ f.cta }}</a>
+</div>
+<div style="flex: 1 1 0; background: #F7F1F6; border-radius: 24px; padding: 36px; box-sizing: border-box; height: 420px; display: flex; flex-direction: column; gap: 14px; justify-content: center">
+<span style="font-size: 13px; font-weight: 700; letter-spacing: 0.6px; color: #78006E">{{ f.visTitle }}</span>
+<sc-if value="{{ f.isMedia }}" hint-placeholder-val="{{ false }}">
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px">
+<div style="height: 140px; border-radius: 14px; overflow: hidden; position: relative"><img src="assets/9d2bc83e34a1b61c5e4ca63b5f151b6d.jpg" alt="Desert train" style="width: 100%; height: 100%; object-fit: cover"><span style="position: absolute; bottom: 10px; inset-inline-start: 10px; height: 26px; padding: 0 10px; border-radius: 13px; background: #FFFFFF; font-size: 12px; font-weight: 700; display: flex; align-items: center">Images</span></div>
+<div style="height: 140px; border-radius: 14px; background: #78006E; color: #FFFFFF; display: flex; align-items: flex-end; padding: 12px; box-sizing: border-box; font-size: 14px; font-weight: 700">▶ Videos</div>
+<div style="height: 140px; border-radius: 14px; background: #4F58B0; color: #FFFFFF; display: flex; align-items: flex-end; padding: 12px; box-sizing: border-box; font-size: 14px; font-weight: 700">Brochures</div>
+<div style="height: 140px; border-radius: 14px; overflow: hidden; position: relative"><img src="assets/126806652de6e2fd582f319f28f97d84.jpg" alt="Coffee and dates" style="width: 100%; height: 100%; object-fit: cover"><span style="position: absolute; bottom: 10px; inset-inline-start: 10px; height: 26px; padding: 0 10px; border-radius: 13px; background: #FFFFFF; font-size: 12px; font-weight: 700; display: flex; align-items: center">Logos</span></div>
+</div>
+</sc-if>
+<sc-if value="{{ f.isCourse }}" hint-placeholder-val="{{ false }}">
+<div style="background: #FFFFFF; border-radius: 16px; padding: 24px; display: flex; flex-direction: column; gap: 12px; box-shadow: 0 8px 24px rgba(120,0,110,0.08)">
+<span style="font-size: 11px; font-weight: 700; letter-spacing: 0.8px; color: #6B6B6B">ADVANCED · COURSE PREVIEW</span>
+<span style="font-family: 'Saudi Serif', Georgia, serif; font-size: 26px; font-weight: 700">Red Sea Destination Expert</span>
+<span style="font-size: 14px; color: #4B4B4B">Master the offering for luxury coastal tourism.</span>
+<div style="display: flex; justify-content: space-between; font-size: 13px"><span>Progress</span><b>75%</b></div>
+<span style="height: 8px; border-radius: 4px; background: #EBEBEB; display: flex"><span style="width: 75%; border-radius: 4px; background: #78006E"></span></span>
+<div style="display: flex; gap: 10px; padding-top: 6px"><span style="height: 30px; padding: 0 12px; border-radius: 15px; background: #F7EBF5; color: #78006E; font-size: 11px; font-weight: 700; display: flex; align-items: center">CERTIFICATE</span><span style="height: 30px; padding: 0 12px; border-radius: 15px; background: #FEF1EB; color: #B84A18; font-size: 11px; font-weight: 700; display: flex; align-items: center">ACHIEVEMENT BADGE</span></div>
+</div>
+</sc-if>
+<sc-if value="{{ f.isConnect }}" hint-placeholder-val="{{ false }}">
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px">
+<sc-for list="{{ tiles }}" as="t" hint-placeholder-count="4">
+<a href="{{ t.href }}" style="position: relative; height: 150px; border-radius: 14px; overflow: hidden; display: flex; color: #FFFFFF; text-decoration: none">
+<img src="{{ t.img }}" alt="{{ t.alt }}" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover">
+<span style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(40,0,36,0) 30%, rgba(40,0,36,0.85) 100%)"></span>
+<span style="position: relative; margin-top: auto; padding: 14px 16px; display: flex; flex-direction: column; gap: 3px"><span style="font-size: 10px; font-weight: 700; letter-spacing: 0.8px; color: #F0D6EC">{{ t.tag }}</span><span style="font-size: 17px; font-weight: 700">{{ t.title }}</span><span style="font-size: 12px; color: #F3E1F0">{{ t.sub }}</span></span>
+</a>
+</sc-for>
+</div>
+</sc-if>
+<sc-for list="{{ f.rows }}" as="r" hint-placeholder-count="0">
+<div style="background: #FFFFFF; border-radius: 14px; padding: 16px 18px; display: flex; align-items: center; gap: 14px">
+<span style="width: 42px; height: 42px; flex-shrink: 0; border-radius: 21px; background: #F7EBF5; color: #78006E; font-weight: 700; display: flex; align-items: center; justify-content: center">{{ r.badge }}</span>
+<div style="flex-grow: 1; display: flex; flex-direction: column; gap: 3px"><span style="font-size: 15px; font-weight: 700">{{ r.title }}</span><span style="font-size: 13px; color: #6B6B6B">{{ r.sub }}</span></div>
+</div>
+</sc-for>
+</div>
+</section>
+</sc-for>
+
+<!-- Top suppliers -->
+<section style="padding: 96px 72px; display: flex; flex-direction: column; gap: 32px; background: #FFFFFF">
+<div style="display: flex; align-items: flex-end; justify-content: space-between">
+<div style="display: flex; flex-direction: column; gap: 12px"><span style="font-size: 13px; font-weight: 700; letter-spacing: 1px; color: #78006E">PARTNER CONNECT</span><h2 style="margin: 0; font-family: 'Saudi Serif', Georgia, serif; font-size: 48px; font-weight: 700">Licensed partners across the Kingdom</h2><p style="margin: 0; font-size: 17px; color: #4B4B4B">Browse licensed tourism businesses and the offerings they publish for trade.</p></div>
+<a href="Directory.dc.html" style="font-size: 15px; font-weight: 700">Explore the directory →</a>
+</div>
+<div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 20px">
+<sc-for list="{{ suppliers }}" as="s" hint-placeholder-count="4">
+<article style="border: 1px solid #EBEBEB; border-radius: 16px; padding: 22px; display: flex; flex-direction: column; gap: 12px; min-height: 420px; box-sizing: border-box">
+<sc-if value="{{ s.featured }}" hint-placeholder-val="{{ false }}"><span style="align-self: flex-start; height: 24px; padding: 0 10px; border-radius: 12px; background: #78006E; color: #FFFFFF; font-size: 11px; font-weight: 700; display: flex; align-items: center">Featured Supplier</span></sc-if>
+<div style="display: flex; align-items: center; gap: 12px"><span style="width: 48px; height: 48px; border-radius: 12px; background: #F7EBF5; color: #78006E; font-family: 'Saudi Serif', Georgia, serif; font-size: 22px; font-weight: 700; display: flex; align-items: center; justify-content: center">{{ s.letter }}</span><div style="display: flex; flex-direction: column; gap: 2px"><span style="font-size: 16px; font-weight: 700">{{ s.name }}</span><span style="font-size: 12px; color: #6B6B6B">{{ s.city }} · {{ s.type }}</span></div></div>
+<div style="display: flex; gap: 6px; flex-wrap: wrap"><sc-for list="{{ s.badges }}" as="b" hint-placeholder-count="2"><span style="height: 24px; padding: 0 10px; border-radius: 12px; background: #EDF8F3; color: #1F6143; font-size: 11px; font-weight: 700; display: flex; align-items: center">{{ b }}</span></sc-for></div>
+<span style="font-size: 11px; font-weight: 700; letter-spacing: 0.8px; color: #6B6B6B; border-top: 1px solid #EBEBEB; padding-top: 12px">OFFERINGS</span>
+<sc-for list="{{ s.products }}" as="p" hint-placeholder-count="2">
+<div style="display: flex; flex-direction: column; gap: 4px"><span style="font-size: 14px; font-weight: 700">{{ p.name }}</span><span style="font-size: 12px; color: #6B6B6B">{{ p.cat }}</span></div>
+</sc-for>
+<sc-if value="{{ s.none }}" hint-placeholder-val="{{ false }}"><span style="font-size: 13px; color: #6B6B6B">No offerings published yet</span></sc-if>
+<a href="BusinessProfile.dc.html" style="margin-top: auto; font-size: 14px; font-weight: 700">View Profile →</a>
+</article>
+</sc-for>
+</div>
+</section>
+
+<!-- Success stories -->
+<section style="padding: 0 72px 96px; display: flex; flex-direction: column; gap: 28px">
+<div style="display: flex; flex-direction: column; gap: 12px; max-width: 760px"><span style="font-size: 13px; font-weight: 700; letter-spacing: 1px; color: #78006E">SUCCESS STORIES</span><h2 style="margin: 0; font-family: 'Saudi Serif', Georgia, serif; font-size: 48px; font-weight: 700; line-height: 1.1">Tourism Businesses Growing with Saudi Partner</h2><p style="margin: 0; font-size: 17px; line-height: 1.6; color: #4B4B4B">Meet Saudi tourism partners building their visibility, offerings and trade connections through the platform.</p></div>
+<div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 20px">
+<sc-for list="{{ stories }}" as="s" hint-placeholder-count="4">
+<article style="border-radius: 16px; overflow: hidden; border: 1px solid #EBEBEB; display: flex; flex-direction: column">
+<div style="{{ s.cover }}"><span style="font-size: 11px; font-weight: 700; letter-spacing: 0.8px; color: #FFFFFF">SUPPLIER SPOTLIGHT</span></div>
+<div style="padding: 18px 20px; display: flex; flex-direction: column; gap: 8px"><span style="font-size: 17px; font-weight: 700">{{ s.name }}</span><span style="font-size: 13px; color: #6B6B6B">{{ s.meta }}</span><div style="display: flex; gap: 6px; flex-wrap: wrap"><sc-for list="{{ s.badges }}" as="b" hint-placeholder-count="2"><span style="height: 22px; padding: 0 8px; border-radius: 11px; background: #F7EBF5; color: #78006E; font-size: 10px; font-weight: 700; display: flex; align-items: center">{{ b }}</span></sc-for></div><a href="BusinessProfile.dc.html" style="font-size: 13px; font-weight: 700; padding-top: 6px">View Supplier Story →</a></div>
+</article>
+</sc-for>
+</div>
+</section>
+
+<!-- CTA -->
+<section style="margin: 0 72px 96px; background: #78006E; border-radius: 24px; padding: 56px; display: flex; align-items: center; justify-content: space-between; color: #FFFFFF">
+<div style="display: flex; flex-direction: column; gap: 10px"><h2 style="margin: 0; font-family: 'Saudi Serif', Georgia, serif; font-size: 40px; font-weight: 700">Join the Saudi Partner network</h2><span style="font-size: 17px; color: #F3E1F0">Get listed, get matched, and grow with STA programmes.</span></div>
+<a href="Register.dc.html" style="height: 54px; padding: 0 30px; border-radius: 27px; background: #FFFFFF; color: #78006E; font-size: 16px; font-weight: 700; display: flex; align-items: center">Become a Partner</a>
+</section>
+
+<div style="margin-top: auto"><dc-import name="PublicFooter" hint-size="1440px,440px"></dc-import></div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":6800}}'>
+class Component extends DCLogic {
+  renderVals() {
+    var tone = ['background: #F7EBF5; color: #78006E', 'background: #EEF0FA; color: #4F58B0', 'background: #EDF8F3; color: #2E7D55'];
+    var paths = [
+      ['FOR SUPPLIERS', 'I want buyers to find my business', 'DMCs, licensed guides, attractions, hotels, F&B and transport. Claim a licensed listing, get accredited, get found by buyers and join STA programmes.', 'View Supplier Solutions', 'ForSuppliers.dc.html', 'M21 8l-9-5-9 5 9 5zM3 8v8l9 5 9-5V8M12 13v8'],
+      ['FOR BUYERS', 'I want to source and sell Saudi', 'Tour operators, OTAs, wholesalers and MICE agencies. Every licensed supplier in one place, content for your market, and one STA relationship.', 'View Buyer Solutions', 'ForBuyers.dc.html', 'M3 4h2l2 12h11l2-8H6M9 20h.01M17 20h.01'],
+      ['FOR DMOS', 'I want to grow my destination', 'DMOs and government partners. Destination content, trade access, packages, co-invested media and results you can measure.', 'View DMO Solutions', 'ForDMOs.dc.html', 'M12 21s7-6.2 7-12a7 7 0 10-14 0c0 5.8 7 12 7 12zM12 11.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5z']
+    ].map(function (p, i) { return { tag: p[0], title: p[1], desc: p[2], cta: p[3], href: p[4], icon: p[5], iconStyle: 'width: 52px; height: 52px; border-radius: 26px; display: flex; align-items: center; justify-content: center; ' + tone[i] }; });
+    var F = [
+      ['01', 'Connect · Suppliers & Buyers', 'Partner Connect', 'Find licensed businesses and tour guides, download the offerings they publish, and let Connect bring you partners that fit your brief.', ['Licensed businesses & guides', 'Rate sheets & catalogues', 'Connect by brief', 'Requests & offers'], 'Explore Partner Connect', 'Directory.dc.html', 'PARTNER CONNECT', 'connect'],
+      ['02', 'Marketing · Everyone', 'Official content & co-invested media', 'Promote Saudi with STA imagery, video and brand kits, build market-ready assets in Saudi Studio, and join campaigns STA co-invests in.', ['Images, video & brand kits', 'Saudi Studio', 'Collections to promote', 'Co-op media buying'], 'Browse Visual Assets', 'Assets.dc.html', 'VISUAL ASSETS', 'media'],
+      ['03', 'Academy · Everyone', 'Training & Certification', 'Complete expert-led courses and become a certified Saudi destination specialist.', ['E-learning courses', 'Guides & playbooks', 'Webinars & bootcamps', 'Certificates & badges'], 'Start Learning', 'Training.dc.html', 'ACADEMY', 'course'],
+      ['04', 'Programmes · Suppliers & Buyers', 'Tiers & Programmes', 'Accreditation earns a partner tier, and each tier opens more of what STA offers: COOP agreements, FAM trips and programmes from STA business units.', ['Earn a partner tier', 'COOP agreements', 'FAM trips & delegations', 'One partner record with STA'], 'Explore Programmes', 'ForSuppliers.dc.html', 'PROGRAMMES', 'rows'],
+      ['05', 'Insights & Planning · Everyone', 'Know the market, plan the year', 'Market briefs by source market, demand and performance reports, and the national media plan, so you commit where it will sell.', ['Market briefs', 'Demand reports', 'See what sells', 'National media plan'], 'Explore Data & Insights', 'Insights.dc.html', 'INSIGHTS & PLANNING', 'rows']
+    ];
+    var ROWS = {
+      '04': [['T', 'Partner tier', 'Accreditation unlocks access'], ['C', 'COOP agreements', 'Co-invest with STA and share monthly actuals'], ['F', 'FAM trips & delegations', 'Programmes from STA business units']],
+      '05': [['M', 'Market briefs', 'By source market'], ['D', 'Demand & performance', 'See what sells, and where'], ['P', 'National media plan', 'Plan the year alongside STA']]
+    };
+    var features = F.map(function (f, i) {
+      return { n: f[0], tag: f[1], title: f[2], desc: f[3], points: f[4], cta: f[5], href: f[6], visTitle: f[7],
+        isMedia: f[8] === 'media', isCourse: f[8] === 'course', isConnect: f[8] === 'connect',
+        rows: (ROWS[f[0]] || []).map(function (r) { return { badge: r[0], title: r[1], sub: r[2] }; }),
+        rowStyle: 'padding: 48px 72px; display: flex; gap: 64px; align-items: center; flex-direction: ' + (i % 2 ? 'row-reverse' : 'row') };
+    });
+    var SUP = [
+      ['AlUla Heritage Tours', 'AlUla', 'Tour Operator', ['Licensed', 'STA Certified'], [['[RATE SHEET 2027]', 'Rate sheet · EN · PDF'], ['[PRODUCT CATALOGUE]', 'Catalogue · Bilingual · XLSX']], true],
+      ['Red Sea Retreats', 'Red Sea', 'Accommodation', ['Licensed'], [['[ROOM RATES 2027]', 'Rate sheet · EN · PDF']], false],
+      ['Haramain Journeys', 'Makkah', 'DMC', ['Licensed', 'STA Certified'], [['[UMRAH PACKAGES]', 'Catalogue · AR & EN · PDF']], false],
+      ['Riyadh DMC Group', 'Riyadh', 'DMC', ['Licensed'], [], false]
+    ];
+    var suppliers = SUP.map(function (s) { return { name: s[0], city: s[1], type: s[2], badges: s[3], letter: s[0].charAt(0), featured: s[5], none: s[4].length === 0, products: s[4].map(function (p) { return { name: p[0], cat: p[1] }; }) }; });
+    var COV = ['#C0541F', '#3F78B0', '#78006E', '#2E8A5C'];
+    var stories = SUP.map(function (s, i) { return { name: s[0], meta: s[2] + ' · ' + s[1], badges: s[3], cover: 'height: 150px; padding: 16px; box-sizing: border-box; display: flex; align-items: flex-end; background: ' + COV[i] }; });
+    return {
+      paths: paths, features: features, suppliers: suppliers, stories: stories,
+      tiles: [
+        { tag: 'DIRECTORY', title: 'Businesses', sub: 'Licensed DMCs, hotels and operators', href: 'Directory.dc.html', img: 'assets/98f663db535a65d0f72791a63c2b0f5e.jpg', alt: 'Visitors in Diriyah' },
+        { tag: 'DIRECTORY', title: 'Tour guides', sub: 'By language and specialism', href: 'Guides.dc.html', img: 'assets/31cdd3634e4f755cd3e3a6d44e978dee.jpg', alt: 'Guided group hiking in Asir' },
+        { tag: 'CONNECT', title: 'Partners for your brief', sub: 'Grouped by fit, never ranked', href: 'Matches.dc.html', img: 'assets/c11ac0687c6f13f7b0073cb4afef6ccd.jpg', alt: 'Family visiting a museum in Saudi Arabia' },
+        { tag: 'REQUESTS', title: 'Post what you need', sub: 'Licensed partners send offers', href: 'Requests.dc.html', img: 'assets/e8bc2e7591d257ff45c7538fea89219d.jpg', alt: 'Hegra, AlUla' }
+      ],
+      why: [
+        { title: 'Get found', desc: 'A licensed listing with your offerings, rate sheets and terms, in front of verified buyers.' },
+        { title: 'Get matched', desc: 'Answer seven short questions and meet partners grouped by how well they fit. Never a paid ranking.' },
+        { title: 'Grow with STA', desc: 'Training, official content, tiers and co-invested programmes, all on one partner record.' }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

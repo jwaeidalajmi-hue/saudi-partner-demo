@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<title>Campaigns – Home</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+@font-face{font-family:"Saudi Sans";src:url(assets/9d5b063e22fb4c1fdf4e126126e305fc.ttf) format("truetype");font-weight:400 700}
+@font-face{font-family:"Saudi Serif";src:url(assets/036b8acfe104a78d15187d034057eea5.ttf) format("truetype");font-weight:400 700}
+body{margin:0;background:#FFFFFF}
+a{color:#78006E;text-decoration:none}a:hover{color:#5A0052}
+button{font-family:inherit}
+</style>
+</helmet>
+<div dir="{{ dir }}" lang="{{ lang }}" style="width: 1440px; height: 1320px; display: flex; flex-direction: column; background: #FFFFFF; font-family: 'Saudi Sans', system-ui, sans-serif; color: #1A1A1A; overflow: hidden">
+<div style="position: relative; z-index: 10; flex-shrink: 0"><dc-import name="Topbar" mode="dmo" initials="LQ" country="KSA" lang="{{ lang }}" hint-size="1440px,76px"></dc-import></div>
+<div style="flex-grow: 1; display: flex; min-height: 0">
+<div style="flex-shrink: 0; display: flex; background: #FFFFFF; border-inline-end: 1px solid #EBEBEB"><dc-import name="Sidebar" active="campaigns" dmo="{{ true }}" lang="{{ lang }}" initials="LQ" user="{{ t.user }}" role="{{ t.role }}" badge="{{ 1 }}" hint-size="264px,100%"></dc-import></div>
+<main style="flex-grow: 1; min-width: 0; padding: 32px 40px 48px; box-sizing: border-box; display: flex; flex-direction: column; gap: 24px">
+
+<div style="display: flex; align-items: flex-end; justify-content: space-between; gap: 24px">
+<div style="display: flex; flex-direction: column; gap: 8px; max-width: 720px">
+<span style="font-size: 12px; font-weight: 700; letter-spacing: 0.6px; color: #78006E">{{ t.kicker }}</span>
+<h1 style="margin: 0; font-family: 'Saudi Serif', Georgia, serif; font-weight: 700; font-size: 40px; line-height: 1.15">{{ t.title }}</h1>
+<p style="margin: 0; font-size: 15px; line-height: 1.6; color: #4B4B4B">{{ t.sub }}</p>
+</div>
+<a href="NewBrief.dc.html" style="height: 48px; padding: 0 24px; border-radius: 24px; background: #78006E; color: #FFFFFF; font-size: 14px; font-weight: 700; display: flex; align-items: center; gap: 8px; flex-shrink: 0"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"></path></svg>{{ t.cta }}</a>
+</div>
+
+<nav aria-label="{{ t.title }}" style="display: flex; gap: 32px; border-bottom: 1px solid #E0E0E0">
+<a href="CampaignsHome.dc.html" aria-current="page" style="padding: 0 2px 12px; font-size: 14px; font-weight: 700; color: #78006E; border-bottom: 2px solid #78006E; margin-bottom: -1px">{{ t.tabMine }}</a>
+<a href="MediaPlan.dc.html" style="padding: 0 2px 12px; font-size: 14px; font-weight: 500; color: #4B4B4B; border-bottom: 2px solid transparent; margin-bottom: -1px">{{ t.tabPlan }}</a>
+</nav>
+
+<!-- Summary tiles -->
+<div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px">
+<sc-for list="{{ tiles }}" as="k" hint-placeholder-count="4">
+<div style="border: 1px solid #EBEBEB; border-radius: 12px; padding: 20px 22px; display: flex; flex-direction: column; gap: 10px">
+<div style="display: flex; align-items: center; gap: 10px"><span style="{{ k.iconStyle }}"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="{{ k.icon }}"></path></svg></span><span style="font-size: 13px; color: #4B4B4B">{{ k.label }}</span></div>
+<span style="font-family: 'Saudi Serif', Georgia, serif; font-size: 30px; font-weight: 700; line-height: 1.1">{{ k.value }}</span>
+<span style="font-size: 12px; color: #6B6B6B">{{ k.note }}</span>
+</div>
+</sc-for>
+</div>
+
+<!-- Table -->
+<sc-if value="{{ hasRows }}" hint-placeholder-val="{{ true }}">
+<section style="border: 1px solid #EBEBEB; border-radius: 12px; overflow: hidden">
+<div style="padding: 18px 22px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid #EBEBEB"><h2 style="margin: 0; font-size: 17px; font-weight: 700">{{ t.tableTitle }}</h2><span style="font-size: 12px; color: #6B6B6B">{{ t.sample }}</span></div>
+<table style="width: 100%; border-collapse: collapse; font-size: 13px">
+<thead><tr style="background: #FAFAFA; color: #4B4B4B; text-align: start">
+<th scope="col" style="text-align: start; padding: 12px 22px; font-weight: 700; font-size: 12px">{{ t.colName }}</th>
+<th scope="col" style="text-align: start; padding: 12px 12px; font-weight: 700; font-size: 12px">{{ t.colMarket }}</th>
+<th scope="col" style="text-align: start; padding: 12px 12px; font-weight: 700; font-size: 12px">{{ t.colSeason }}</th>
+<th scope="col" style="text-align: start; padding: 12px 12px; font-weight: 700; font-size: 12px">{{ t.colStatus }}</th>
+<th scope="col" style="text-align: start; padding: 12px 12px; font-weight: 700; font-size: 12px; width: 250px">{{ t.colBudget }}</th>
+<th scope="col" style="text-align: end; padding: 12px 22px; font-weight: 700; font-size: 12px">{{ t.colAction }}</th>
+</tr></thead>
+<tbody>
+<sc-for list="{{ rows }}" as="r" hint-placeholder-count="5">
+<tr style="border-top: 1px solid #EBEBEB">
+<td style="padding: 16px 22px"><div style="display: flex; flex-direction: column; gap: 4px"><span style="font-size: 14px; font-weight: 700">{{ r.name }}</span><span style="font-size: 12px; color: #6B6B6B">{{ r.region }}</span></div></td>
+<td style="padding: 16px 12px">{{ r.market }}</td>
+<td style="padding: 16px 12px; color: #4B4B4B">{{ r.season }}</td>
+<td style="padding: 16px 12px"><span style="{{ r.pillStyle }}"><span style="{{ r.dotStyle }}"></span>{{ r.status }}</span></td>
+<td style="padding: 16px 12px">
+<div style="display: flex; flex-direction: column; gap: 6px">
+<span style="font-weight: 700">{{ r.total }}</span>
+<span style="height: 6px; border-radius: 3px; background: #EBEBEB; display: flex; gap: 2px; overflow: hidden"><span style="{{ r.dmoBar }}"></span><span style="{{ r.staBar }}"></span></span>
+<span style="font-size: 11px; color: #6B6B6B">{{ r.split }}</span>
+</div>
+</td>
+<td style="padding: 16px 22px; text-align: end"><a href="{{ r.href }}" style="font-size: 13px; font-weight: 700; white-space: nowrap">{{ r.action }}</a></td>
+</tr>
+</sc-for>
+</tbody>
+</table>
+<div style="padding: 12px 22px; border-top: 1px solid #EBEBEB; display: flex; gap: 18px; font-size: 11px; color: #4B4B4B"><span style="display: flex; align-items: center; gap: 6px"><span style="width: 10px; height: 10px; border-radius: 2px; background: #78006E"></span>{{ t.dmoShare }}</span><span style="display: flex; align-items: center; gap: 6px"><span style="width: 10px; height: 10px; border-radius: 2px; background: #646EC8"></span>{{ t.staShare }}</span></div>
+</section>
+</sc-if>
+
+<!-- Empty state -->
+<sc-if value="{{ isEmpty }}" hint-placeholder-val="{{ false }}">
+<section style="border: 1px dashed #DCDCDC; border-radius: 12px; padding: 56px 40px; display: flex; flex-direction: column; align-items: center; gap: 14px; text-align: center">
+<span style="width: 64px; height: 64px; border-radius: 32px; background: #F7EBF5; display: flex; align-items: center; justify-content: center"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#78006E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11v2a1 1 0 001 1h2l5 4V6L6 10H4a1 1 0 00-1 1zM15 9a3 3 0 010 6M18 6a7 7 0 010 12"></path></svg></span>
+<h2 style="margin: 0; font-size: 20px; font-weight: 700">{{ t.emptyTitle }}</h2>
+<p style="margin: 0; max-width: 520px; font-size: 14px; line-height: 1.6; color: #4B4B4B">{{ t.emptyText }}</p>
+<div style="display: flex; gap: 12px; margin-top: 8px">
+<a href="NewBrief.dc.html" style="height: 44px; padding: 0 22px; border-radius: 22px; background: #78006E; color: #FFFFFF; font-size: 14px; font-weight: 700; display: flex; align-items: center">{{ t.cta }}</a>
+<a href="MediaPlan.dc.html" style="height: 44px; padding: 0 22px; border-radius: 22px; border: 1px solid #78006E; font-size: 14px; font-weight: 700; display: flex; align-items: center">{{ t.viewPlan }}</a>
+</div>
+<ol style="margin: 16px 0 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; width: 760px; text-align: start">
+<sc-for list="{{ howto }}" as="h" hint-placeholder-count="3">
+<li style="display: flex; gap: 10px; align-items: flex-start"><span style="width: 26px; height: 26px; flex-shrink: 0; border-radius: 13px; background: #78006E; color: #FFFFFF; font-size: 12px; font-weight: 700; display: flex; align-items: center; justify-content: center">{{ h.n }}</span><span style="font-size: 13px; line-height: 1.5; color: #4B4B4B">{{ h.text }}</span></li>
+</sc-for>
+</ol>
+</section>
+</sc-if>
+
+<p style="margin: 0; font-size: 12px; color: #6B6B6B; display: flex; align-items: center; gap: 8px"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#6B6B6B" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v5M12 8h.01"></path></svg>{{ t.footnote }}</p>
+
+</main>
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"lang":{"editor":"enum","options":["en","ar"],"default":"en"},"state":{"editor":"enum","options":["With campaigns","Empty (new DMO)"],"default":"With campaigns"},"$preview":{"width":1440,"height":1320}}'>
+class Component extends DCLogic {
+  renderVals() {
+    var ar = this.props.lang === 'ar';
+    var empty = this.props.state === 'Empty (new DMO)';
+    var T = ar ? {
+      user: 'ليلى القحطاني', role: 'مديرة التسويق · منظمة إدارة وجهة عسير',
+      kicker: 'ون سعودي · حملات مشتركة', title: 'الحملات',
+      sub: 'خطّط لحملاتك الإعلامية المشتركة مع الهيئة السعودية للسياحة وتابع تنفيذها. تتولى وكالة الهيئة شراء الوسائط، وتنسّق أنت هنا الموجزات والتمويل المشترك والمحتوى الإبداعي والنتائج.',
+      cta: 'موجز حملة جديد', tabMine: 'حملاتي', tabPlan: 'الخطة الإعلامية الوطنية',
+      tableTitle: 'حملاتك', sample: 'بيانات تجريبية',
+      colName: 'الحملة', colMarket: 'السوق', colSeason: 'الموسم', colStatus: 'الحالة', colBudget: 'الميزانية (الهيئة الإقليمية + حصة الهيئة)', colAction: 'الإجراء',
+      dmoShare: 'حصة الهيئة الإقليمية', staShare: 'حصة الهيئة السعودية للسياحة',
+      emptyTitle: 'لا توجد حملات بعد', emptyText: 'ابدأ بالاطلاع على الخطة الإعلامية الوطنية لمعرفة أوقات حملات الهيئة وأسواقها، ثم قدّم موجز حملتك الأولى للمراجعة.',
+      viewPlan: 'عرض الخطة الإعلامية الوطنية',
+      how: ['اطّلع على الخطة الوطنية واختر السوق والموسم', 'قدّم موجزاً يتضمن الأهداف والميزانية والتمويل المطلوب', 'يراجع مركز التميز التسويقي الموجز ويعتمد التمويل'],
+      footnote: 'لا تشتري منصة شريك السعودية الوسائط. تتولى وكالة الهيئة السعودية للسياحة الشراء والتنفيذ ضمن مبادرة ون سعودي.',
+      tiles: [['الحملات النشطة', 'قيد التنفيذ أو معتمدة'], ['بانتظار الاعتماد', 'لدى مركز التميز التسويقي'], ['تمويل الهيئة المعتمد ٢٠٢٦', 'منذ ١ يناير ٢٠٢٦'], ['آخر موعد للتقديم القادم', 'حملات الربع الأول ٢٠٢٧ · متبقٍ ٢١ يوماً']],
+      deadline: '١٥ أكتوبر', sar: 'ر.س'
+    } : {
+      user: 'Layla Al-Qahtani', role: 'Marketing Manager · Asir DMO',
+      kicker: 'ONESAUDI · JOINT CAMPAIGNS', title: 'Campaigns',
+      sub: "Plan and run joint media campaigns with STA. STA's agency buys the media — you coordinate briefs, co-funding, creative and results here.",
+      cta: 'New campaign brief', tabMine: 'My campaigns', tabPlan: 'National media plan',
+      tableTitle: 'Your campaigns', sample: 'Sample data',
+      colName: 'Campaign', colMarket: 'Market', colSeason: 'Season', colStatus: 'Status', colBudget: 'Budget (DMO + STA share)', colAction: 'Action',
+      dmoShare: 'DMO share', staShare: 'STA share',
+      emptyTitle: 'No campaigns yet', emptyText: "Start with the national media plan to see when and where STA is on air, then submit your first brief for review.",
+      viewPlan: 'View national media plan',
+      how: ['Check the national plan and pick a market and season', 'Submit a brief with objectives, budget and co-funding request', 'STA Marketing CoE reviews and allocates co-funding'],
+      footnote: "Saudi Partner does not buy media. STA's agency plans and buys all placements under the OneSaudi initiative.",
+      tiles: [['Active campaigns', 'In flight or approved'], ['Pending approval', 'With STA Marketing CoE'], ['STA co-funding approved 2026', 'Since 1 Jan 2026'], ['Next submission deadline', 'Q1 2027 flights · 21 days left']],
+      deadline: '15 Oct', sar: 'SAR'
+    };
+    var ICONS = ['M5 3l14 9-14 9z', 'M12 21a9 9 0 100-18 9 9 0 000 18zM12 7v5l3 2', 'M4 7h16v12H4zM4 11h16M8 15h3', 'M4 5h16v16H4zM4 10h16M9 3v4M15 3v4'];
+    var TONE = ['background: #EDF8F3; color: #2E7D55', 'background: #EEF0FA; color: #4F58B0', 'background: #F7EBF5; color: #78006E', 'background: #FEF1EB; color: #B84A18'];
+    var VALS = empty ? ['0', '0', T.sar + ' 0', T.deadline] : ['2', '1', T.sar + ' 3.4M', T.deadline];
+    var tiles = T.tiles.map(function (k, i) {
+      return { label: k[0], note: k[1], value: VALS[i], icon: ICONS[i], iconStyle: 'width: 30px; height: 30px; border-radius: 15px; display: flex; align-items: center; justify-content: center; ' + TONE[i] };
+    });
+    var S = {
+      review: ['#EEF0FA', '#4F58B0', ar ? 'قيد المراجعة' : 'Under review'],
+      flight: ['#EDF8F3', '#1F6143', ar ? 'قيد التنفيذ' : 'In flight'],
+      approved: ['#EDF8F3', '#1F6143', ar ? 'معتمدة' : 'Approved'],
+      rejected: ['#FFE8EC', '#C4213F', ar ? 'مرفوضة' : 'Rejected'],
+      closed: ['#F0F0F0', '#4B4B4B', ar ? 'مغلقة' : 'Closed']
+    };
+    var DOT = { review: '#646EC8', flight: '#3CA06E', approved: '#3CA06E', rejected: '#FF4664', closed: '#4B4B4B' };
+    var src = ar ? [
+      ['شتاء عسير الثقافي', 'أبها ورجال ألمع', 'المملكة المتحدة', 'شتاء ٢٠٢٧', 'review', 1.2, 1.0, 'عرض الموجز', 'CampaignDetail.dc.html'],
+      ['مغامرة مرتفعات عسير', 'السودة وأبها', 'ألمانيا، فرنسا', 'الربع الأول ٢٠٢٧', 'flight', 2.0, 1.5, 'عرض النتائج', 'Results.dc.html'],
+      ['صيف عسير', 'منطقة عسير', 'دول الخليج', 'صيف ٢٠٢٧', 'approved', 1.8, 1.2, 'فتح مساحة العمل', 'CampaignDetail.dc.html'],
+      ['تراث رجال ألمع', 'رجال ألمع', 'فرنسا', 'ربيع ٢٠٢٧', 'rejected', 0.6, 0.6, 'عرض السبب', 'CampaignDetail.dc.html'],
+      ['صيف عسير ٢٠٢٦', 'منطقة عسير', 'دول الخليج', 'صيف ٢٠٢٦', 'closed', 1.5, 0.7, 'عرض النتائج', 'Results.dc.html']
+    ] : [
+      ['Asir Winter Culture', 'Abha & Rijal Almaa', 'United Kingdom', 'Winter 2027', 'review', 1.2, 1.0, 'View brief', 'CampaignDetail.dc.html'],
+      ['Asir Highlands Adventure', 'Al Soudah & Abha', 'Germany, France', 'Q1 2027', 'flight', 2.0, 1.5, 'View results', 'Results.dc.html'],
+      ['Asir Summer Escape', 'Asir region', 'GCC', 'Summer 2027', 'approved', 1.8, 1.2, 'Open workspace', 'CampaignDetail.dc.html'],
+      ['Rijal Almaa Heritage', 'Rijal Almaa', 'France', 'Spring 2027', 'rejected', 0.6, 0.6, 'See reason', 'CampaignDetail.dc.html'],
+      ['Asir Summer 2026', 'Asir region', 'GCC', 'Summer 2026', 'closed', 1.5, 0.7, 'View results', 'Results.dc.html']
+    ];
+    var requested = ar ? 'مطلوب' : 'requested';
+    var rows = src.map(function (r) {
+      var s = S[r[4]];
+      var tot = Math.round((r[5] + r[6]) * 10) / 10;
+      var dmoPct = Math.round(r[5] / (r[5] + r[6]) * 100);
+      var req = (r[4] === 'review' || r[4] === 'rejected') ? ' (' + requested + ')' : '';
+      return {
+        name: r[0], region: r[1], market: r[2], season: r[3], status: s[2], action: r[7], href: r[8],
+        total: T.sar + ' ' + tot + 'M',
+        split: (ar ? 'الهيئة الإقليمية ' : 'DMO ') + r[5] + 'M + ' + (ar ? 'الهيئة ' : 'STA ') + r[6] + 'M' + req,
+        pillStyle: 'display: inline-flex; align-items: center; gap: 6px; height: 26px; padding: 0 10px; border-radius: 13px; font-size: 12px; font-weight: 700; white-space: nowrap; background: ' + s[0] + '; color: ' + s[1],
+        dotStyle: 'width: 7px; height: 7px; border-radius: 4px; background: ' + DOT[r[4]],
+        dmoBar: 'width: ' + dmoPct + '%; background: #78006E',
+        staBar: 'flex-grow: 1; background: #646EC8'
+      };
+    });
+    return {
+      t: T, lang: ar ? 'ar' : 'en', dir: ar ? 'rtl' : 'ltr',
+      tiles: tiles, rows: empty ? [] : rows, hasRows: !empty, isEmpty: empty,
+      howto: T.how.map(function (h, i) { return { n: i + 1, text: h }; })
+    };
+  }
+}
+</script>
+</body>
+</html>

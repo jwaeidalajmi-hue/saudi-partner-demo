@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<title>الحملات – عربي</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+@font-face{font-family:"Saudi Sans";src:url(assets/9d5b063e22fb4c1fdf4e126126e305fc.ttf) format("truetype");font-weight:400 700}
+@font-face{font-family:"Saudi Serif";src:url(assets/036b8acfe104a78d15187d034057eea5.ttf) format("truetype");font-weight:400 700}
+body{margin:0;background:#FFFFFF}
+</style>
+</helmet>
+<div style="width: 1440px; height: 1320px; background: #FFFFFF">
+<dc-import name="CampaignsHome" lang="ar" state="{{ state }}" hint-size="1440px,1320px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"state":{"editor":"enum","options":["With campaigns","Empty (new DMO)"],"default":"With campaigns"},"$preview":{"width":1440,"height":1320}}'>
+class Component extends DCLogic {
+  renderVals() { return { state: this.props.state || 'With campaigns' }; }
+}
+</script>
+</body>
+</html>

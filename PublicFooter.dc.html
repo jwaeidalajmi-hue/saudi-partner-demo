@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<title>Public footer</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+@font-face{font-family:"Saudi Sans";src:url(assets/9d5b063e22fb4c1fdf4e126126e305fc.ttf) format("truetype");font-weight:400 700}
+body{margin:0}
+</style>
+</helmet>
+<footer style="width: 1440px; height: 440px; box-sizing: border-box; background: #78006E; color: #FFFFFF; font-family: 'Saudi Sans', system-ui, sans-serif; padding: 56px 72px 32px; display: flex; flex-direction: column; justify-content: space-between">
+<div style="display: grid; grid-template-columns: 1.4fr repeat(5, minmax(0, 1fr)); gap: 28px">
+<div style="display: flex; flex-direction: column; gap: 14px"><img src="assets/605505d45f1d76478d470bd94b8ee803.png" alt="Saudi Partner" style="height: 52px; width: auto; align-self: flex-start"><span style="font-size: 13px; line-height: 1.6; color: #F3E1F0">The official partner platform from Saudi Tourism Authority.</span></div>
+<sc-for list="{{ cols }}" as="c" hint-placeholder-count="5">
+<div style="display: flex; flex-direction: column; gap: 10px"><span style="font-size: 11px; font-weight: 700; letter-spacing: 0.8px; color: #F0D6EC">{{ c.title }}</span><sc-for list="{{ c.links }}" as="l" hint-placeholder-count="4"><a href="{{ l.href }}" style="font-size: 13px; color: #FFFFFF; text-decoration: none">{{ l.label }}</a></sc-for></div>
+</sc-for>
+</div>
+<div style="border-top: 1px solid rgba(255,255,255,0.25); padding-top: 18px; display: flex; justify-content: space-between; font-size: 12px; color: #F3E1F0"><span>Copyrights ©2024 All rights reserved. Saudi Tourism Authority</span><span style="display: flex; gap: 20px"><a href="#" style="color: #F3E1F0">Terms &amp; Conditions</a><a href="#" style="color: #F3E1F0">Privacy policy</a><a href="#" style="color: #F3E1F0">Cookies policy</a></span></div>
+</footer>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":440}}'>
+class Component extends DCLogic {
+  renderVals() {
+    var mk = function (t, ls) { return { title: t, links: ls.map(function (l) { return { label: l[0], href: l[1] || '#' }; }) }; };
+    return { cols: [
+      mk('SERVICE DIRECTORY', [['Insights', 'MarketInsights.dc.html'], ['Academy', 'Training.dc.html'], ['Marketing', 'Assets.dc.html'], ['Planning', 'Calendar.dc.html'], ['Connect', 'Directory.dc.html'], ['Programmes', 'Programmes.dc.html']]),
+      mk('SELL SAUDI', [['All markets', 'SellSaudi.dc.html'], ['China', 'MarketChina.dc.html'], ['Indonesia', 'MarketIndonesia.dc.html'], ['India', 'MarketIndia.dc.html'], ['Italy', 'MarketItaly.dc.html'], ['Jordan', 'MarketJordan.dc.html'], ['United Kingdom', 'MarketUK.dc.html']]),
+      mk('FOR PARTNERS', [['Partners Portal', 'DemoLauncher.dc.html'], ['For Suppliers', 'ForSuppliers.dc.html'], ['For Buyers', 'ForBuyers.dc.html'], ['For DMOs', 'ForDMOs.dc.html']]),
+      mk('VISIT SAUDI', [['Saudi Rewards'], ['Destinations'], ['Things To Do'], ['Plan Your Trip'], ['Saudi Calendar']]),
+      mk('CONTACT', [['Help centre'], ['Contact us'], ['Nourah AI']])
+    ] };
+  }
+}
+</script>
+</body>
+</html>

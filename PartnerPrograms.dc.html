@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<title>Programs & contracts – Partner</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+@font-face{font-family:"Saudi Sans";src:url(assets/9d5b063e22fb4c1fdf4e126126e305fc.ttf) format("truetype");font-weight:400 700}
+@font-face{font-family:"Saudi Serif";src:url(assets/036b8acfe104a78d15187d034057eea5.ttf) format("truetype");font-weight:400 700}
+body{margin:0;background:#F5F5F5}
+a{color:#78006E;text-decoration:none}a:hover{color:#5A0052}
+button{font-family:inherit}
+input,select,textarea{font-family:inherit}
+</style>
+</helmet>
+<div style="width: 1440px; height: 1900px; display: flex; flex-direction: column; background: #F5F5F5; font-family: 'Saudi Sans', system-ui, sans-serif; color: #1A1A1A; overflow: hidden">
+<div style="position: relative; z-index: 10; flex-shrink: 0"><dc-import name="Topbar" mode="buyer" initials="JW" country="DE" hint-size="1440px,76px"></dc-import></div>
+<div style="flex-grow: 1; display: flex; min-height: 0">
+<div style="flex-shrink: 0; display: flex; background: #FFFFFF; border-inline-end: 1px solid #EBEBEB"><dc-import name="Sidebar" mode="buyer" active="programs" initials="JW" user="Jonas Weber" role="Buyer · EuroTrails Tours" hint-size="264px,100%"></dc-import></div>
+<main style="flex-grow: 1; min-width: 0; padding: 36px 40px 48px; box-sizing: border-box; display: flex; flex-direction: column; gap: 24px; overflow-y: auto">
+
+<div style="display: flex; justify-content: space-between; align-items: flex-end; gap: 24px">
+<div style="display: flex; flex-direction: column; gap: 8px">
+<h1 style="margin: 0; font-family: 'Saudi Serif', Georgia, serif; font-weight: 700; font-size: 40px; line-height: 1.1">Programs &amp; contracts</h1>
+<p style="margin: 0; font-size: 15px; color: #4B4B4B">Submit COOP / Non-COOP agreements and share monthly actuals with STA. Your Account Manager: <b>Omar Al-Harbi</b>, Europe BU.</p>
+</div>
+<button onClick="{{ openWizard }}" style="height: 44px; padding: 0 20px; border-radius: 22px; border: 0; background: #78006E; color: #FFFFFF; font-size: 14px; font-weight: 700; cursor: pointer; flex-shrink: 0">+ Submit a new contract</button>
+</div>
+
+<!-- Wizard -->
+<sc-if value="{{ wizOpen }}" hint-placeholder-val="{{ false }}">
+<section aria-label="Submit a contract" style="background: #FFFFFF; border: 1px solid #78006E; border-radius: 12px; padding: 22px 24px; display: flex; flex-direction: column; gap: 18px">
+<div style="display: flex; justify-content: space-between; align-items: center">
+<ol style="margin: 0; padding: 0; list-style: none; display: flex; gap: 8px; align-items: center">
+<sc-for list="{{ steps }}" as="s" hint-placeholder-count="3"><li style="display: flex; align-items: center; gap: 8px; font-size: 13px"><span style="{{ s.dot }}">{{ s.n }}</span><span style="{{ s.lab }}">{{ s.label }}</span><span style="{{ s.sep }}"></span></li></sc-for>
+</ol>
+<button onClick="{{ closeWizard }}" aria-label="Close" style="border: 0; background: none; font-size: 22px; cursor: pointer">×</button>
+</div>
+
+<sc-if value="{{ step1 }}" hint-placeholder-val="{{ true }}">
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px">
+<sc-for list="{{ programs }}" as="p" hint-placeholder-count="2">
+<button onClick="{{ p.pick }}" aria-pressed="{{ p.on }}" style="{{ p.style }}">
+<span style="display: flex; justify-content: space-between; align-items: center"><span style="font-size: 17px; font-weight: 700">{{ p.title }}</span><span style="{{ p.radio }}"></span></span>
+<span style="font-size: 13px; color: #4B4B4B; line-height: 1.5">{{ p.desc }}</span>
+<span style="font-size: 12px; color: #6B6B6B">{{ p.needs }}</span>
+</button>
+</sc-for>
+</div>
+</sc-if>
+
+<sc-if value="{{ step2 }}" hint-placeholder-val="{{ false }}">
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px">
+<div style="display: flex; flex-direction: column; gap: 10px">
+<span style="font-size: 13px; font-weight: 700">Signed contract</span>
+<button onClick="{{ attach }}" style="{{ dropStyle }}"><span style="font-size: 14px; font-weight: 700">{{ dropTitle }}</span><span style="font-size: 12px; color: #6B6B6B">{{ dropNote }}</span></button>
+<a href="#" style="font-size: 12px; font-weight: 700">Download the {{ progName }} template (v4.2)</a>
+</div>
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; align-content: start">
+<label style="display: flex; flex-direction: column; gap: 6px; font-size: 12px; font-weight: 700; color: #4B4B4B">Start date<input value="1 Jan 2027" style="height: 40px; border-radius: 8px; border: 1px solid #DCDCDC; padding: 0 12px; font-size: 13px"></label>
+<label style="display: flex; flex-direction: column; gap: 6px; font-size: 12px; font-weight: 700; color: #4B4B4B">End date<input value="31 Dec 2027" style="height: 40px; border-radius: 8px; border: 1px solid #DCDCDC; padding: 0 12px; font-size: 13px"></label>
+<sc-if value="{{ isCoop }}" hint-placeholder-val="{{ true }}">
+<label style="display: flex; flex-direction: column; gap: 6px; font-size: 12px; font-weight: 700; color: #4B4B4B">STA + partner combined budget (SAR)<input value="4,200,000" style="height: 40px; border-radius: 8px; border: 1px solid #DCDCDC; padding: 0 12px; font-size: 13px"></label>
+<label style="display: flex; flex-direction: column; gap: 6px; font-size: 12px; font-weight: 700; color: #4B4B4B">STA contribution %<select style="height: 40px; border-radius: 8px; border: 1px solid #DCDCDC; padding: 0 10px; font-size: 13px; background: #FFFFFF"><option>40%</option><option>30%</option><option>50% (max)</option></select></label>
+</sc-if>
+<label style="display: flex; flex-direction: column; gap: 6px; font-size: 12px; font-weight: 700; color: #4B4B4B">Total visits (1 – 1,000,000)<input value="22,000" maxlength="100" style="height: 40px; border-radius: 8px; border: 1px solid #DCDCDC; padding: 0 12px; font-size: 13px"></label>
+<label style="display: flex; flex-direction: column; gap: 6px; font-size: 12px; font-weight: 700; color: #4B4B4B">Primary travel purpose<select style="height: 40px; border-radius: 8px; border: 1px solid #DCDCDC; padding: 0 10px; font-size: 13px; background: #FFFFFF"><option>Leisure</option><option>Umrah</option><option>Business / MICE</option></select></label>
+<div style="grid-column: 1 / -1; display: flex; flex-direction: column; gap: 6px"><span style="font-size: 12px; font-weight: 700; color: #4B4B4B">Source markets (must total 100%)</span><div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px"><label style="display: flex; align-items: center; gap: 6px; font-size: 12px; border: 1px solid #DCDCDC; border-radius: 8px; padding: 0 10px; height: 38px">Germany<input value="60" aria-label="Germany %" style="width: 36px; border: 0; text-align: end; font-size: 13px; font-weight: 700">%</label><label style="display: flex; align-items: center; gap: 6px; font-size: 12px; border: 1px solid #DCDCDC; border-radius: 8px; padding: 0 10px; height: 38px">Austria<input value="25" aria-label="Austria %" style="width: 36px; border: 0; text-align: end; font-size: 13px; font-weight: 700">%</label><label style="display: flex; align-items: center; gap: 6px; font-size: 12px; border: 1px solid #DCDCDC; border-radius: 8px; padding: 0 10px; height: 38px">Switzerland<input value="15" aria-label="Switzerland %" style="width: 36px; border: 0; text-align: end; font-size: 13px; font-weight: 700">%</label></div></div>
+<span style="grid-column: 1 / -1; font-size: 11px; color: #6B6B6B">{{ extractNote }}</span>
+</div>
+</div>
+</sc-if>
+
+<sc-if value="{{ step3 }}" hint-placeholder-val="{{ false }}">
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px">
+<dl style="margin: 0; display: grid; grid-template-columns: 160px 1fr; row-gap: 10px; font-size: 13px; padding: 16px 18px; border: 1px solid #EBEBEB; border-radius: 10px">
+<dt style="color: #6B6B6B">Program</dt><dd style="margin: 0; font-weight: 700">{{ progName }}</dd>
+<dt style="color: #6B6B6B">Term</dt><dd style="margin: 0; font-weight: 700">1 Jan – 31 Dec 2027</dd>
+<dt style="color: #6B6B6B">Budget</dt><dd style="margin: 0; font-weight: 700">{{ budgetLine }}</dd>
+<dt style="color: #6B6B6B">Total visits</dt><dd style="margin: 0; font-weight: 700">22,000 · DE 60% · AT 25% · CH 15%</dd>
+<dt style="color: #6B6B6B">Document</dt><dd style="margin: 0; font-weight: 700">EuroTrails_STA_2027_signed.pdf</dd>
+</dl>
+<div style="display: flex; flex-direction: column; gap: 12px; font-size: 13px; color: #4B4B4B">
+<span style="font-weight: 700; color: #1A1A1A">What happens next</span>
+<span>1. Your Account Manager, Omar, checks it and builds the monthly plan with you.</span>
+<span>2. {{ nextStep }}</span>
+<span>3. You share monthly actuals here, no later than one month after each month ends.</span>
+<label style="display: flex; gap: 8px; align-items: flex-start; margin-top: 4px; cursor: pointer"><input type="checkbox" checked="{{ agree }}" onChange="{{ toggleAgree }}" style="accent-color: #78006E; margin-top: 2px">I confirm I'm authorised to sign for EuroTrails Tours GmbH and the uploaded contract is final.</label>
+</div>
+</div>
+</sc-if>
+
+<sc-if value="{{ step4 }}" hint-placeholder-val="{{ false }}">
+<div style="padding: 18px 20px; border-radius: 10px; background: #EDF8F3; display: flex; flex-direction: column; gap: 6px"><span style="font-size: 16px; font-weight: 700; color: #2E7D55">✓ Contract submitted</span><span style="font-size: 13px; color: #1A1A1A">Reference ETT-DE--EUR · 2027. Omar Al-Harbi has been notified. Status: with your Account Manager.</span></div>
+</sc-if>
+
+<sc-if value="{{ showNav }}" hint-placeholder-val="{{ true }}">
+<div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #EBEBEB; padding-top: 16px">
+<button onClick="{{ back }}" style="height: 42px; padding: 0 18px; border-radius: 21px; border: 1px solid #DCDCDC; background: #FFFFFF; font-size: 13px; font-weight: 700; cursor: pointer">{{ backLabel }}</button>
+<button onClick="{{ nextFn }}" disabled="{{ nextDisabled }}" style="{{ nextStyle }}">{{ nextLabel }}</button>
+</div>
+</sc-if>
+</section>
+</sc-if>
+
+<!-- Agreements -->
+<section style="display: flex; flex-direction: column; gap: 14px">
+<h2 style="margin: 0; font-size: 18px; font-weight: 700">My agreements</h2>
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px">
+<sc-for list="{{ agreements }}" as="a" hint-placeholder-count="2">
+<article style="background: #FFFFFF; border: 1px solid #EBEBEB; border-radius: 12px; padding: 20px 22px; display: flex; flex-direction: column; gap: 14px">
+<div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 12px"><div style="display: flex; flex-direction: column; gap: 4px"><span style="font-size: 16px; font-weight: 700">{{ a.title }}</span><span style="font-size: 12px; color: #6B6B6B">{{ a.meta }}</span></div><span style="{{ a.chip }}">{{ a.status }}</span></div>
+<ol style="margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px">
+<sc-for list="{{ a.track }}" as="t" hint-placeholder-count="4"><li style="display: flex; flex-direction: column; gap: 6px"><span style="{{ t.bar }}"></span><span style="{{ t.lab }}">{{ t.label }}</span></li></sc-for>
+</ol>
+<div style="display: flex; justify-content: space-between; font-size: 12px; color: #4B4B4B"><span>{{ a.foot }}</span><a href="#" style="font-weight: 700">View contract</a></div>
+</article>
+</sc-for>
+</div>
+</section>
+
+<!-- Share data -->
+<section style="display: grid; grid-template-columns: minmax(0, 1fr) 360px; gap: 20px; align-items: start">
+<div style="background: #FFFFFF; border: 1px solid #EBEBEB; border-radius: 12px; padding: 22px 24px; display: flex; flex-direction: column; gap: 16px">
+<div style="display: flex; justify-content: space-between; align-items: flex-start"><div style="display: flex; flex-direction: column; gap: 4px"><h2 style="margin: 0; font-size: 18px; font-weight: 700">Share monthly actuals</h2><span style="font-size: 13px; color: #4B4B4B">September 2026 · due <b>31 Oct</b> (data actuals lag 1 month) · 2026 Non-COOP MoU</span></div><span style="{{ dueChip }}">{{ dueLabel }}</span></div>
+<div role="tablist" aria-label="How to share" style="display: flex; gap: 8px">
+<sc-for list="{{ methods }}" as="m" hint-placeholder-count="3"><button role="tab" onClick="{{ m.pick }}" aria-selected="{{ m.on }}" style="{{ m.style }}">{{ m.label }}</button></sc-for>
+</div>
+
+<sc-if value="{{ mUpload }}" hint-placeholder-val="{{ true }}">
+<sc-if value="{{ upIdle }}" hint-placeholder-val="{{ true }}">
+<button onClick="{{ upload }}" style="height: 150px; border: 2px dashed #DCDCDC; border-radius: 10px; background: #FAFAFA; cursor: pointer; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px"><span style="font-size: 15px; font-weight: 700">Drop your file or click to upload</span><span style="font-size: 12px; color: #6B6B6B">XLSX or CSV · use the monthly template · max 20 MB</span></button>
+<a href="#" style="font-size: 12px; font-weight: 700">Download monthly template (XLSX)</a>
+</sc-if>
+<sc-if value="{{ upChecked }}" hint-placeholder-val="{{ false }}">
+<div style="border: 1px solid #EBEBEB; border-radius: 10px; overflow: hidden">
+<div style="padding: 12px 16px; background: #FAFAFA; display: flex; justify-content: space-between; font-size: 13px"><b>EuroTrails_Sep2026.xlsx</b><span style="color: #4B4B4B">1,102 rows checked</span></div>
+<div style="padding: 12px 16px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; font-size: 12px; color: #4B4B4B">
+<span>Visits · Germany<br><b style="font-size: 18px; color: #1A1A1A">1,310</b> <span style="font-size: 11px">plan 1,050</span></span><span>Visits · Austria<br><b style="font-size: 18px; color: #1A1A1A">470</b> <span style="font-size: 11px">plan 450</span></span><span>Impressions<br><b style="font-size: 18px; color: #1A1A1A">2.4M</b></span><span>Engagement<br><b style="font-size: 18px; color: #1A1A1A">86K</b></span>
+</div>
+<div style="padding: 10px 16px; border-top: 1px solid #F0F0F0; font-size: 12px; color: #B84A18; font-weight: 700">! 1 warning: 3 bookings have no source market. They'll be counted under “Other”.</div>
+</div>
+<div style="display: flex; gap: 10px"><button onClick="{{ submitData }}" style="height: 42px; padding: 0 20px; border-radius: 21px; border: 0; background: #78006E; color: #FFFFFF; font-size: 13px; font-weight: 700; cursor: pointer">Submit to STA</button><button onClick="{{ resetUpload }}" style="height: 42px; padding: 0 18px; border-radius: 21px; border: 1px solid #DCDCDC; background: #FFFFFF; font-size: 13px; font-weight: 700; cursor: pointer">Replace file</button></div>
+</sc-if>
+<sc-if value="{{ upDone }}" hint-placeholder-val="{{ false }}">
+<div style="padding: 16px 18px; border-radius: 10px; background: #EDF8F3; display: flex; justify-content: space-between; align-items: center"><span style="font-size: 14px; font-weight: 700; color: #2E7D55">✓ September actuals submitted · waiting for your Account Manager to accept</span><button onClick="{{ resetUpload }}" style="border: 0; background: none; color: #78006E; font-size: 12px; font-weight: 700; cursor: pointer">Undo (demo)</button></div>
+</sc-if>
+</sc-if>
+
+<sc-if value="{{ mApi }}" hint-placeholder-val="{{ false }}">
+<div style="border: 1px solid #EBEBEB; border-radius: 10px; padding: 16px 18px; display: flex; flex-direction: column; gap: 10px; font-size: 13px">
+<div style="display: flex; justify-content: space-between"><b>Performance API</b><span style="color: #2E7D55; font-weight: 700">● Connected · last push 6 Aug</span></div>
+<code style="background: #F5F5F5; border-radius: 6px; padding: 10px 12px; font-size: 12px">POST https://api.partner.visitsaudi.com/v1/performance</code>
+<span style="color: #4B4B4B">Push monthly actuals per source market from your booking system. Validated like file uploads, then accepted into STA’s Trade 360°.</span>
+<div style="display: flex; gap: 14px; font-weight: 700"><a href="#">API docs</a><a href="#">Rotate key</a></div>
+</div>
+</sc-if>
+
+<sc-if value="{{ mManual }}" hint-placeholder-val="{{ false }}">
+<div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px">
+<label style="display: flex; flex-direction: column; gap: 6px; font-size: 12px; font-weight: 700; color: #4B4B4B">Visits · Germany<input placeholder="0" style="height: 40px; border-radius: 8px; border: 1px solid #DCDCDC; padding: 0 12px; font-size: 13px"></label>
+<label style="display: flex; flex-direction: column; gap: 6px; font-size: 12px; font-weight: 700; color: #4B4B4B">Visits · Austria<input placeholder="0" style="height: 40px; border-radius: 8px; border: 1px solid #DCDCDC; padding: 0 12px; font-size: 13px"></label>
+<label style="display: flex; flex-direction: column; gap: 6px; font-size: 12px; font-weight: 700; color: #4B4B4B">Impressions<input placeholder="0" style="height: 40px; border-radius: 8px; border: 1px solid #DCDCDC; padding: 0 12px; font-size: 13px"></label>
+<label style="display: flex; flex-direction: column; gap: 6px; font-size: 12px; font-weight: 700; color: #4B4B4B">Engagement<input placeholder="0" style="height: 40px; border-radius: 8px; border: 1px solid #DCDCDC; padding: 0 12px; font-size: 13px"></label>
+</div>
+<span style="font-size: 12px; color: #6B6B6B">Enter visits per source market in your plan. Use the file or API if you also report by product or segment.</span>
+</sc-if>
+<span style="font-size: 11px; color: #6B6B6B">Data you share is visible to your STA Account Manager and their BU, and stored in STA’s CRM (Trade 360°) under STA data-governance rules. It’s never shown to other partners.</span>
+</div>
+
+<div style="background: #FFFFFF; border: 1px solid #EBEBEB; border-radius: 12px; overflow: hidden">
+<div style="padding: 16px 18px; border-bottom: 1px solid #EBEBEB"><h2 style="margin: 0; font-size: 15px; font-weight: 700">Submission history</h2></div>
+<sc-for list="{{ history }}" as="h" hint-placeholder-count="5">
+<div style="display: flex; justify-content: space-between; align-items: center; padding: 12px 18px; border-bottom: 1px solid #F0F0F0"><span style="display: flex; flex-direction: column; gap: 2px"><span style="font-size: 13px; font-weight: 700">{{ h.period }}</span><span style="font-size: 11px; color: #6B6B6B">{{ h.meta }}</span></span><span style="{{ h.chip }}">{{ h.status }}</span></div>
+</sc-for>
+</div>
+</section>
+
+</main>
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":1900}}'>
+class Component extends DCLogic {
+  constructor(props) { super(props); this.state = { wiz: false, step: 1, prog: 'coop', file: false, agree: false, method: 'upload', up: 'idle' }; }
+  renderVals() {
+    var self = this, st = this.state;
+    var CH = { good: 'background: #EDF8F3; color: #2E7D55', warn: 'background: #FEF1EB; color: #B84A18', info: 'background: #F5EBF4; color: #78006E', mute: 'background: #F5F5F5; color: #4B4B4B' };
+    var chip = function (k) { return 'height: 24px; padding: 0 10px; border-radius: 12px; font-size: 11px; font-weight: 700; display: inline-flex; align-items: center; white-space: nowrap; flex-shrink: 0; ' + CH[k]; };
+    var isCoop = st.prog === 'coop';
+    var progName = isCoop ? 'COOP agreement' : 'Non-COOP MoU';
+    var steps = ['Program', 'Contract & terms', 'Review & submit'].map(function (l, i) {
+      var n = i + 1, done = st.step > n, cur = st.step === n;
+      return { n: done ? '✓' : String(n), label: l,
+        dot: 'width: 26px; height: 26px; border-radius: 13px; font-size: 12px; font-weight: 700; display: flex; align-items: center; justify-content: center; ' + (cur || done ? 'background: #78006E; color: #FFFFFF' : 'background: #F5F5F5; color: #6B6B6B'),
+        lab: cur ? 'font-weight: 700' : 'color: #6B6B6B',
+        sep: i < 2 ? 'display: block; width: 36px; height: 1px; background: #DCDCDC; margin: 0 4px' : 'display: none' };
+    });
+    var programs = [
+      ['coop', 'COOP · paid engagement', 'STA contributes a % of your campaign budget. You commit to total visits by source market, share monthly actuals, and invoice STA against milestones.', 'Needs: signed agreement, STA contribution %, total visits, source markets, bank details'],
+      ['noncoop', 'Non-COOP · unpaid engagement', 'No STA budget. You commit to a visits plan, share monthly actuals, and get market insights, listings and joint promotion.', 'Needs: signed MoU, total visits, source markets']
+    ].map(function (p) {
+      var on = st.prog === p[0];
+      return { title: p[1], desc: p[2], needs: p[3], on: on, pick: function () { self.setState({ prog: p[0] }); },
+        style: 'text-align: start; cursor: pointer; border-radius: 12px; padding: 18px 20px; display: flex; flex-direction: column; gap: 8px; background: #FFFFFF; ' + (on ? 'border: 2px solid #78006E' : 'border: 1px solid #DCDCDC'),
+        radio: 'width: 18px; height: 18px; border-radius: 9px; box-sizing: border-box; ' + (on ? 'border: 6px solid #78006E' : 'border: 2px solid #9A9A9A') };
+    });
+    var canNext = st.step === 1 || (st.step === 2 && st.file) || (st.step === 3 && st.agree);
+    var track = function (labels, cur) {
+      return labels.map(function (l, i) {
+        return { label: l, bar: 'display: block; height: 6px; border-radius: 3px; background: ' + (i < cur ? '#78006E' : (i === cur ? '#C9A3C4' : '#EBEBEB')), lab: 'font-size: 11px; ' + (i === cur ? 'font-weight: 700; color: #78006E' : 'color: #6B6B6B') };
+      });
+    };
+    var coopStatus = st.step === 4 ? 1 : 1;
+    var methods = [['upload', 'Upload file'], ['api', 'API'], ['manual', 'Enter totals']].map(function (m) {
+      var on = st.method === m[0];
+      return { label: m[1], on: on, pick: function () { self.setState({ method: m[0] }); },
+        style: 'height: 36px; padding: 0 16px; border-radius: 18px; font-size: 13px; font-weight: 700; cursor: pointer; ' + (on ? 'background: #78006E; color: #FFFFFF; border: 1px solid #78006E' : 'background: #FFFFFF; color: #1A1A1A; border: 1px solid #DCDCDC') };
+    });
+    var hist = [
+      ['August 2026', 'File · submitted 8 Sep', 'Accepted', 'good'],
+      ['July 2026', 'API · 6 Aug', 'Accepted', 'good'],
+      ['June 2026', 'API · 9 Jul', 'Accepted with notes', 'warn'],
+      ['May 2026', 'File · 12 Jun', 'Accepted · 2 days late', 'warn'],
+      ['April 2026', 'File · 7 May', 'Accepted', 'good']
+    ];
+    if (st.up === 'done') hist.unshift(['September 2026', 'File · submitted today', 'With Account Manager', 'info']);
+    return {
+      wizOpen: st.wiz, openWizard: function () { self.setState({ wiz: true, step: 1, file: false, agree: false }); }, closeWizard: function () { self.setState({ wiz: false }); },
+      steps: steps, programs: programs, step1: st.step === 1, step2: st.step === 2, step3: st.step === 3, step4: st.step === 4, showNav: st.step < 4,
+      isCoop: isCoop, progName: progName,
+      budgetLine: isCoop ? 'SAR 4.2M · STA share 40% (SAR 1.68M)' : 'No STA funding',
+      nextStep: isCoop ? 'STA’s Line Manager approves it; STA then sets you up as a supplier and issues a purchase order.' : 'STA’s Line Manager approves it and your data sharing starts.',
+      attach: function () { self.setState({ file: true }); },
+      dropTitle: st.file ? '✓ EuroTrails_STA_2027_signed.pdf' : 'Upload signed PDF',
+      dropNote: st.file ? '14 pages · 2.4 MB · signature detected' : 'PDF · max 25 MB',
+      dropStyle: 'height: 130px; border-radius: 10px; cursor: pointer; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; ' + (st.file ? 'border: 1px solid #C8EBDB; background: #EDF8F3' : 'border: 2px dashed #DCDCDC; background: #FAFAFA'),
+      extractNote: st.file ? 'Pre-filled from your PDF. Check the values match the signed contract.' : 'Upload the PDF and we will pre-fill these from it.',
+      agree: st.agree, toggleAgree: function () { self.setState({ agree: !st.agree }); },
+      backLabel: st.step === 1 ? 'Cancel' : 'Back',
+      back: function () { if (st.step === 1) self.setState({ wiz: false }); else self.setState({ step: st.step - 1 }); },
+      nextLabel: st.step === 3 ? 'Submit to STA' : 'Continue',
+      nextDisabled: !canNext,
+      nextStyle: 'height: 42px; padding: 0 22px; border-radius: 21px; border: 0; background: #78006E; color: #FFFFFF; font-size: 13px; font-weight: 700; ' + (canNext ? 'cursor: pointer' : 'opacity: .45; cursor: not-allowed'),
+      nextFn: function () { if (canNext) self.setState({ step: st.step + 1 }); },
+      agreements: [
+        { title: '2027 COOP agreement', meta: '22,000 visits · STA contribution 40% (SAR 1.68M) · submitted 22 Sep', status: '● With Line Manager', chip: chip('info'), track: track(['Submitted', 'Account Manager', 'Line Manager', 'PO issued'], 2), foot: 'Account Manager submitted it for approval on 24 Sep' },
+        { title: '2026 Non-COOP MoU', meta: '18,000 visits · Germany 70% · Austria 30% · 1 Jan – 31 Dec 2026', status: '✓ Approved · Actual', chip: chip('good'), track: track(['Submitted', 'Account Manager', 'Line Manager', 'Actual'], 3), foot: '8 of 8 monthly actuals submitted · 14,320 visits so far' }
+      ],
+      dueLabel: st.up === 'done' ? '✓ Submitted' : 'Due in 12 days', dueChip: chip(st.up === 'done' ? 'good' : 'warn'),
+      methods: methods, mUpload: st.method === 'upload', mApi: st.method === 'api', mManual: st.method === 'manual',
+      upIdle: st.up === 'idle', upChecked: st.up === 'checked', upDone: st.up === 'done',
+      upload: function () { self.setState({ up: 'checked' }); }, submitData: function () { self.setState({ up: 'done' }); }, resetUpload: function () { self.setState({ up: 'idle' }); },
+      history: hist.map(function (h) { return { period: h[0], meta: h[1], status: h[2], chip: chip(h[3]) }; })
+    };
+  }
+}
+</script>
+</body>
+</html>

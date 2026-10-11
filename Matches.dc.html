@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<title>Partner Connect — Matches</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+@font-face{font-family:"Saudi Sans";src:url("assets/9d5b063e22fb4c1fdf4e126126e305fc.ttf") format("truetype");font-weight:400 700}
+@font-face{font-family:"Saudi Serif";src:url("assets/036b8acfe104a78d15187d034057eea5.ttf") format("truetype");font-weight:400 700}
+body{margin:0;background:#F5F5F5}
+a{color:#78006E;text-decoration:none}a:hover{color:#5A0052}
+button{font-family:inherit}
+</style>
+</helmet>
+<div style="width: 1440px; height: 1776px; display: flex; flex-direction: column; background: #F5F5F5; font-family: 'Saudi Sans', system-ui, sans-serif; color: #1A1A1A; overflow: hidden">
+<div style="position: relative; z-index: 10; flex-shrink: 0"><dc-import name="Topbar" hint-size="1440px,76px"></dc-import></div>
+<div style="flex-grow: 1; display: flex; min-height: 0">
+<div style="flex-shrink: 0; display: flex; background: #FFFFFF; border-right: 1px solid #EBEBEB"><dc-import name="Sidebar" active="matches" hint-size="264px,100%"></dc-import></div>
+<main style="flex-grow: 1; min-width: 0; padding: 32px 40px 48px; box-sizing: border-box; display: flex; flex-direction: column; gap: 18px">
+<dc-import name="JourneyBar" page="Matches" hint-size="100%,52px"></dc-import>
+
+<div style="display: flex; align-items: center; justify-content: space-between; gap: 20px">
+<div role="group" aria-label="Partner Connect sections" style="display: flex; background: #FFFFFF; border: 1px solid #EBEBEB; border-radius: 24px; padding: 4px">
+<a href="Directory.dc.html" style="height: 40px; padding: 0 22px; border-radius: 20px; color: #1A1A1A; font-size: 14px; font-weight: 700; display: flex; align-items: center">Directory</a>
+<span aria-current="true" style="height: 40px; padding: 0 22px; border-radius: 20px; background: #78006E; color: #FFFFFF; font-size: 14px; font-weight: 700; display: flex; align-items: center">Matchmaking</span>
+<a href="Requests.dc.html" style="height: 40px; padding: 0 22px; border-radius: 20px; color: #1A1A1A; font-size: 14px; font-weight: 700; display: flex; align-items: center">Requests</a>
+</div>
+<div style="display: flex; gap: 10px">
+<button type="button" style="height: 40px; padding: 0 18px; border-radius: 20px; background: #FFFFFF; border: 1px solid #DCDCDC; font-size: 13px; font-weight: 700; cursor: pointer">Edit brief</button>
+<button type="button" style="height: 40px; padding: 0 18px; border-radius: 20px; background: #FFFFFF; border: 1px solid #78006E; color: #78006E; font-size: 13px; font-weight: 700; cursor: pointer">Compare selected (3)</button>
+</div>
+</div>
+
+<div style="display: flex; align-items: center; gap: 22px">
+<img src="assets/c11ac0687c6f13f7b0073cb4afef6ccd.jpg" alt="Family visiting a museum in Saudi Arabia" style="width: 220px; height: 128px; object-fit: cover; border-radius: 12px; flex-shrink: 0">
+<div style="display: flex; flex-direction: column; gap: 6px">
+<h1 style="margin: 0; font-family: 'Saudi Serif', Georgia, serif; font-weight: 700; font-size: 34px; line-height: 1.1">7 partners fit your brief</h1>
+<p style="margin: 0; font-size: 14px; color: #6B6B6B">Grouped by fit, never ranked or scored. Within a group the order rotates between buyers.</p>
+</div>
+</div>
+
+<section style="background: #FFFFFF; border: 1px solid #EBEBEB; border-radius: 12px; padding: 16px 22px; display: flex; align-items: center; gap: 10px; flex-wrap: wrap">
+<span style="font-size: 11px; font-weight: 700; letter-spacing: 0.4px; color: #6B6B6B; margin-right: 6px">YOUR BRIEF</span>
+<sc-for list="{{brief}}" as="b" hint-placeholder-count="6"><span style="height: 30px; padding: 0 12px; border-radius: 15px; background: #F5F5F5; border: 1px solid #EBEBEB; font-size: 12px; color: #4B4B4B; display: flex; align-items: center">{{b.t}}</span></sc-for>
+</section>
+
+<sc-for list="{{groups}}" as="grp" hint-placeholder-count="2">
+<div style="display: flex; flex-direction: column; gap: 12px">
+<div style="display: flex; align-items: center; gap: 10px">
+<span style="{{grp.badge}}">{{grp.title}}</span>
+<span style="font-size: 13px; color: #6B6B6B">{{grp.note}}</span>
+</div>
+<sc-for list="{{grp.items}}" as="m" hint-placeholder-count="2">
+<article style="background: #FFFFFF; border: 1px solid #EBEBEB; border-radius: 12px; padding: 22px 24px; display: flex; gap: 20px; align-items: center">
+<img src="{{m.img}}" alt="" style="width: 92px; height: 72px; border-radius: 12px; object-fit: cover; flex-shrink: 0">
+<div style="flex-grow: 1; display: flex; flex-direction: column; gap: 10px">
+<div style="display: flex; align-items: center; gap: 12px">
+<span style="font-size: 16px; font-weight: 700">{{m.name}}</span>
+<span style="font-size: 12px; color: #6B6B6B">{{m.meta}}</span>
+</div>
+<div style="display: flex; gap: 8px; flex-wrap: wrap">
+<sc-for list="{{m.reasons}}" as="r" hint-placeholder-count="3"><span style="height: 28px; padding: 0 12px; border-radius: 14px; background: #EDF8F3; color: #1F6647; font-size: 12px; font-weight: 700; display: flex; align-items: center; gap: 6px"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#1F6647" stroke-width="3" stroke-linecap="round"><path d="M5 13l4 4L19 7"></path></svg>{{r.t}}</span></sc-for>
+<sc-for list="{{m.gaps}}" as="g" hint-placeholder-count="1"><span style="height: 28px; padding: 0 12px; border-radius: 14px; background: #FEDDCE; color: #8A3C0F; font-size: 12px; font-weight: 700; display: flex; align-items: center; gap: 6px"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#8A3C0F" stroke-width="3" stroke-linecap="round"><path d="M12 7v7M12 17.5v.5"></path></svg>{{g.t}}</span></sc-for>
+</div>
+</div>
+<div style="display: flex; gap: 10px; flex-shrink: 0">
+<a href="BusinessProfile.dc.html" style="height: 44px; padding: 0 20px; border-radius: 22px; background: #FFFFFF; border: 1px solid #DCDCDC; color: #1A1A1A; font-size: 13px; font-weight: 700; display: flex; align-items: center">View profile</a>
+<button type="button" style="height: 44px; padding: 0 22px; border-radius: 22px; background: #78006E; color: #FFFFFF; border: 0; font-size: 13px; font-weight: 700; cursor: pointer">Request intro</button>
+</div>
+</article>
+</sc-for>
+</div>
+</sc-for>
+
+<section style="background: #FFFFFF; border: 1px solid #EBEBEB; border-radius: 12px; padding: 24px 26px; display: flex; flex-direction: column; gap: 14px">
+<h2 style="margin: 0; font-size: 17px; font-weight: 700">Compare</h2>
+<div style="display: grid; grid-template-columns: 220px repeat(3, minmax(0, 1fr)); border: 1px solid #EBEBEB; border-radius: 10px; overflow: hidden">
+<sc-for list="{{rows}}" as="r" hint-placeholder-count="7">
+<div style="{{r.labelStyle}}">{{r.label}}</div>
+<div style="{{r.cellStyle}}">{{r.a}}</div>
+<div style="{{r.cellStyle}}">{{r.b}}</div>
+<div style="{{r.cellStyle}}">{{r.c}}</div>
+</sc-for>
+</div>
+</section>
+
+</main>
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":1776}}'>
+class Component extends DCLogic {
+renderVals() {
+function t(a) { return a.map(function (x) { return { t: x }; }); }
+var strongBadge = 'height: 30px; padding: 0 14px; border-radius: 15px; background: #78006E; color: #FFFFFF; font-size: 12px; font-weight: 700; display: flex; align-items: center';
+var possibleBadge = 'height: 30px; padding: 0 14px; border-radius: 15px; background: #FFFFFF; color: #78006E; border: 1px solid #78006E; font-size: 12px; font-weight: 700; display: flex; align-items: center';
+function row(label, a, b, c, alt) {
+var base = 'padding: 12px 16px; font-size: 12px; border-bottom: 1px solid #EBEBEB; background: ' + (alt ? '#FAFAFA' : '#FFFFFF');
+return { label: label, a: a, b: b, c: c,
+labelStyle: base + '; font-weight: 700; letter-spacing: 0.3px; color: #6B6B6B',
+cellStyle: base + '; border-left: 1px solid #EBEBEB; color: #1A1A1A' };
+}
+return {
+brief: t(['Umrah & Ziyarat', 'Makkah and Madinah', '30 to 40 travellers', 'Accommodation, transport, guide, visa, flights', 'Bahasa Indonesia guides', 'Net rates']),
+groups: [
+{ title: 'Strong fit', note: 'meets everything you asked for', badge: strongBadge, items: [
+{ img: 'assets/98f663db535a65d0f72791a63c2b0f5e.jpg', letter: 'H', name: 'Haramain Journeys', img: 'assets/c11ac0687c6f13f7b0073cb4afef6ccd.jpg', meta: 'DMC · Makkah · 4.9 (106)', reasons: t(['Umrah & Ziyarat', 'Own Makkah permits', 'Bahasa Indonesia guides']), gaps: [] },
+{ img: 'assets/cb6a395277ce81b3f1c119cf27914c10.jpg', letter: 'M', name: 'Madinah Hospitality Group', img: 'assets/ddfba5a807a1b48908eb7eade3ab94b3.jpg', meta: 'Tour Operator · Madinah · 4.5 (61)', reasons: t(['Indonesia ready', 'Net rates', 'Proposal in 2 to 3 days']), gaps: [] }
+] },
+{ title: 'Possible fit', note: 'meets the essentials, with named gaps', badge: possibleBadge, items: [
+{ img: 'assets/c11ac0687c6f13f7b0073cb4afef6ccd.jpg', letter: 'Z', name: 'Zamzam Travel Services', img: 'assets/775e80c89d6f570f1ffe7134b4763b6b.jpg', meta: 'DMC · Makkah · 4.7 (88)', reasons: t(['All inclusions', 'Groups up to 60']), gaps: t(['No Bahasa Indonesia guides']) },
+{ img: 'assets/31cdd3634e4f755cd3e3a6d44e978dee.jpg', letter: 'A', name: 'Arabian Gateway DMC', img: 'assets/6596caef0129c20aa5b6bf10f6dd1789.jpg', meta: 'DMC · Jeddah · 4.4 (38)', reasons: t(['Umrah & Ziyarat', 'Net rates']), gaps: t(['No coach, max van', 'Proposal takes up to a week']) }
+] }
+],
+rows: [
+row('FIT', 'Strong', 'Strong', 'Possible', false),
+row('Q1 SELLS TO', 'Umrah & Ziyarat, Leisure', 'Umrah & Ziyarat, FAM', 'Umrah & Ziyarat', true),
+row('Q2 MARKETS', 'APAC · Indonesia, Malaysia', 'APAC · Indonesia; GCC', 'GCC, Middle East', false),
+row('Q3 INCLUDES', 'All seven', 'All except translation', 'All except meals', true),
+row('Q3a TIER AND VEHICLES', '4 to 5 star · coach, with driver', '4 star · minibus, with driver', '3 to 4 star · van, self-drive', false),
+row('Q4 GUIDE LANGUAGES', 'AR, EN, Bahasa Indonesia', 'AR, EN, Urdu', 'AR, EN', true),
+row('Q7 PROPOSAL IN', 'Within 24 hours', '2 to 3 days', 'Up to a week', false)
+]
+};
+}
+}
+</script>
+</body>
+</html>

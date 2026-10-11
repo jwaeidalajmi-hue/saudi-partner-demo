@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<title>Academy course</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+@font-face{font-family:"Saudi Sans";src:url(assets/9d5b063e22fb4c1fdf4e126126e305fc.ttf) format("truetype");font-weight:400 700}
+@font-face{font-family:"Saudi Serif";src:url(assets/036b8acfe104a78d15187d034057eea5.ttf) format("truetype");font-weight:400 700}
+body{margin:0;background:#F5F5F5}
+a{color:#78006E;text-decoration:none}a:hover{color:#5A0052}
+button{font-family:inherit}
+</style>
+</helmet>
+<div style="width: 1440px; height: 1300px; display: flex; flex-direction: column; background: #F5F5F5; font-family: 'Saudi Sans', system-ui, sans-serif; color: #1A1A1A; overflow: hidden">
+<div style="position: relative; z-index: 10; flex-shrink: 0"><dc-import name="Topbar" hint-size="1440px,76px"></dc-import></div>
+<div style="flex-grow: 1; display: flex; min-height: 0">
+<div style="flex-shrink: 0; display: flex; background: #FFFFFF; border-right: 1px solid #EBEBEB"><dc-import name="Sidebar" active="course" hint-size="264px,100%"></dc-import></div>
+<main style="flex-grow: 1; min-width: 0; padding: 32px 40px 48px; box-sizing: border-box; display: flex; flex-direction: column; gap: 22px">
+<dc-import name="JourneyBar" page="CourseMarket" hint-size="100%,52px"></dc-import>
+<div style="display: flex; align-items: flex-end; justify-content: space-between; gap: 24px">
+<div style="display: flex; flex-direction: column; gap: 8px; max-width: 760px">
+<span style="font-size: 12px; font-weight: 700; letter-spacing: 1px; color: #78006E">ACADEMY · MARKET SPECIALIST</span>
+<h1 style="margin: 0; font-family: 'Saudi Serif', Georgia, serif; font-weight: 700; font-size: 38px; line-height: 1.12">China Market Specialist</h1>
+<p style="margin: 0; font-size: 15px; line-height: 1.6; color: #4B4B4B">Learn how Chinese travellers choose Saudi, how to package for group operators, and how to work with Chinese OTAs. Pass the assessment to earn the certificate and the China Market Specialist badge.</p>
+</div>
+<div style="display: flex; gap: 10px; flex-shrink: 0"><a href="Training.dc.html" style="height: 44px; padding: 0 20px; border-radius: 22px; background: #FFFFFF; color: #78006E; border: 1px solid #78006E; font-size: 14px; font-weight: 700; display: flex; align-items: center; gap: 8px; cursor: pointer">All courses</a></div>
+</div>
+
+<div style="display: flex; gap: 20px; align-items: flex-start">
+<div style="flex: 1 1 0; min-width: 0; display: flex; flex-direction: column; gap: 20px">
+<section style="position: relative; height: 200px; border-radius: 14px; overflow: hidden; flex-shrink: 0">
+<img src="assets/e8bc2e7591d257ff45c7538fea89219d.jpg" alt="Hegra, AlUla" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 40%">
+<div style="position: absolute; inset: 0; background: linear-gradient(90deg, rgba(58,0,53,0.9) 0%, rgba(58,0,53,0.5) 60%, rgba(58,0,53,0) 100%)"></div>
+<div style="position: relative; height: 100%; padding: 0 30px; display: flex; flex-direction: column; justify-content: center; gap: 10px; max-width: 520px; color: #FFFFFF">
+<span style="font-size: 12px; font-weight: 700; letter-spacing: 0.8px; color: #DDBFDB">{{ progressLabel }}</span>
+<span style="height: 8px; border-radius: 4px; background: rgba(255,255,255,0.25); display: flex"><span style="{{ progressBar }}"></span></span>
+<span style="font-size: 14px; line-height: 1.5; color: #F3E1F0">Built with the STA APAC business unit · 5 modules · about 3 hours · available in English and Arabic</span>
+</div>
+</section>
+
+<section style="background: #FFFFFF; border: 1px solid #EBEBEB; border-radius: 12px; padding: 22px 24px; display: flex; flex-direction: column; gap: 14px">
+<h2 style="margin: 0; font-size: 17px; font-weight: 700">Modules</h2>
+<sc-for list="{{ modules }}" as="m" hint-placeholder-count="5">
+<div style="display: flex; align-items: center; gap: 14px; padding: 12px 0; border-top: 1px solid #EBEBEB">
+<span style="{{ m.dot }}">{{ m.n }}</span>
+<span style="flex-grow: 1; display: flex; flex-direction: column; gap: 3px"><span style="font-size: 14px; font-weight: 700">{{ m.t }}</span><span style="font-size: 12px; color: #6B6B6B">{{ m.meta }}</span></span>
+<span style="{{ m.pill }}">{{ m.status }}</span>
+</div>
+</sc-for>
+</section>
+
+<section style="background: #F7F1F6; border: 1px solid #DDBFDB; border-radius: 12px; padding: 22px 24px; display: flex; align-items: center; gap: 20px">
+<div style="flex-grow: 1; display: flex; flex-direction: column; gap: 6px">
+<span style="font-size: 17px; font-weight: 700">{{ assessTitle }}</span>
+<span style="font-size: 13px; line-height: 1.6; color: #4B4B4B">{{ assessText }}</span>
+</div>
+<sc-if value="{{ canStart }}" hint-placeholder-val="{{ true }}"><button type="button" onClick="{{ finish }}" style="height: 44px; padding: 0 22px; border-radius: 22px; background: #78006E; color: #FFFFFF; border: 0; font-size: 14px; font-weight: 700; display: flex; align-items: center; gap: 8px; cursor: pointer">Take the assessment</button></sc-if>
+<sc-if value="{{ done }}" hint-placeholder-val="{{ false }}"><span style="height: 36px; padding: 0 16px; border-radius: 18px; background: #EDF8F3; color: #1F6647; font-size: 13px; font-weight: 700; display: flex; align-items: center">Certified</span></sc-if>
+</section>
+</div>
+
+<aside style="width: 360px; flex-shrink: 0; display: flex; flex-direction: column; gap: 20px">
+<section style="background: #FFFFFF; border: 1px solid #EBEBEB; border-radius: 12px; padding: 22px 24px; display: flex; flex-direction: column; gap: 14px">
+<h2 style="margin: 0; font-size: 17px; font-weight: 700">My badges</h2>
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px">
+<sc-for list="{{ badges }}" as="b" hint-placeholder-count="6">
+<div style="{{ b.style }}">
+<span style="{{ b.iconStyle }}"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="{{ b.icon }}"></path></svg></span>
+<span style="font-size: 12px; font-weight: 700; line-height: 1.3">{{ b.name }}</span>
+<span style="font-size: 11px; color: #6B6B6B">{{ b.note }}</span>
+</div>
+</sc-for>
+</div>
+</section>
+<section style="background: #FFFFFF; border: 1px solid #EBEBEB; border-radius: 12px; padding: 22px 24px; display: flex; flex-direction: column; gap: 14px">
+<h2 style="margin: 0; font-size: 17px; font-weight: 700">What the certificate unlocks</h2>
+<sc-for list="{{ unlocks }}" as="u" hint-placeholder-count="4"><div style="display: flex; gap: 10px; font-size: 13px; line-height: 1.5"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3CA06E" stroke-width="2.6" stroke-linecap="round" style="flex-shrink: 0; margin-top: 2px"><path d="M4 12l5 5L20 6"></path></svg>{{ u.t }}</div></sc-for>
+</section>
+<section style="background: #FFFFFF; border: 1px solid #EBEBEB; border-radius: 12px; padding: 22px 24px; display: flex; flex-direction: column; gap: 14px">
+<div style="display: flex; justify-content: space-between; align-items: baseline"><h2 style="margin: 0; font-size: 17px; font-weight: 700">Saudi Rewards</h2><span style="font-family: 'Saudi Serif', Georgia, serif; font-size: 24px; font-weight: 700; color: #78006E">{{ points }}</span></div>
+<span style="font-size: 12px; color: #6B6B6B">Points for courses, shared actuals and hosted FAM trips</span>
+</section>
+</aside>
+</div>
+</main>
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview": {"width": 1440, "height": 1300}}'>
+class Component extends DCLogic {
+  constructor(props) { super(props); this.state = { done: false }; }
+  renderVals() {
+    var self = this, done = this.state.done;
+    var dot = function (s) { return 'width: 32px; height: 32px; flex-shrink: 0; border-radius: 16px; font-size: 13px; font-weight: 700; display: flex; align-items: center; justify-content: center; ' + (s === 'done' ? 'background: #78006E; color: #FFFFFF' : (s === 'now' ? 'background: #FFFFFF; color: #78006E; border: 2px solid #78006E' : 'background: #F0F0F0; color: #767676')); };
+    var pill = function (bg, fg) { return 'height: 24px; padding: 0 10px; border-radius: 12px; font-size: 11px; font-weight: 700; display: flex; align-items: center; background: ' + bg + '; color: ' + fg; };
+    var M = [
+      ['The Chinese traveller today', 'Segments, seasons and how trips are booked · 30 min', 'done'],
+      ['Saudi stories that land in China', 'Heritage, AlUla, Red Sea and the words that sell them · 40 min', 'done'],
+      ['Packaging for group operators', 'Group sizes, pricing per group, Mandarin guides · 35 min', 'done'],
+      ['Working with Chinese OTAs', 'Listings, content formats and payment · 40 min', done ? 'done' : 'now'],
+      ['Visas, flights and service standards', 'eVisa, direct routes and welcome standards · 30 min', done ? 'done' : 'todo']
+    ];
+    var n = done ? 5 : 3;
+    var ic = function (bg, fg) { return 'width: 34px; height: 34px; border-radius: 17px; display: flex; align-items: center; justify-content: center; background: ' + bg + '; color: ' + fg; };
+    var on = 'background: #FFFFFF; border: 1px solid #EBEBEB; border-radius: 10px; padding: 12px; display: flex; flex-direction: column; gap: 6px';
+    var off = 'background: #FAFAFA; border: 1px dashed #DCDCDC; border-radius: 10px; padding: 12px; display: flex; flex-direction: column; gap: 6px';
+    var CAP = 'M2 9l10-5 10 5-10 5zM6 11v5c3 2 9 2 12 0v-5', STAR = 'M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z', GLOBE = 'M12 21a9 9 0 100-18 9 9 0 000 18zM3 12h18M12 3c2.5 3 2.5 15 0 18M12 3c-2.5 3-2.5 15 0 18';
+    return {
+      done: done, canStart: !done && true,
+      progressLabel: n + ' OF 5 MODULES COMPLETE',
+      progressBar: 'width: ' + (n * 20) + '%; border-radius: 4px; background: #FFFFFF',
+      modules: M.map(function (m, i) { return { n: String(i + 1), t: m[0], meta: m[1], dot: dot(m[2]), status: m[2] === 'done' ? 'Completed' : (m[2] === 'now' ? 'Continue' : 'Locked'), pill: m[2] === 'done' ? pill('#EDF8F3', '#1F6647') : (m[2] === 'now' ? pill('#F7EBF5', '#78006E') : pill('#F0F0F0', '#4B4B4B')) }; }),
+      assessTitle: done ? 'You are a China Market Specialist' : 'Final assessment · 20 questions',
+      assessText: done ? 'Certificate issued. The badge now shows on your directory profile and in matchmaking results for China-based buyers.' : 'Finish module 4 and 5, then pass with 80% to earn the certificate. For the demo you can take it now.',
+      finish: function () { self.setState({ done: true }); },
+      badges: [
+        { name: 'Saudi Destination Expert', note: 'Earned Jun 2026', icon: CAP, style: on, iconStyle: ic('#F7EBF5', '#78006E') },
+        { name: 'Partner of Choice 2026', note: 'From buyer ratings', icon: STAR, style: on, iconStyle: ic('#FEF1EB', '#B84A18') },
+        { name: 'China Market Specialist', note: done ? 'Earned today' : 'In progress', icon: GLOBE, style: done ? on : off, iconStyle: done ? ic('#EEF0FA', '#4F58B0') : ic('#F0F0F0', '#767676') },
+        { name: 'AlUla Heritage Guide', note: 'Earned Mar 2026', icon: CAP, style: on, iconStyle: ic('#EDF8F3', '#2E7D55') },
+        { name: 'Umrah and Ziyarat Specialist', note: 'Not started', icon: CAP, style: off, iconStyle: ic('#F0F0F0', '#767676') },
+        { name: 'MICE Ready', note: 'Not started', icon: CAP, style: off, iconStyle: ic('#F0F0F0', '#767676') }
+      ],
+      unlocks: [{ t: 'China Market Specialist badge on your profile' }, { t: 'Priority for China roadshows and FAM trips' }, { t: 'Entry to the China Ready enablement programme' }, { t: '+500 Saudi Rewards points' }],
+      points: done ? '2,950' : '2,450'
+    };
+  }
+}
+</script>
+</body>
+</html>

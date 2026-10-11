@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<title>Sell Saudi market page</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+@font-face{font-family:"Saudi Sans";src:url(assets/9d5b063e22fb4c1fdf4e126126e305fc.ttf) format("truetype");font-weight:400 700}
+@font-face{font-family:"Saudi Serif";src:url(assets/036b8acfe104a78d15187d034057eea5.ttf) format("truetype");font-weight:400 700}
+body{margin:0;background:#FFFFFF}
+a{color:#78006E;text-decoration:none}a:hover{color:#5A0052}
+</style>
+</helmet>
+<div lang="{{ c.lang }}" style="width: 1440px; height: 4150px; display: flex; flex-direction: column; background: #FFFFFF; font-family: 'Saudi Sans', system-ui, sans-serif; color: #1A1A1A; overflow: hidden">
+<div style="position: relative; z-index: 10; flex-shrink: 0"><dc-import name="PublicHeader" hint-size="1440px,104px"></dc-import></div>
+<div dir="{{ c.dir }}" style="display: flex; flex-direction: column; flex-grow: 1">
+
+<section style="position: relative; height: 540px; flex-shrink: 0; overflow: hidden">
+<img src="{{ c.heroImg }}" alt="{{ c.heroAlt }}" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover">
+<div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(58,0,53,0.35) 0%, rgba(58,0,53,0.88) 100%)"></div>
+<div style="position: relative; height: 100%; box-sizing: border-box; padding: 64px 72px 40px; display: flex; flex-direction: column; justify-content: flex-end; gap: 18px; color: #FFFFFF">
+<a href="SellSaudi.dc.html" style="color: #F0D6EC; font-size: 13px; font-weight: 700">Sell Saudi</a>
+<span style="font-size: 14px; font-weight: 700; letter-spacing: 1px; color: #F0D6EC">{{ c.eyebrow }}</span>
+<h1 style="margin: 0; font-family: 'Saudi Serif', Georgia, serif; font-size: 60px; font-weight: 700; line-height: 1.1; max-width: 960px">{{ c.title }}</h1>
+<p style="margin: 0; font-size: 18px; line-height: 1.6; color: #F3E1F0; max-width: 780px">{{ c.sub }}</p>
+<div style="display: flex; gap: 14px; margin-top: 6px">
+<a href="Register.dc.html" style="height: 52px; padding: 0 28px; border-radius: 26px; background: #FFFFFF; color: #78006E; font-size: 15px; font-weight: 700; display: flex; align-items: center">{{ c.cta1 }}</a>
+<a href="#partners" style="height: 52px; padding: 0 26px; border-radius: 26px; border: 1px solid rgba(255,255,255,0.7); color: #FFFFFF; font-size: 15px; font-weight: 700; display: flex; align-items: center">{{ c.cta2 }}</a>
+</div>
+<div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-top: 10px"><span style="font-size: 12px; color: #F0D6EC">{{ c.L.langs }}</span>
+<sc-for list="{{ others }}" as="o" hint-placeholder-count="6"><a href="{{ o.href }}" style="{{ o.style }}">{{ o.label }}</a></sc-for>
+</div>
+</div>
+</section>
+
+<section style="padding: 80px 72px 40px; display: grid; grid-template-columns: 380px minmax(0, 1fr); gap: 56px">
+<h2 style="font-family: 'Saudi Serif', Georgia, serif; font-size: 40px; font-weight: 700; margin: 0; line-height: 1.15">{{ c.L.intro }}</h2>
+<p style="margin: 0; font-size: 19px; line-height: 1.75; color: #333333">{{ c.intro }}</p>
+</section>
+
+<section style="padding: 40px 72px 72px; display: flex; flex-direction: column; gap: 28px">
+<h2 style="font-family: 'Saudi Serif', Georgia, serif; font-size: 40px; font-weight: 700; margin: 0; line-height: 1.15">{{ c.L.why }}</h2>
+<div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 20px">
+<sc-for list="{{ why }}" as="w" hint-placeholder-count="4">
+<div style="border-top: 3px solid #78006E; padding-top: 18px; display: flex; flex-direction: column; gap: 8px"><span style="font-size: 20px; font-weight: 700">{{ w.t }}</span><span style="font-size: 15px; line-height: 1.6; color: #4B4B4B">{{ w.d }}</span></div>
+</sc-for>
+</div>
+</section>
+
+<section style="background: #78006E; color: #FFFFFF; padding: 72px; display: flex; flex-direction: column; gap: 28px">
+<h2 style="font-family: 'Saudi Serif', Georgia, serif; font-size: 40px; font-weight: 700; margin: 0; line-height: 1.15">{{ c.L.giga }}</h2>
+<div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 20px">
+<sc-for list="{{ giga }}" as="g" hint-placeholder-count="4">
+<div style="background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.25); border-radius: 16px; padding: 24px; display: flex; flex-direction: column; gap: 10px; min-height: 170px"><span style="font-family: 'Saudi Serif', Georgia, serif; font-size: 26px; font-weight: 700">{{ g.t }}</span><span style="font-size: 15px; line-height: 1.6; color: #F3E1F0">{{ g.d }}</span></div>
+</sc-for>
+</div>
+</section>
+
+<section style="padding: 80px 72px; display: grid; grid-template-columns: minmax(0, 1fr) 520px; gap: 56px; align-items: center">
+<div style="display: flex; flex-direction: column; gap: 18px">
+<h2 style="font-family: 'Saudi Serif', Georgia, serif; font-size: 40px; font-weight: 700; margin: 0; line-height: 1.15">{{ c.L.culture }}</h2>
+<p style="margin: 0; font-size: 17px; line-height: 1.75; color: #333333">{{ c.culture }}</p>
+<div style="display: flex; gap: 8px; flex-wrap: wrap"><sc-for list="{{ tags }}" as="t" hint-placeholder-count="3"><span style="height: 34px; padding: 0 14px; border-radius: 17px; background: #F7EBF5; color: #78006E; font-size: 13px; font-weight: 700; display: flex; align-items: center">{{ t.t }}</span></sc-for></div>
+</div>
+<img src="assets/126806652de6e2fd582f319f28f97d84.jpg" alt="Arabic coffee and dates on a brass tray" style="width: 100%; height: 340px; object-fit: cover; border-radius: 20px">
+</section>
+
+<section style="padding: 0 72px 80px; display: flex; flex-direction: column; gap: 28px">
+<h2 style="font-family: 'Saudi Serif', Georgia, serif; font-size: 40px; font-weight: 700; margin: 0; line-height: 1.15">{{ c.L.poi }}</h2>
+<div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 20px">
+<sc-for list="{{ poi }}" as="p" hint-placeholder-count="4">
+<article style="border-radius: 16px; overflow: hidden; border: 1px solid #EBEBEB; display: flex; flex-direction: column">
+<img src="{{ p.img }}" alt="{{ p.alt }}" style="width: 100%; height: 200px; object-fit: cover">
+<div style="padding: 18px 20px; display: flex; flex-direction: column; gap: 6px"><span style="font-size: 19px; font-weight: 700">{{ p.t }}</span><span style="font-size: 12px; font-weight: 700; color: #78006E">{{ p.place }}</span><span style="font-size: 14px; line-height: 1.6; color: #4B4B4B">{{ p.d }}</span></div>
+</article>
+</sc-for>
+</div>
+</section>
+
+<section style="background: #F7F1F6; padding: 72px; display: flex; flex-direction: column; gap: 28px">
+<h2 style="font-family: 'Saudi Serif', Georgia, serif; font-size: 40px; font-weight: 700; margin: 0; line-height: 1.15">{{ c.L.itin }}</h2>
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px">
+<sc-for list="{{ itin }}" as="i" hint-placeholder-count="2">
+<article style="background: #FFFFFF; border-radius: 18px; padding: 28px; display: flex; flex-direction: column; gap: 16px">
+<span style="font-family: 'Saudi Serif', Georgia, serif; font-size: 26px; font-weight: 700">{{ i.t }}</span>
+<ol style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 12px">
+<sc-for list="{{ i.stops }}" as="s" hint-placeholder-count="4"><li style="display: flex; align-items: center; gap: 12px; font-size: 15px"><span style="width: 28px; height: 28px; flex-shrink: 0; border-radius: 14px; background: #78006E; color: #FFFFFF; font-size: 12px; font-weight: 700; display: flex; align-items: center; justify-content: center">{{ s.n }}</span>{{ s.t }}</li></sc-for>
+</ol>
+</article>
+</sc-for>
+</div>
+</section>
+
+<section id="partners" style="padding: 80px 72px; display: flex; flex-direction: column; gap: 28px">
+<div style="display: flex; align-items: flex-end; justify-content: space-between; gap: 24px">
+<div style="display: flex; flex-direction: column; gap: 8px"><h2 style="font-family: 'Saudi Serif', Georgia, serif; font-size: 40px; font-weight: 700; margin: 0; line-height: 1.15">{{ c.L.partners }}</h2><span style="font-size: 16px; color: #4B4B4B">{{ c.L.partnersSub }}</span></div>
+<a href="Directory.dc.html" style="height: 48px; padding: 0 22px; border-radius: 24px; border: 1px solid #78006E; font-size: 15px; font-weight: 700; display: flex; align-items: center">{{ c.L.more }}</a>
+</div>
+<div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px">
+<sc-for list="{{ partners }}" as="p" hint-placeholder-count="3">
+<article style="border: 1px solid #EBEBEB; border-radius: 16px; overflow: hidden; display: flex; flex-direction: column">
+<img src="{{ p.img }}" alt="" style="width: 100%; height: 160px; object-fit: cover">
+<div style="padding: 18px 20px; display: flex; flex-direction: column; gap: 8px">
+<span style="font-size: 18px; font-weight: 700" dir="ltr">{{ p.name }}</span>
+<span style="font-size: 13px; color: #6B6B6B">{{ p.type }}</span>
+<span style="align-self: flex-start; height: 26px; padding: 0 12px; border-radius: 13px; background: #EDF8F3; color: #1F6647; font-size: 12px; font-weight: 700; display: flex; align-items: center">{{ p.note }}</span>
+<a href="BusinessProfile.dc.html" style="font-size: 14px; font-weight: 700; padding-top: 4px">{{ c.L.view }}</a>
+</div>
+</article>
+</sc-for>
+</div>
+</section>
+
+<section style="margin: 0 72px 80px; background: #78006E; border-radius: 24px; padding: 48px 56px; display: flex; align-items: center; justify-content: space-between; gap: 24px; color: #FFFFFF">
+<div style="display: flex; flex-direction: column; gap: 10px"><h2 style="margin: 0; font-family: 'Saudi Serif', Georgia, serif; font-size: 36px; font-weight: 700">{{ c.L.cta }}</h2><span style="font-size: 17px; color: #F3E1F0">{{ c.L.ctaSub }}</span></div>
+<a href="Register.dc.html" style="height: 54px; padding: 0 30px; border-radius: 27px; background: #FFFFFF; color: #78006E; font-size: 16px; font-weight: 700; display: flex; align-items: center; flex-shrink: 0">{{ c.cta1 }}</a>
+</section>
+</div>
+
+<div style="margin-top: auto; flex-shrink: 0"><dc-import name="PublicFooter" hint-size="1440px,440px"></dc-import></div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"market":{"editor":"enum","options":["cn","id","in","it","jo","uk"],"default":"cn"},"$preview":{"width":1440,"height":4150}}'>
+class Component extends DCLogic {
+  renderVals() {
+    var D = {"cn": {"lang": "zh-CN", "dir": "ltr", "hero": "hegra", "eyebrow": "沙特合作伙伴 · 大中华区", "title": "向中国游客推广沙特", "sub": "面向中国旅行商的沙特目的地资料：大型项目、文化、热门景点、推荐行程，以及可直接合作的持牌供应商。", "cta1": "成为合作伙伴", "cta2": "查看供应商", "L": {"intro": "认识沙特", "why": "为什么选择沙特", "giga": "正在建设的大型项目", "culture": "文化与礼仪", "poi": "热门景点", "itin": "推荐行程", "partners": "供应商与产品", "partnersSub": "来自 Connect 的持牌供应商", "more": "在 Connect 中查看更多", "view": "查看详情", "cta": "与沙特一起拓展业务", "ctaSub": "注册后即可获取素材、培训和合作机会。", "langs": "其他市场页面"}, "intro": "沙特阿拉伯位于阿拉伯半岛中心，拥有红海海岸、沙漠、山地和数千年的历史遗址。旅游业正在全面开放：在线电子签证、不断增加的航线和全新的度假目的地，让中国游客的沙特之旅更加便利。", "why": [["世界级遗产", "希吉尔是沙特首个联合国教科文组织世界遗产，还有德拉伊耶和吉达老城。"], ["在线签证", "电子签证可在线申请，具体资格以官方信息为准。"], ["全新目的地", "红海和阿勒乌拉提供高端而私密的体验。"], ["热情好客", "以好客著称的文化，适合团队和家庭出行。"]], "giga": [["红海项目", "珊瑚礁、岛屿和沙漠中的可持续度假目的地，分阶段开放。"], ["德拉伊耶", "沙特王国的发祥地，正在打造为文化与生活方式目的地。"], ["齐迪亚", "利雅得附近的娱乐、体育和文化之城。"], ["阿勒乌拉", "古代文明遗址与沙漠绿洲，拥有精品酒店和户外体验。"]], "culture": "沙特文化以慷慨好客为核心：阿拉伯咖啡和椰枣是迎客之礼。着装宜得体端庄，斋月期间行程节奏会有所不同。当地美食、传统集市和诗歌音乐都是了解沙特的好方式。", "tags": ["阿拉伯咖啡与椰枣", "传统集市", "斋月与节庆"], "poi": [["希吉尔", "阿勒乌拉", "纳巴泰人在砂岩中雕刻的石墓，世界文化遗产。"], ["阿图赖夫区", "德拉伊耶，利雅得", "泥砖古城，世界文化遗产。"], ["阿西尔山区", "艾卜哈", "凉爽高原、梯田与彩绘村落。"], ["吉达历史区", "吉达", "珊瑚石建筑与历史集市，世界文化遗产。"]], "itin": [["经典沙特 8 天", ["利雅得 · 德拉伊耶", "阿勒乌拉 · 希吉尔", "阿勒乌拉 · 星空之夜", "吉达 · 历史区"]], ["红海与遗产 6 天", ["吉达 · 历史区", "阿勒乌拉 · 希吉尔", "红海 · 海岛度假"]]], "partners": [["AlUla Heritage Tours", "旅游运营商 · 阿勒乌拉", "提供中文导游", "assets/e8bc2e7591d257ff45c7538fea89219d.jpg"], ["Red Sea Retreats", "住宿 · 红海", "适合高端团队", "assets/4f91d07a84e88edcb6880dfaafcaaf95.jpg"], ["Riyadh DMC Group", "目的地管理公司 · 利雅得", "会奖团队", "assets/2579c0003409b4bcbac4b9ad0b6a7a83.jpg"]], "heroImg": "assets/e8bc2e7591d257ff45c7538fea89219d.jpg", "heroAlt": "Hegra, AlUla"}, "id": {"lang": "id", "dir": "ltr", "hero": "museum", "eyebrow": "Saudi Partner · Asia Tenggara", "title": "Jual Arab Saudi ke wisatawan Indonesia", "sub": "Informasi destinasi untuk biro perjalanan: proyek besar, budaya, tempat populer, rencana perjalanan, dan pemasok berlisensi yang siap bekerja sama.", "cta1": "Jadi mitra", "cta2": "Lihat pemasok", "L": {"intro": "Tentang Arab Saudi", "why": "Mengapa Arab Saudi", "giga": "Proyek besar yang sedang dibangun", "culture": "Budaya dan etika", "poi": "Tempat paling populer", "itin": "Rencana perjalanan", "partners": "Pemasok dan penawaran", "partnersSub": "Pemasok berlisensi dari Connect", "more": "Lihat lebih banyak di Connect", "view": "Lihat profil", "cta": "Kembangkan bisnis Anda bersama Arab Saudi", "ctaSub": "Daftar untuk mengakses materi, pelatihan, dan peluang kerja sama.", "langs": "Halaman ini untuk pasar lain"}, "intro": "Arab Saudi adalah tujuan utama jemaah umrah Indonesia, dan kini juga destinasi wisata yang lengkap: pantai Laut Merah, gurun, pegunungan, dan situs bersejarah. Paket umrah plus kini bisa digabungkan dengan AlUla, Jeddah, atau Taif.", "why": [["Umrah plus wisata", "Tambahkan beberapa hari di AlUla atau Jeddah setelah umrah."], ["Warisan dunia", "Hegra adalah situs Warisan Dunia UNESCO pertama di Arab Saudi."], ["Destinasi baru", "Laut Merah dan AlUla menawarkan pengalaman premium."], ["Ramah keluarga", "Budaya yang hangat, cocok untuk rombongan besar."]], "giga": [["Proyek Laut Merah", "Resor berkelanjutan di antara terumbu karang, pulau, dan gurun, dibuka bertahap."], ["Diriyah", "Tempat lahirnya negara Saudi, kini menjadi destinasi budaya dan gaya hidup."], ["Qiddiya", "Kota hiburan, olahraga, dan budaya dekat Riyadh."], ["AlUla", "Situs peradaban kuno dan oasis gurun dengan hotel butik."]], "culture": "Keramahan adalah inti budaya Saudi: kopi Arab dan kurma disajikan untuk setiap tamu. Berpakaianlah sopan, dan perhatikan ritme perjalanan saat Ramadan. Kuliner lokal, pasar tradisional, dan festival adalah cara terbaik mengenal Saudi.", "tags": ["Kopi Arab dan kurma", "Pasar tradisional", "Ramadan dan festival"], "poi": [["Hegra", "AlUla", "Makam batu Nabataea yang dipahat di batu pasir, Warisan Dunia UNESCO."], ["At-Turaif", "Diriyah, Riyadh", "Kota bata lumpur bersejarah, Warisan Dunia UNESCO."], ["Pegunungan Asir", "Abha", "Dataran tinggi sejuk, terasering, dan desa berwarna."], ["Jeddah Bersejarah", "Jeddah", "Rumah batu karang dan pasar tua, Warisan Dunia UNESCO."]], "itin": [["Umrah plus AlUla, 12 hari", ["Makkah · umrah", "Madinah", "AlUla · Hegra", "Jeddah · kota tua"]], ["Umrah plus Taif, 10 hari", ["Makkah · umrah", "Taif · kebun mawar", "Jeddah · pantai"]]], "partners": [["Haramain Journeys", "DMC · Makkah", "Pemandu berbahasa Indonesia", "assets/c11ac0687c6f13f7b0073cb4afef6ccd.jpg"], ["AlUla Heritage Tours", "Operator tur · AlUla", "Paket umrah plus", "assets/e8bc2e7591d257ff45c7538fea89219d.jpg"], ["Red Sea Retreats", "Akomodasi · Laut Merah", "Cocok untuk keluarga", "assets/4f91d07a84e88edcb6880dfaafcaaf95.jpg"]], "heroImg": "assets/c11ac0687c6f13f7b0073cb4afef6ccd.jpg", "heroAlt": "Family visiting a museum in Saudi Arabia"}, "in": {"lang": "en", "dir": "ltr", "hero": "diriyah", "eyebrow": "Saudi Partner · South Asia", "title": "Sell Saudi to Indian travellers", "sub": "Destination content for Indian travel companies: giga projects, culture, top places, sample itineraries, and licensed suppliers ready to work with you.", "cta1": "Become a partner", "cta2": "See suppliers", "L": {"intro": "About Saudi", "why": "Why Saudi", "giga": "Giga projects taking shape", "culture": "Culture and etiquette", "poi": "Most popular places", "itin": "Recommended itineraries", "partners": "Suppliers and offers", "partnersSub": "Licensed suppliers listed in Connect", "more": "See more in Connect", "view": "View profile", "cta": "Grow your business with Saudi", "ctaSub": "Register to access assets, training and partner opportunities.", "langs": "This page in other markets"}, "intro": "Saudi Arabia is a short flight from India, with a Red Sea coast, desert, mountains and thousands of years of history. Families, weddings and incentive groups now pair city breaks in Riyadh and Jeddah with AlUla and the Red Sea, and many add Umrah to the trip.", "why": [["Short flights", "Direct routes from major Indian cities."], ["Family and MICE ready", "Venues and resorts for weddings, incentives and family groups."], ["World heritage", "Hegra, At-Turaif and Historic Jeddah are UNESCO sites."], ["Events all year", "Riyadh Season, concerts and sport on the national calendar."]], "giga": [["The Red Sea", "A sustainable resort destination among reefs, islands and desert, opening in phases."], ["Diriyah", "Birthplace of the Saudi state, becoming a culture and lifestyle destination."], ["Qiddiya", "An entertainment, sports and culture city near Riyadh."], ["AlUla", "Ancient civilisations and a desert oasis with boutique stays."]], "culture": "Hospitality is at the heart of Saudi culture: Arabic coffee and dates welcome every guest. Dress modestly, and expect a different rhythm during Ramadan. Riyadh and Jeddah have a wide choice of vegetarian and Indian dining.", "tags": ["Arabic coffee and dates", "Souqs and markets", "Vegetarian friendly"], "poi": [["Hegra", "AlUla", "Nabataean tombs carved in sandstone, a UNESCO World Heritage site."], ["At-Turaif", "Diriyah, Riyadh", "The mud-brick old city, a UNESCO World Heritage site."], ["Asir mountains", "Abha", "Cool highlands, terraces and painted villages."], ["Historic Jeddah", "Jeddah", "Coral-stone houses and old souqs, a UNESCO World Heritage site."]], "itin": [["Family Saudi, 6 days", ["Riyadh · Diriyah", "Riyadh Season events", "Jeddah · Historic Jeddah", "Red Sea · beach day"]], ["Umrah and AlUla, 8 days", ["Makkah · Umrah", "Madinah", "AlUla · Hegra"]]], "partners": [["Riyadh DMC Group", "DMC · Riyadh", "Weddings and incentives", "assets/2579c0003409b4bcbac4b9ad0b6a7a83.jpg"], ["Red Sea Retreats", "Accommodation · Red Sea", "Family villas", "assets/4f91d07a84e88edcb6880dfaafcaaf95.jpg"], ["AlUla Heritage Tours", "Tour operator · AlUla", "Groups of 2 to 120", "assets/e8bc2e7591d257ff45c7538fea89219d.jpg"]], "heroImg": "assets/98f663db535a65d0f72791a63c2b0f5e.jpg", "heroAlt": "Visitors in Diriyah"}, "it": {"lang": "it", "dir": "ltr", "hero": "hegra2", "eyebrow": "Saudi Partner · Europa", "title": "Vendere l’Arabia Saudita ai viaggiatori italiani", "sub": "Contenuti di destinazione per tour operator e agenzie: grandi progetti, cultura, luoghi più amati, itinerari consigliati e fornitori con licenza pronti a collaborare.", "cta1": "Diventa partner", "cta2": "Vedi i fornitori", "L": {"intro": "L’Arabia Saudita in breve", "why": "Perché l’Arabia Saudita", "giga": "I grandi progetti in corso", "culture": "Cultura e galateo", "poi": "I luoghi più amati", "itin": "Itinerari consigliati", "partners": "Fornitori e offerte", "partnersSub": "Fornitori con licenza presenti su Connect", "more": "Scopri di più su Connect", "view": "Vedi profilo", "cta": "Fai crescere il tuo business con l’Arabia Saudita", "ctaSub": "Registrati per accedere a materiali, formazione e opportunità.", "langs": "Questa pagina per altri mercati"}, "intro": "L’Arabia Saudita unisce la costa del Mar Rosso, il deserto, le montagne e migliaia di anni di storia. Per il viaggiatore italiano, appassionato di archeologia e cultura, è una destinazione nuova e sorprendente, con l’inverno come stagione ideale.", "why": [["Archeologia unica", "Hegra, primo sito UNESCO del Paese, e l’arte rupestre del nord."], ["Stagione invernale", "Clima mite da ottobre a marzo."], ["Hotel di charme", "Resort sul Mar Rosso e dimore storiche ad AlUla."], ["Visto online", "Il visto elettronico si richiede online."]], "giga": [["The Red Sea", "Destinazione sostenibile tra barriere coralline, isole e deserto, aperta per fasi."], ["Diriyah", "Culla dello Stato saudita, oggi destinazione di cultura e lifestyle."], ["Qiddiya", "Città dell’intrattenimento, dello sport e della cultura vicino a Riyadh."], ["AlUla", "Civiltà antiche e un’oasi nel deserto con hotel boutique."]], "culture": "L’ospitalità è il cuore della cultura saudita: caffè arabo e datteri accolgono ogni ospite. Si consiglia un abbigliamento sobrio; durante il Ramadan il ritmo del viaggio cambia. Mercati tradizionali, poesia e musica raccontano il Paese.", "tags": ["Caffè arabo e datteri", "Souq tradizionali", "Ramadan e festival"], "poi": [["Hegra", "AlUla", "Tombe nabatee scolpite nell’arenaria, patrimonio UNESCO."], ["At-Turaif", "Diriyah, Riyadh", "La città antica in mattoni di fango, patrimonio UNESCO."], ["Montagne dell’Asir", "Abha", "Altopiani freschi, terrazzamenti e villaggi dipinti."], ["Jeddah storica", "Jeddah", "Case in pietra corallina e antichi souq, patrimonio UNESCO."]], "itin": [["Archeologia e deserto, 9 giorni", ["Riyadh · Diriyah", "AlUla · Hegra", "AlUla · arte rupestre", "Abha · Asir"]], ["Mar Rosso e cultura, 7 giorni", ["Jeddah storica", "AlUla · Hegra", "Mar Rosso · isole"]]], "partners": [["AlUla Heritage Tours", "Tour operator · AlUla", "Archeologia e osservazione delle stelle", "assets/e8bc2e7591d257ff45c7538fea89219d.jpg"], ["Red Sea Retreats", "Alloggio · Mar Rosso", "Eco-resort sul mare", "assets/4f91d07a84e88edcb6880dfaafcaaf95.jpg"], ["Desert Quest Arabia", "Esperienze · NEOM", "Avventure nel deserto", "assets/6596caef0129c20aa5b6bf10f6dd1789.jpg"]], "heroImg": "assets/85fda2f036184f4714830af67057a67a.jpg", "heroAlt": "Hegra, AlUla"}, "jo": {"lang": "ar", "dir": "rtl", "hero": "camp", "eyebrow": "سعودي بارتنر · الشرق الأوسط", "title": "سوّق السعودية للمسافرين من الأردن", "sub": "محتوى الوجهات لشركات السياحة والسفر: المشاريع الكبرى، والثقافة، وأشهر المعالم، وبرامج مقترحة، وموردون مرخّصون جاهزون للتعاون.", "cta1": "انضم كشريك", "cta2": "تصفّح الموردين", "L": {"intro": "عن السعودية", "why": "لماذا السعودية", "giga": "مشاريع كبرى قيد الإنشاء", "culture": "الثقافة والآداب", "poi": "أشهر المعالم", "itin": "برامج مقترحة", "partners": "الموردون والعروض", "partnersSub": "موردون مرخّصون مدرجون في منصة التواصل", "more": "المزيد في منصة التواصل", "view": "عرض الملف", "cta": "نمِّ أعمالك مع السعودية", "ctaSub": "سجّل للوصول إلى المواد والتدريب وفرص الشراكة.", "langs": "هذه الصفحة لأسواق أخرى"}, "intro": "السعودية وجهة قريبة من الأردن برًا وجوًا، تجمع بين ساحل البحر الأحمر والصحراء والجبال وتاريخ يمتد لآلاف السنين. رحلات العمرة، ومواسم الفعاليات مثل موسم الرياض، والعطلات العائلية القصيرة تجعلها خيارًا مثاليًا على مدار العام.", "why": [["قريبة وسهلة الوصول", "رحلات جوية قصيرة وطرق برية مباشرة."], ["العمرة والسياحة", "اجمع العمرة مع جدة أو العلا في برنامج واحد."], ["مواسم وفعاليات", "موسم الرياض والحفلات والفعاليات الرياضية على مدار العام."], ["مثالية للعائلات", "فنادق ومنتجعات تناسب العائلات والمجموعات."]], "giga": [["مشروع البحر الأحمر", "وجهة مستدامة بين الشعاب المرجانية والجزر والصحراء، تُفتتح على مراحل."], ["الدرعية", "مهد الدولة السعودية، وتتحول إلى وجهة للثقافة ونمط الحياة."], ["القدية", "مدينة للترفيه والرياضة والثقافة قرب الرياض."], ["العلا", "حضارات قديمة وواحة صحراوية مع فنادق بوتيك."]], "culture": "الكرم جوهر الثقافة السعودية؛ فالقهوة العربية والتمر في استقبال كل ضيف. تتشابه العادات كثيرًا مع الأردن، مما يجعل الرحلة مألوفة ومريحة للعائلات، مع أجواء خاصة في رمضان والأعياد.", "tags": ["القهوة العربية والتمر", "الأسواق الشعبية", "رمضان والأعياد"], "poi": [["الحِجر", "العلا", "مقابر نبطية منحوتة في الصخر، موقع تراث عالمي."], ["حي الطريف", "الدرعية، الرياض", "المدينة الطينية التاريخية، موقع تراث عالمي."], ["جبال عسير", "أبها", "مرتفعات معتدلة ومدرجات زراعية وقرى ملوّنة."], ["جدة التاريخية", "جدة", "بيوت من الحجر المرجاني وأسواق عريقة، موقع تراث عالمي."]], "itin": [["عطلة موسم الرياض، 4 أيام", ["الرياض · الدرعية", "فعاليات موسم الرياض", "الرياض · التسوق والمطاعم"]], ["العمرة وجدة، 6 أيام", ["مكة المكرمة · العمرة", "المدينة المنورة", "جدة التاريخية"]]], "partners": [["Haramain Journeys", "إدارة وجهات · مكة المكرمة", "برامج العمرة", "assets/c11ac0687c6f13f7b0073cb4afef6ccd.jpg"], ["Riyadh DMC Group", "إدارة وجهات · الرياض", "مجموعات موسم الرياض", "assets/2579c0003409b4bcbac4b9ad0b6a7a83.jpg"], ["Red Sea Retreats", "إقامة · البحر الأحمر", "منتجع للعائلات", "assets/4f91d07a84e88edcb6880dfaafcaaf95.jpg"]], "heroImg": "assets/4f91d07a84e88edcb6880dfaafcaaf95.jpg", "heroAlt": "Desert camp at sunset"}, "uk": {"lang": "en-GB", "dir": "ltr", "hero": "canyon", "eyebrow": "Saudi Partner · UK and Americas", "title": "Sell Saudi to British travellers", "sub": "Destination content for UK tour operators and agents: giga projects, culture, top places, sample itineraries, and licensed suppliers ready to work with you.", "cta1": "Become a partner", "cta2": "See suppliers", "L": {"intro": "About Saudi", "why": "Why Saudi", "giga": "Giga projects taking shape", "culture": "Culture and etiquette", "poi": "Most popular places", "itin": "Recommended itineraries", "partners": "Suppliers and offers", "partnersSub": "Licensed suppliers listed in Connect", "more": "See more in Connect", "view": "View profile", "cta": "Grow your business with Saudi", "ctaSub": "Register to access assets, training and partner opportunities.", "langs": "This page in other markets"}, "intro": "Saudi Arabia offers winter sun on the Red Sea, desert adventure and some of the region’s most striking heritage sites, a direct flight from London. It is new to most British travellers, which makes it a strong story for your programme.", "why": [["Winter sun", "Warm, dry weather from November to March."], ["Adventure", "Hiking, diving and stargazing away from the crowds."], ["Luxury and boutique", "New Red Sea resorts and heritage stays in AlUla."], ["Easy entry", "Apply for an eVisa online."]], "giga": [["The Red Sea", "A sustainable resort destination among reefs, islands and desert, opening in phases."], ["Diriyah", "Birthplace of the Saudi state, becoming a culture and lifestyle destination."], ["Qiddiya", "An entertainment, sports and culture city near Riyadh."], ["AlUla", "Ancient civilisations and a desert oasis with boutique stays."]], "culture": "Hospitality is at the heart of Saudi culture: Arabic coffee and dates welcome every guest. Dress modestly, and expect a different rhythm during Ramadan. Souqs, poetry and music are the best way into the country.", "tags": ["Arabic coffee and dates", "Souqs and markets", "Ramadan and festivals"], "poi": [["Hegra", "AlUla", "Nabataean tombs carved in sandstone, a UNESCO World Heritage site."], ["At-Turaif", "Diriyah, Riyadh", "The mud-brick old city, a UNESCO World Heritage site."], ["Asir mountains", "Abha", "Cool highlands, terraces and painted villages."], ["Historic Jeddah", "Jeddah", "Coral-stone houses and old souqs, a UNESCO World Heritage site."]], "itin": [["Winter sun and heritage, 8 days", ["Riyadh · Diriyah", "AlUla · Hegra", "AlUla · stargazing", "Red Sea · island resort"]], ["Mountains and coast, 7 days", ["Jeddah · Historic Jeddah", "Abha · Asir highlands", "Red Sea · reef diving"]]], "partners": [["Red Sea Retreats", "Accommodation · Red Sea", "Eco-resort with reef access", "assets/4f91d07a84e88edcb6880dfaafcaaf95.jpg"], ["AlUla Heritage Tours", "Tour operator · AlUla", "Heritage and stargazing", "assets/e8bc2e7591d257ff45c7538fea89219d.jpg"], ["Desert Quest Arabia", "Experience · NEOM", "Desert adventure", "assets/6596caef0129c20aa5b6bf10f6dd1789.jpg"]], "heroImg": "assets/6596caef0129c20aa5b6bf10f6dd1789.jpg", "heroAlt": "Group walking a canyon trail"}};
+    var key = D[this.props.market] ? this.props.market : 'cn';
+    var c = D[key];
+    var POI_IMG = [['assets/e8bc2e7591d257ff45c7538fea89219d.jpg', 'Hegra, AlUla'], ['assets/98f663db535a65d0f72791a63c2b0f5e.jpg', 'Visitors in Diriyah'], ['assets/31cdd3634e4f755cd3e3a6d44e978dee.jpg', 'Guided group hiking in Asir'], ['assets/ddfba5a807a1b48908eb7eade3ab94b3.jpg', 'Heritage doorway']];
+    var MK = [['cn', '中文 · China', 'MarketChina'], ['id', 'Bahasa · Indonesia', 'MarketIndonesia'], ['in', 'English · India', 'MarketIndia'], ['it', 'Italiano · Italia', 'MarketItaly'], ['jo', 'العربية · الأردن', 'MarketJordan'], ['uk', 'English · UK', 'MarketUK']];
+    return {
+      c: c,
+      others: MK.map(function (m) { var on = m[0] === key; return { label: m[1], href: m[2] + '.dc.html', style: 'height: 30px; padding: 0 12px; border-radius: 15px; font-size: 12px; font-weight: 700; display: flex; align-items: center; ' + (on ? 'background: #FFFFFF; color: #78006E' : 'border: 1px solid rgba(255,255,255,0.5); color: #FFFFFF') }; }),
+      why: c.why.map(function (x) { return { t: x[0], d: x[1] }; }),
+      giga: c.giga.map(function (x) { return { t: x[0], d: x[1] }; }),
+      tags: c.tags.map(function (x) { return { t: x }; }),
+      poi: c.poi.map(function (x, i) { return { t: x[0], place: x[1], d: x[2], img: POI_IMG[i][0], alt: POI_IMG[i][1] }; }),
+      itin: c.itin.map(function (x) { return { t: x[0], stops: x[1].map(function (s, j) { return { n: String(j + 1), t: s }; }) }; }),
+      partners: c.partners.map(function (x) { return { name: x[0], type: x[1], note: x[2], img: x[3] }; })
+    };
+  }
+}
+</script>
+</body>
+</html>

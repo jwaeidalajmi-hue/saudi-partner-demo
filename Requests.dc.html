@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<title>Partner Connect — Requests</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+@font-face{font-family:"Saudi Sans";src:url("assets/9d5b063e22fb4c1fdf4e126126e305fc.ttf") format("truetype");font-weight:400 700}
+@font-face{font-family:"Saudi Serif";src:url("assets/036b8acfe104a78d15187d034057eea5.ttf") format("truetype");font-weight:400 700}
+body{margin:0;background:#F5F5F5}
+a{color:#78006E;text-decoration:none}a:hover{color:#5A0052}
+button{font-family:inherit;cursor:pointer}
+button:focus-visible,a:focus-visible{outline:2px solid #78006E;outline-offset:2px}
+</style>
+</helmet>
+<div style="width: 1440px; height: 2316px; display: flex; flex-direction: column; background: #F5F5F5; font-family: 'Saudi Sans', system-ui, sans-serif; color: #1A1A1A; overflow: hidden">
+<div style="position: relative; z-index: 10; flex-shrink: 0"><dc-import name="Topbar" hint-size="1440px,76px"></dc-import></div>
+<div style="flex-grow: 1; display: flex; min-height: 0">
+<div style="flex-shrink: 0; display: flex; background: #FFFFFF; border-right: 1px solid #EBEBEB"><dc-import name="Sidebar" active="requests" hint-size="264px,100%"></dc-import></div>
+<main style="flex-grow: 1; min-width: 0; padding: 32px 40px 48px; box-sizing: border-box; display: flex; flex-direction: column; gap: 20px">
+<dc-import name="JourneyBar" page="Requests" hint-size="100%,52px"></dc-import>
+
+<div style="display: flex; align-items: center; justify-content: space-between; gap: 20px">
+<div role="group" aria-label="Partner Connect sections" style="display: flex; background: #FFFFFF; border: 1px solid #EBEBEB; border-radius: 24px; padding: 4px">
+<a href="Directory.dc.html" style="height: 40px; padding: 0 22px; border-radius: 20px; color: #1A1A1A; font-size: 14px; font-weight: 700; display: flex; align-items: center">Directory</a>
+<a href="Matches.dc.html" style="height: 40px; padding: 0 22px; border-radius: 20px; color: #1A1A1A; font-size: 14px; font-weight: 700; display: flex; align-items: center">Matchmaking</a>
+<span aria-current="true" style="height: 40px; padding: 0 22px; border-radius: 20px; background: #78006E; color: #FFFFFF; font-size: 14px; font-weight: 700; display: flex; align-items: center; gap: 8px">Requests<span style="min-width: 20px; height: 20px; padding: 0 6px; box-sizing: border-box; border-radius: 10px; background: #FFFFFF; color: #78006E; font-size: 11px; display: flex; align-items: center; justify-content: center">6</span></span>
+</div>
+<a href="RequestNew.dc.html" style="height: 44px; padding: 0 22px; border-radius: 22px; background: #78006E; color: #FFFFFF; font-size: 14px; font-weight: 700; display: flex; align-items: center; gap: 8px"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"></path></svg>Post a request</a>
+</div>
+
+<section style="position: relative; height: 220px; border-radius: 16px; overflow: hidden; flex-shrink: 0">
+<img src="assets/e8bc2e7591d257ff45c7538fea89219d.jpg" alt="Hegra, AlUla" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 42%">
+<div style="position: absolute; inset: 0; background: linear-gradient(90deg, rgba(120,0,110,0.94) 0%, rgba(120,0,110,0.7) 50%, rgba(120,0,110,0) 88%)"></div>
+<div style="position: relative; height: 100%; padding: 0 36px; display: flex; flex-direction: column; justify-content: center; gap: 10px; max-width: 640px">
+<span style="font-size: 11px; font-weight: 700; letter-spacing: 1.4px; color: #DDBFDB">CONNECT · REQUESTS</span>
+<h1 style="margin: 0; font-family: 'Saudi Serif', Georgia, serif; font-size: 34px; font-weight: 700; color: #FFFFFF; line-height: 1.08">Post what you need. Let partners bid.</h1>
+<p style="margin: 0; font-size: 14px; color: #F0E6EF; line-height: 1.55">Buyers and STA business units publish requests. Qualified partners are notified and send priced offers. Contact details are exchanged when one offer is approved.</p>
+</div>
+</section>
+
+<div style="display: flex; align-items: center; justify-content: space-between; gap: 16px">
+<div role="tablist" aria-label="Requests view" style="display: flex; gap: 8px">
+<sc-for list="{{views}}" as="v" hint-placeholder-count="2"><button type="button" role="tab" aria-selected="{{v.on}}" onClick="{{v.pick}}" style="{{v.style}}">{{v.label}}</button></sc-for>
+</div>
+<div style="display: flex; gap: 8px">
+<sc-for list="{{filters}}" as="f" hint-placeholder-count="4"><span style="height: 36px; padding: 0 14px; border-radius: 18px; border: 1px solid #DCDCDC; background: #FFFFFF; font-size: 13px; display: flex; align-items: center; gap: 6px">{{f.t}}<svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#6B6B6B" stroke-width="2.4" stroke-linecap="round"><path d="M6 9l6 6 6-6"></path></svg></span></sc-for>
+</div>
+</div>
+
+<sc-if value="{{showOpen}}" hint-placeholder-val="{{ true }}">
+<div style="display: flex; flex-direction: column; gap: 14px">
+<div style="background: #FFFFFF; border: 1px dashed #DDBFDB; border-radius: 12px; padding: 14px 20px; display: flex; align-items: center; justify-content: space-between; gap: 16px">
+<span style="font-size: 13px; color: #4B4B4B">You see requests your Connect profile qualifies you for. <b style="color: #1A1A1A">Answer Q4 guide languages</b> to see requests that need a specific language.</span>
+<a href="GetFound.dc.html" style="font-size: 13px; font-weight: 700; flex-shrink: 0">Answer now</a>
+</div>
+<sc-for list="{{open}}" as="r" hint-placeholder-count="4">
+<article style="background: #FFFFFF; border: 1px solid #EBEBEB; border-radius: 14px; overflow: hidden; display: flex">
+<img src="{{r.img}}" alt="" style="width: 220px; object-fit: cover; flex-shrink: 0">
+<div style="flex-grow: 1; padding: 20px 24px; display: flex; flex-direction: column; gap: 12px">
+<div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap">
+<span style="height: 24px; padding: 0 10px; border-radius: 12px; background: #F7EBF5; color: #78006E; font-size: 10px; font-weight: 700; letter-spacing: 0.4px; display: flex; align-items: center">{{r.tag}}</span>
+<sc-if value="{{r.official}}" hint-placeholder-val="{{ false }}"><span style="height: 24px; padding: 0 10px; border-radius: 12px; background: #78006E; color: #FFFFFF; font-size: 10px; font-weight: 700; letter-spacing: 0.4px; display: flex; align-items: center; gap: 5px"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v6c0 4-3 7-7 9-4-2-7-5-7-9V6z"></path></svg>{{r.officialLabel}}</span></sc-if>
+<span style="font-size: 12px; color: #6B6B6B">{{r.requester}}</span>
+<sc-if value="{{r.private}}" hint-placeholder-val="{{ false }}"><span style="height: 24px; padding: 0 10px; border-radius: 12px; border: 1px solid #78006E; color: #78006E; font-size: 10px; font-weight: 700; display: flex; align-items: center; gap: 5px"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#78006E" stroke-width="2.6" stroke-linecap="round"><rect x="5" y="11" width="14" height="10" rx="2"></rect><path d="M8 11V7a4 4 0 018 0v4"></path></svg>YOU WERE INVITED</span></sc-if>
+</div>
+<span style="font-family: 'Saudi Serif', Georgia, serif; font-size: 21px; font-weight: 700; line-height: 1.2">{{r.title}}</span>
+<div style="display: flex; gap: 22px; font-size: 13px; color: #4B4B4B">
+<span style="display: flex; align-items: center; gap: 6px"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#6B6B6B" stroke-width="1.8" stroke-linecap="round"><circle cx="9" cy="8" r="3.4"></circle><path d="M3 20c0-3.3 2.7-5.5 6-5.5s6 2.2 6 5.5M16 5.2a3.2 3.2 0 010 6.3M21 20c0-2.6-1.6-4.5-4-5.2"></path></svg>{{r.pax}}</span>
+<span style="display: flex; align-items: center; gap: 6px"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#6B6B6B" stroke-width="1.8" stroke-linecap="round"><rect x="4" y="5" width="16" height="15" rx="2"></rect><path d="M4 10h16M9 3v4M15 3v4"></path></svg>{{r.dates}}</span>
+<span style="display: flex; align-items: center; gap: 6px"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#6B6B6B" stroke-width="1.8" stroke-linecap="round"><path d="M12 21s7-6.2 7-11a7 7 0 10-14 0c0 4.8 7 11 7 11z"></path><circle cx="12" cy="10" r="2.4"></circle></svg>{{r.region}}</span>
+<span style="display: flex; align-items: center; gap: 6px"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#6B6B6B" stroke-width="1.8" stroke-linecap="round"><path d="M6 3h8l4 4v14H6zM14 3v4h4"></path></svg>{{r.offers}} offers so far</span>
+</div>
+<div style="display: flex; gap: 6px; flex-wrap: wrap; align-items: center">
+<span style="font-size: 11px; font-weight: 700; letter-spacing: 0.4px; color: #6B6B6B; margin-right: 4px">WHY YOU SEE THIS</span>
+<sc-for list="{{r.why}}" as="w" hint-placeholder-count="3"><span style="height: 26px; padding: 0 11px; border-radius: 13px; background: #EDF8F3; color: #1F6647; font-size: 11px; font-weight: 700; display: flex; align-items: center">{{w.t}}</span></sc-for>
+</div>
+</div>
+<div style="width: 210px; flex-shrink: 0; border-left: 1px solid #EBEBEB; padding: 20px; display: flex; flex-direction: column; justify-content: space-between; gap: 12px; background: #FCFAFC">
+<div style="display: flex; flex-direction: column; gap: 4px">
+<span style="font-size: 11px; font-weight: 700; letter-spacing: 0.4px; color: #6B6B6B">OFFERS CLOSE IN</span>
+<span style="{{r.deadlineStyle}}">{{r.deadline}}</span>
+</div>
+<a href="RequestOffer.dc.html" style="height: 44px; border-radius: 22px; background: #78006E; color: #FFFFFF; font-size: 14px; font-weight: 700; display: flex; align-items: center; justify-content: center">Send an offer</a>
+</div>
+</article>
+</sc-for>
+</div>
+</sc-if>
+
+<sc-if value="{{showMine}}" hint-placeholder-val="{{ false }}">
+<div style="display: flex; flex-direction: column; gap: 14px">
+<sc-for list="{{mine}}" as="m" hint-placeholder-count="3">
+<article style="background: #FFFFFF; border: 1px solid #EBEBEB; border-radius: 14px; padding: 20px 24px; display: flex; align-items: center; gap: 22px">
+<img src="{{m.img}}" alt="" style="width: 120px; height: 84px; object-fit: cover; border-radius: 10px; flex-shrink: 0">
+<div style="flex-grow: 1; display: flex; flex-direction: column; gap: 6px">
+<span style="font-family: 'Saudi Serif', Georgia, serif; font-size: 19px; font-weight: 700">{{m.title}}</span>
+<span style="font-size: 12px; color: #6B6B6B">{{m.meta}}</span>
+</div>
+<span style="{{m.statusStyle}}">{{m.status}}</span>
+<div style="width: 120px; display: flex; flex-direction: column; align-items: flex-end; gap: 2px"><span style="font-family: 'Saudi Serif', Georgia, serif; font-size: 26px; font-weight: 700; color: #78006E">{{m.offers}}</span><span style="font-size: 11px; color: #6B6B6B">offers</span></div>
+<a href="RequestOffers.dc.html" style="height: 40px; padding: 0 18px; border-radius: 20px; border: 1px solid #78006E; color: #78006E; font-size: 13px; font-weight: 700; display: flex; align-items: center">Review</a>
+</article>
+</sc-for>
+</div>
+</sc-if>
+
+</main>
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":2316}}'>
+class Component extends DCLogic {
+constructor(props) { super(props); this.state = { view: 'open' }; }
+renderVals() {
+var self = this, view = this.state.view;
+function tab(key, label) {
+var on = view === key;
+return { label: label, on: on ? 'true' : 'false', pick: function () { self.setState({ view: key }); },
+style: 'height: 40px; padding: 0 18px; border-radius: 20px; font-size: 14px; font-weight: 700; ' + (on ? 'background: #1A1A1A; color: #FFFFFF; border: 1px solid #1A1A1A' : 'background: #FFFFFF; color: #1A1A1A; border: 1px solid #DCDCDC') };
+}
+function t(a) { return a.map(function (x) { return { t: x }; }); }
+var urgent = 'font-family: "Saudi Serif", Georgia, serif; font-size: 24px; font-weight: 700; color: #8A3C0F';
+var calm = 'font-family: "Saudi Serif", Georgia, serif; font-size: 24px; font-weight: 700; color: #1A1A1A';
+var pill = function (bg, fg) { return 'height: 30px; padding: 0 14px; border-radius: 15px; background: ' + bg + '; color: ' + fg + '; font-size: 12px; font-weight: 700; display: flex; align-items: center; flex-shrink: 0'; };
+return {
+views: [tab('open', 'Open to you (6)'), tab('mine', 'My requests (3)')],
+showOpen: view === 'open',
+showMine: view === 'mine',
+filters: t(['From: all requesters', 'Type', 'Region', 'Closing soon']),
+open: [
+{ img: 'assets/775e80c89d6f570f1ffe7134b4763b6b.jpg', tag: 'EVENT', official: true, officialLabel: 'OFFICIAL · DMO', requester: 'Regional DMO, Asir', private: false, title: '[Rijal Almaa heritage weekend: ground handling for festival guests]', pax: '60 guests', dates: '[EVENT DATES]', region: 'Asir, Rijal Almaa', offers: 3, deadline: '5 days', deadlineStyle: calm, why: t(['Operates in Asir', 'Includes transport and guide', 'Groups up to 120']) },
+{ img: 'assets/4f91d07a84e88edcb6880dfaafcaaf95.jpg', tag: 'INSPIRATIONAL ITINERARY', official: true, officialLabel: 'OFFICIAL · STA', requester: 'STA, APAC market team', private: false, title: '[Five-day AlUla and Red Sea itinerary to feature in the APAC campaign]', pax: 'Itinerary for 2 to 16', dates: '[CAMPAIGN SEASON]', region: 'AlUla, Red Sea', offers: 6, deadline: '8 days', deadlineStyle: calm, why: t(['APAC ready', 'Sells to Leisure', 'Mandarin guides']) },
+{ img: 'assets/31cdd3634e4f755cd3e3a6d44e978dee.jpg', tag: 'FAM TRIP', official: true, officialLabel: 'OFFICIAL · STA', requester: 'STA Business Unit', private: true, title: '[AlUla and Asir familiarisation trip for APAC operators]', pax: '12 guests', dates: '[DATES]', region: 'AlUla, Asir', offers: 2, deadline: '6 days', deadlineStyle: calm, why: t(['Invited partner', 'Sells to FAM trips', 'Operates in AlUla']) },
+{ img: 'assets/c11ac0687c6f13f7b0073cb4afef6ccd.jpg', tag: 'SPECIFIC REQUEST', official: false, officialLabel: '', requester: 'OTA buyer, Indonesia', private: false, title: '[Umrah series, 30 to 40 travellers per departure]', pax: '30 to 40 guests', dates: '[SEASON]', region: 'Makkah, Madinah', offers: 4, deadline: '2 days', deadlineStyle: urgent, why: t(['Umrah & Ziyarat', 'Includes transport and visa', 'Groups up to 120']) },
+{ img: 'assets/6596caef0129c20aa5b6bf10f6dd1789.jpg', tag: 'SPECIFIC REQUEST', official: false, officialLabel: '', requester: 'Luxury tour operator, Europe', private: false, title: '[Private desert stargazing evenings for incentive groups]', pax: '8 to 16 guests', dates: '[DATES]', region: 'AlUla', offers: 1, deadline: '11 days', deadlineStyle: calm, why: t(['VIP & concierge', 'Stargazing specialism', 'Europe ready']) },
+{ img: 'assets/2579c0003409b4bcbac4b9ad0b6a7a83.jpg', tag: 'MASS REQUEST', official: false, officialLabel: '', requester: 'MICE agency, GCC', private: false, title: '[Riyadh Season corporate programme, recurring]', pax: '120 guests', dates: '[SEASON]', region: 'Riyadh', offers: 7, deadline: '9 days', deadlineStyle: calm, why: t(['MICE', 'Contracts on net rates', 'GCC ready']) }
+],
+mine: [
+{ img: 'assets/ddfba5a807a1b48908eb7eade3ab94b3.jpg', title: '[Boutique heritage stays, AlUla, 20 rooms]', meta: 'Specific request · open to qualified partners · closes in 4 days', status: 'Receiving offers', statusStyle: pill('#EDF8F3', '#1F6647'), offers: 5 },
+{ img: 'assets/31cdd3634e4f755cd3e3a6d44e978dee.jpg', title: '[Coach transfers, Abha to Rijal Almaa]', meta: 'Specific request · locked since first offer · closes in 1 day', status: 'Closing soon', statusStyle: pill('#FEDDCE', '#8A3C0F'), offers: 3 },
+{ img: 'assets/6596caef0129c20aa5b6bf10f6dd1789.jpg', title: '[Guided canyon trek, 2 days]', meta: 'Specific request · approved [DATE]', status: 'Approved', statusStyle: pill('#F7EBF5', '#78006E'), offers: 6 }
+]
+};
+}
+}
+</script>
+</body>
+</html>

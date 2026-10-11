@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<title>Training</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+@font-face{font-family:"Saudi Sans";src:url(assets/9d5b063e22fb4c1fdf4e126126e305fc.ttf) format("truetype");font-weight:400 700}
+@font-face{font-family:"Saudi Serif";src:url(assets/036b8acfe104a78d15187d034057eea5.ttf) format("truetype");font-weight:400 700}
+body{margin:0;background:#F5F5F5}
+a{color:#78006E;text-decoration:none}a:hover{color:#5A0052}
+button{font-family:inherit}
+</style>
+</helmet>
+<div style="width: 1440px; height: 1480px; display: flex; flex-direction: column; background: #F5F5F5; font-family: 'Saudi Sans', system-ui, sans-serif; color: #1A1A1A; overflow: hidden">
+<div style="position: relative; z-index: 10; flex-shrink: 0"><dc-import name="Topbar" hint-size="1440px,76px"></dc-import></div>
+<div style="flex-grow: 1; display: flex; min-height: 0">
+<div style="flex-shrink: 0; display: flex; background: #FFFFFF; border-right: 1px solid #EBEBEB"><dc-import name="Sidebar" active="training" locked="{{ false }}" hint-size="264px,100%"></dc-import></div>
+<main style="flex-grow: 1; min-width: 0; padding: 36px 40px 48px; box-sizing: border-box; display: flex; flex-direction: column; gap: 28px">
+
+<div style="display: flex; flex-direction: column; gap: 8px">
+<h1 style="margin: 0; font-family: 'Saudi Serif', Georgia, serif; font-weight: 700; font-size: 40px; line-height: 1.1">Training</h1>
+<p style="margin: 0; font-size: 15px; color: #6B6B6B">Courses and certifications for Saudi tourism professionals.</p>
+</div>
+
+<!-- Progress -->
+<section style="background: #78006E; border-radius: 16px; padding: 32px 36px; display: flex; align-items: center; gap: 36px; color: #FFFFFF">
+<div style="width: 112px; height: 112px; flex-shrink: 0; border-radius: 56px; background: {{ ring }}; display: flex; align-items: center; justify-content: center">
+<div style="width: 90px; height: 90px; border-radius: 45px; background: #78006E; display: flex; align-items: center; justify-content: center; font-family: 'Saudi Serif', Georgia, serif; font-size: 28px; font-weight: 700">{{ pct }}%</div>
+</div>
+<div style="flex-grow: 1; display: flex; flex-direction: column; gap: 8px">
+<span style="font-size: 12px; font-weight: 700; letter-spacing: 1px; color: #F0D6EC">YOUR LEARNING PROGRESS</span>
+<span style="font-family: 'Saudi Serif', Georgia, serif; font-size: 28px; font-weight: 700">{{ done }} of 5 modules completed</span>
+<span style="font-size: 14px; color: #F3E1F0">Keep going, Fahad! You're {{ left }}% away from completing the current path.</span>
+</div>
+</section>
+
+<div style="display: flex; gap: 24px; align-items: flex-start">
+<!-- Learning path -->
+<section style="flex-grow: 1; min-width: 0; background: #FFFFFF; border: 1px solid #EBEBEB; border-radius: 12px; padding: 24px 28px 12px; display: flex; flex-direction: column">
+<div style="display: flex; align-items: center; justify-content: space-between; padding-bottom: 12px">
+<h2 style="margin: 0; font-size: 18px; font-weight: 700">Current Learning Path</h2>
+<span style="font-size: 12px; color: #6B6B6B">Saudi Partner Essentials</span>
+</div>
+<sc-for list="{{ modules }}" as="m" hint-placeholder-count="5">
+<div style="display: flex; align-items: center; gap: 16px; padding: 16px 0; border-top: 1px solid #EBEBEB">
+<span style="{{ m.dotStyle }}">{{ m.mark }}</span>
+<div style="flex-grow: 1; display: flex; flex-direction: column; gap: 6px">
+<span style="font-size: 14px; font-weight: 700">{{ m.title }}</span>
+<span style="font-size: 12px; color: #6B6B6B; display: flex; align-items: center; gap: 4px"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#767676" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg>{{ m.dur }}</span>
+<sc-if value="{{ m.inProgress }}" hint-placeholder-val="{{ false }}"><div style="display: flex; align-items: center; gap: 10px; max-width: 360px"><span style="flex-grow: 1; height: 6px; border-radius: 3px; background: #EBEBEB; display: flex"><span style="{{ m.barStyle }}"></span></span><span style="font-size: 11px; font-weight: 700; color: #78006E">{{ m.progress }}%</span></div></sc-if>
+</div>
+<sc-if value="{{ m.isDone }}" hint-placeholder-val="{{ false }}"><span style="font-size: 12px; font-weight: 700; color: #2E7D55">Completed</span></sc-if>
+<sc-if value="{{ m.canAct }}" hint-placeholder-val="{{ true }}"><button onClick="{{ m.act }}" style="{{ m.btnStyle }}">{{ m.cta }}</button></sc-if>
+</div>
+</sc-for>
+</section>
+
+<!-- Badges & certificates -->
+<aside style="width: 340px; flex-shrink: 0; display: flex; flex-direction: column; gap: 24px">
+<section style="background: #FFFFFF; border: 1px solid #EBEBEB; border-radius: 12px; padding: 24px; display: flex; flex-direction: column; gap: 16px">
+<h2 style="margin: 0; font-size: 16px; font-weight: 700">Latest Badge</h2>
+<div style="border-radius: 8px; background: #FEF1EB; border: 1px solid #FCE0D2; padding: 20px; display: flex; flex-direction: column; align-items: center; gap: 8px"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#FA783C" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="6"></circle><path d="M8.5 14l-1 8 4.5-2.5 4.5 2.5-1-8"></path></svg><span style="font-size: 14px; font-weight: 700">Saudi Partner Essentials</span><span style="font-size: 12px; color: #4B4B4B">Earned Mar 2026</span></div>
+</section>
+<section style="background: #FFFFFF; border: 1px solid #EBEBEB; border-radius: 12px; padding: 24px; display: flex; flex-direction: column; gap: 14px">
+<h2 style="margin: 0; font-size: 16px; font-weight: 700">Certificates</h2>
+<div style="display: flex; align-items: center; gap: 12px; border: 1px solid #EBEBEB; border-radius: 8px; padding: 14px">
+<span style="width: 40px; height: 40px; border-radius: 8px; background: #F7EBF5; display: flex; align-items: center; justify-content: center"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#78006E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v12H4zM8 20l4-3 4 3v-4"></path></svg></span>
+<div style="flex-grow: 1; display: flex; flex-direction: column; gap: 2px"><span style="font-size: 13px; font-weight: 700">Saudi Partner Essentials</span><span style="font-size: 11px; color: #6B6B6B">Mar 2026</span></div>
+<a href="#" aria-label="Download certificate" style="width: 36px; height: 36px; border-radius: 18px; border: 1px solid #EBEBEB; display: flex; align-items: center; justify-content: center"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#78006E" stroke-width="2" stroke-linecap="round"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"></path></svg></a>
+</div>
+</section>
+</aside>
+</div>
+
+<!-- Recommended -->
+<section style="display: flex; flex-direction: column; gap: 16px">
+<h2 style="margin: 0; font-size: 18px; font-weight: 700">Recommended for You</h2>
+<div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px">
+<sc-for list="{{ recs }}" as="r" hint-placeholder-count="3">
+<article style="background: #FFFFFF; border: 1px solid #EBEBEB; border-radius: 8px; overflow: hidden; display: flex; flex-direction: column">
+<div style="padding: 22px; display: flex; flex-direction: column; gap: 10px; flex-grow: 1">
+<div style="display: flex; align-items: center; gap: 8px"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#78006E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 5h6a3 3 0 013 3v12a2 2 0 00-2-2H2zM22 5h-6a3 3 0 00-3 3v12a2 2 0 012-2h7z"></path></svg><span style="flex-grow: 1"></span><span style="font-size: 11px; color: #6B6B6B">{{ r.dur }}</span><span style="{{ r.tagStyle }}">{{ r.tag }}</span></div>
+<span style="font-size: 12px; font-weight: 700; color: #78006E; letter-spacing: 0.3px">COURSE · {{ r.level }}</span>
+<span style="font-size: 16px; font-weight: 700">{{ r.title }}</span>
+</div>
+<button onClick="{{ r.start }}" style="height: 52px; border: 0; padding: 0 22px; background: #F7F1F6; font-size: 12px; font-weight: 700; color: #78006E; display: flex; align-items: center; justify-content: space-between; cursor: pointer">{{ r.cta }} <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#78006E" stroke-width="2" stroke-linecap="round"><path d="M9 6l6 6-6 6"></path></svg></button>
+</article>
+</sc-for>
+</div>
+</section>
+
+</main>
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":1480}}'>
+class Component extends DCLogic {
+  constructor(props) { super(props); this.state = { progress: [100, 100, 60, 0, 0], started: {} }; }
+  renderVals() {
+    var self = this, st = this.state;
+    var src = [['Introduction to Saudi Tourism', '45 min'], ['Saudi Heritage & Culture', '1h 20min'], ['Partner Connect Essentials', '55 min'], ['Sustainable Tourism Practices', '40 min'], ['MICE & Business Tourism', '1h 05min']];
+    var done = st.progress.filter(function (p) { return p === 100; }).length;
+    var pct = Math.round(done / 5 * 100);
+    var modules = src.map(function (m, i) {
+      var p = st.progress[i];
+      var isDone = p === 100, inProg = p > 0 && p < 100;
+      return {
+        title: m[0], dur: m[1], progress: p, isDone: isDone, inProgress: inProg, canAct: !isDone,
+        mark: isDone ? '✓' : String(i + 1),
+        dotStyle: 'width: 36px; height: 36px; flex-shrink: 0; border-radius: 18px; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 700; ' + (isDone ? 'background: #46C8A0; color: #FFFFFF' : (inProg ? 'background: #646EC8; color: #FFFFFF' : 'background: #F5F5F5; color: #767676')),
+        barStyle: 'width: ' + p + '%; border-radius: 3px; background: #78006E',
+        cta: inProg ? 'Resume' : 'Start',
+        btnStyle: 'height: 36px; padding: 0 18px; border-radius: 18px; font-size: 13px; font-weight: 700; cursor: pointer; ' + (inProg ? 'background: #78006E; color: #FFFFFF; border: 1px solid #78006E' : 'background: #FFFFFF; color: #78006E; border: 1px solid #78006E'),
+        act: function () { var arr = self.state.progress.slice(); arr[i] = arr[i] > 0 ? 100 : 20; self.setState({ progress: arr }); }
+      };
+    });
+    var TAG = { New: 'background: #46C8A0; color: #FFFFFF', Popular: 'background: #FEF1EB; color: #B84A18', Certification: 'background: #F7EBF5; color: #78006E' };
+    var recs = [['Luxury Travel Saudi Arabia', 'New', '1h 10min', 'Advanced'], ['Digital Marketing for Tourism', 'Popular', '2h 00min', 'Intermediate'], ['Saudi Destination Expert', 'Certification', '3h 30min', 'All levels']].map(function (r, i) {
+      var s = !!st.started[i];
+      return { title: r[0], tag: r[1], dur: r[2], level: r[3].toUpperCase(), cta: s ? 'Continue learning' : 'Start learning',
+        tagStyle: 'height: 24px; padding: 0 10px; border-radius: 12px; font-size: 10px; font-weight: 700; display: flex; align-items: center; ' + TAG[r[1]],
+        start: function () { var o = Object.assign({}, self.state.started); o[i] = true; self.setState({ started: o }); } };
+    });
+    return {
+      modules: modules, recs: recs, done: done, pct: pct, left: 100 - pct,
+      ring: 'conic-gradient(#46C8A0 0 ' + pct + '%, rgba(255,255,255,0.2) ' + pct + '% 100%)'
+    };
+  }
+}
+</script>
+</body>
+</html>

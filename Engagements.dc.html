@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<title>Engagements</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+@font-face{font-family:"Saudi Sans";src:url(assets/9d5b063e22fb4c1fdf4e126126e305fc.ttf) format("truetype");font-weight:400 700}
+@font-face{font-family:"Saudi Serif";src:url(assets/036b8acfe104a78d15187d034057eea5.ttf) format("truetype");font-weight:400 700}
+body{margin:0;background:#F5F5F5}
+a{color:#78006E;text-decoration:none}a:hover{color:#5A0052}
+button{font-family:inherit}
+</style>
+</helmet>
+<div style="width: 1440px; height: 1450px; display: flex; flex-direction: column; background: #F5F5F5; font-family: 'Saudi Sans', system-ui, sans-serif; color: #1A1A1A; overflow: hidden">
+<div style="position: relative; z-index: 10; flex-shrink: 0"><dc-import name="Topbar" hint-size="1440px,76px"></dc-import></div>
+<div style="flex-grow: 1; display: flex; min-height: 0">
+<div style="flex-shrink: 0; display: flex; background: #FFFFFF; border-right: 1px solid #EBEBEB"><dc-import name="Sidebar" active="engagements" hint-size="264px,100%"></dc-import></div>
+<main style="flex-grow: 1; min-width: 0; padding: 32px 40px 48px; box-sizing: border-box; display: flex; flex-direction: column; gap: 22px">
+<dc-import name="JourneyBar" page="Engagements" hint-size="100%,52px"></dc-import>
+<div style="display: flex; align-items: flex-end; justify-content: space-between; gap: 24px">
+<div style="display: flex; flex-direction: column; gap: 8px; max-width: 760px">
+<span style="font-size: 12px; font-weight: 700; letter-spacing: 1px; color: #78006E">CONNECT · ENGAGEMENTS</span>
+<h1 style="margin: 0; font-family: 'Saudi Serif', Georgia, serif; font-weight: 700; font-size: 38px; line-height: 1.12">Rate your engagements</h1>
+<p style="margin: 0; font-size: 15px; line-height: 1.6; color: #4B4B4B">After a request closes, both sides rate the engagement. Scores show once both have rated, feed Partner of Choice awards and help matchmaking suggest partners who deliver.</p>
+</div>
+<div style="display: flex; gap: 10px; flex-shrink: 0"><a href="Requests.dc.html" style="height: 44px; padding: 0 20px; border-radius: 22px; background: #FFFFFF; color: #78006E; border: 1px solid #78006E; font-size: 14px; font-weight: 700; display: flex; align-items: center; gap: 8px; cursor: pointer">Back to requests</a></div>
+</div>
+
+<div role="tablist" aria-label="Engagements" style="display: flex; gap: 8px">
+<sc-for list="{{ tabs }}" as="t" hint-placeholder-count="2"><button type="button" role="tab" aria-selected="{{ t.on }}" onClick="{{ t.pick }}" style="{{ t.style }}">{{ t.label }}</button></sc-for>
+</div>
+
+<sc-if value="{{ showPending }}" hint-placeholder-val="{{ true }}">
+<div style="display: flex; flex-direction: column; gap: 16px">
+<sc-for list="{{ pending }}" as="e" hint-placeholder-count="2">
+<article style="background: #FFFFFF; border: 1px solid #EBEBEB; border-radius: 12px; padding: 22px 24px; display: flex; flex-direction: column; gap: 14px">
+<div style="display: flex; gap: 16px; align-items: center">
+<img src="{{ e.img }}" alt="" style="width: 96px; height: 72px; border-radius: 10px; object-fit: cover; flex-shrink: 0">
+<div style="flex-grow: 1; display: flex; flex-direction: column; gap: 4px">
+<span style="font-size: 16px; font-weight: 700">{{ e.title }}</span>
+<span style="font-size: 12px; color: #6B6B6B">{{ e.meta }}</span>
+</div>
+<span style="{{ e.pill }}">{{ e.status }}</span>
+</div>
+<sc-if value="{{ e.open }}" hint-placeholder-val="{{ true }}">
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px 28px; border-top: 1px solid #EBEBEB; padding-top: 14px">
+<sc-for list="{{ e.criteria }}" as="c" hint-placeholder-count="4">
+<div style="display: flex; align-items: center; justify-content: space-between; gap: 12px">
+<span style="font-size: 13px">{{ c.label }}</span>
+<span role="radiogroup" aria-label="{{ c.label }}" style="display: flex; gap: 2px">
+<sc-for list="{{ c.stars }}" as="s" hint-placeholder-count="5"><button type="button" aria-label="{{ s.aria }}" onClick="{{ s.pick }}" style="width: 32px; height: 32px; border: 0; background: none; cursor: pointer; padding: 0; display: flex; align-items: center; justify-content: center"><svg width="20" height="20" viewBox="0 0 24 24" fill="{{ s.fill }}" stroke="#FA783C" stroke-width="1.6"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"></path></svg></button></sc-for>
+</span>
+</div>
+</sc-for>
+</div>
+<label style="display: flex; flex-direction: column; gap: 6px; font-size: 12px; font-weight: 700">Comment for the other party (optional)
+<textarea rows="2" placeholder="What went well, what to improve" style="border-radius: 8px; border: 1px solid #DCDCDC; padding: 10px; font-family: inherit; font-size: 13px; font-weight: 400; resize: none"></textarea></label>
+<div style="display: flex; justify-content: flex-end"><button type="button" onClick="{{ e.submit }}" style="height: 44px; padding: 0 22px; border-radius: 22px; background: #78006E; color: #FFFFFF; border: 0; font-size: 14px; font-weight: 700; display: flex; align-items: center; gap: 8px; cursor: pointer">Submit rating</button></div>
+</sc-if>
+<sc-if value="{{ e.rated }}" hint-placeholder-val="{{ false }}">
+<span style="font-size: 13px; color: #1F6647; border-top: 1px solid #EBEBEB; padding-top: 12px">Thanks. Your rating is sealed until the other party rates, then both scores show.</span>
+</sc-if>
+</article>
+</sc-for>
+</div>
+</sc-if>
+
+<sc-if value="{{ showDone }}" hint-placeholder-val="{{ false }}">
+<section style="background: #FFFFFF; border: 1px solid #EBEBEB; border-radius: 12px; padding: 22px 24px; display: flex; flex-direction: column; gap: 14px">
+<sc-for list="{{ done }}" as="d" hint-placeholder-count="4">
+<div style="display: flex; align-items: center; gap: 16px; padding: 12px 0; border-top: 1px solid #EBEBEB">
+<span style="flex-grow: 1; display: flex; flex-direction: column; gap: 3px"><span style="font-size: 14px; font-weight: 700">{{ d.title }}</span><span style="font-size: 12px; color: #6B6B6B">{{ d.meta }}</span></span>
+<span style="font-size: 12px; color: #4B4B4B; width: 150px">You gave <b>{{ d.gave }}</b></span>
+<span style="font-size: 12px; color: #4B4B4B; width: 150px">You received <b>{{ d.got }}</b></span>
+</div>
+</sc-for>
+</section>
+</sc-if>
+
+<section style="background: #F7F1F6; border: 1px solid #DDBFDB; border-radius: 12px; padding: 20px 24px; display: flex; align-items: center; gap: 18px">
+<span style="width: 48px; height: 48px; flex-shrink: 0; border-radius: 24px; background: #FFFFFF; color: #B84A18; display: flex; align-items: center; justify-content: center"><svg width="22" height="22" viewBox="0 0 24 24" fill="#FA783C"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"></path></svg></span>
+<span style="flex-grow: 1; display: flex; flex-direction: column; gap: 4px"><span style="font-size: 16px; font-weight: 700">Your rating: 4.8 from 26 engagements</span><span style="font-size: 13px; color: #4B4B4B">Partner of Choice 2026 is awarded to partners rated 4.5 or higher across at least 20 engagements.</span></span>
+<a href="Programmes.dc.html" style="height: 44px; padding: 0 20px; border-radius: 22px; background: #FFFFFF; color: #78006E; border: 1px solid #78006E; font-size: 14px; font-weight: 700; display: flex; align-items: center; gap: 8px; cursor: pointer">See awards</a>
+</section>
+</main>
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview": {"width": 1440, "height": 1450}}'>
+class Component extends DCLogic {
+  constructor(props) { super(props); this.state = { tab: 'pending', r: {}, sent: {} }; }
+  renderVals() {
+    var self = this, st = this.state;
+    var tab = function (on) { return 'height: 40px; padding: 0 18px; border-radius: 20px; font-size: 13px; font-weight: 700; cursor: pointer; ' + (on ? 'background: #1A1A1A; color: #FFFFFF; border: 1px solid #1A1A1A' : 'background: #FFFFFF; color: #1A1A1A; border: 1px solid #DCDCDC'); };
+    var pill = function (bg, fg) { return 'height: 26px; padding: 0 12px; border-radius: 13px; font-size: 11px; font-weight: 700; display: flex; align-items: center; white-space: nowrap; background: ' + bg + '; color: ' + fg; };
+    var CRIT = ['Responsiveness', 'Accuracy of the proposal', 'Delivery on the ground', 'Would work with them again'];
+    var P = [
+      ['e1', 'Umrah series, 30 to 40 travellers', 'With OTA buyer, Indonesia · 3 departures · closed Aug 2026', 'assets/c11ac0687c6f13f7b0073cb4afef6ccd.jpg'],
+      ['e2', 'Rijal Almaa heritage weekend', 'With Asir DMO · official request · closed Sep 2026', 'assets/31cdd3634e4f755cd3e3a6d44e978dee.jpg']
+    ];
+    return {
+      tabs: [['pending', 'To rate (2)'], ['done', 'Rated (24)']].map(function (t) { return { label: t[1], on: st.tab === t[0] ? 'true' : 'false', style: tab(st.tab === t[0]), pick: function () { self.setState({ tab: t[0] }); } }; }),
+      showPending: st.tab === 'pending', showDone: st.tab === 'done',
+      pending: P.map(function (p) {
+        var rated = !!st.sent[p[0]];
+        return { title: p[1], meta: p[2], img: p[3], open: !rated, rated: rated,
+          status: rated ? 'Rated · waiting for the other party' : 'Your rating is due', pill: rated ? pill('#EDF8F3', '#1F6647') : pill('#FEF1EB', '#8A3C0F'),
+          submit: function () { var s = Object.assign({}, self.state.sent); s[p[0]] = true; self.setState({ sent: s }); },
+          criteria: CRIT.map(function (c, ci) {
+            var key = p[0] + ci, val = st.r[key] || 0;
+            return { label: c, stars: [1, 2, 3, 4, 5].map(function (n) { return { aria: n + ' of 5', fill: n <= val ? '#FA783C' : 'none', pick: function () { var r = Object.assign({}, self.state.r); r[key] = n; self.setState({ r: r }); } }; }) };
+          }) };
+      }),
+      done: [
+        { title: 'Hegra heritage day, 24 pax', meta: 'Levant Journeys · Jul 2026', gave: '5.0', got: '4.9' },
+        { title: 'Five-day AlUla and Red Sea itinerary', meta: 'STA APAC team · Jun 2026', gave: '4.5', got: '4.8' },
+        { title: 'Stargazing evenings for incentive groups', meta: 'EuroTrails · May 2026', gave: '4.8', got: '5.0' },
+        { title: 'Desert camp, 2 nights, 16 pax', meta: 'Nordic Sun Travel · Apr 2026', gave: '4.0', got: '4.4' }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>
